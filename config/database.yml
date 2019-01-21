@@ -44,7 +44,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: pg_meetandeat_dev
+  database: pg_meetandeat_prod
   pool: 5
   password:
   timeout: 5000
