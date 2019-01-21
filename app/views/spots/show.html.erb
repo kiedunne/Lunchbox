@@ -1,4 +1,12 @@
-<h2><%= @spot.spot %></h2>
-<p><%= @spot.time %></p>
-<p><%= @spot.location %></p>
-<p><%= @spot.info %></p>
+<div id="all-spots">
+  <h2><%= @spot.spot %></h2>
+  <p><%= @spot.time %></p>
+  <p><%= @spot.location %></p>
+  <p><%= @spot.info %></p>
+  <a><%= link_to "back", authenticated_root_path%></a>
+<%= link_to "Edit", edit_spot_path(@spot), :class => 'btn btn-default' %>
+<%= link_to "Delete", spot_path(@spot),
+                                      method: :delete,
+                                      data: {confirm: 'Are you sure?'},
+                                      :class => 'btn btn-danger' %>
+</div>
