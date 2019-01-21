@@ -1,0 +1,8 @@
+<h1>Welcome to Meet and Eat!</h1>
+Please see the spots available below
+<% @spots.each do |spot| %>
+    <h3><%= spot.spot %></h3>
+    <p><%= spot.time %></p>
+    <p><%= spot.location %></p>
+    <p><%= spot.info %></p>
+<% end %>
