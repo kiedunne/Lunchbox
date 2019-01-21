@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   authenticated :user do
      root 'spots#index', as: :authenticated_root
+     get 'users/:id', to: 'users#show', as: :profile
    end
 
    unauthenticated do
