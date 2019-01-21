@@ -1,14 +1,14 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/mateuszstacel/Desktop/projects/final-project/Meet-and-Eat/spec/controllers/home_controller_spec.rb": [
+      "/Users/asadk/Projects/Makers-Course/Week11/Meet-And-Eat/spec/controllers/home_controller_spec.rb": [
         1,
         null,
         1,
         null,
         null
       ],
-      "/Users/mateuszstacel/Desktop/projects/final-project/Meet-and-Eat/spec/rails_helper.rb": [
+      "/Users/asadk/Projects/Makers-Course/Week11/Meet-And-Eat/spec/rails_helper.rb": [
         null,
         1,
         1,
@@ -71,14 +71,14 @@
         null,
         null
       ],
-      "/Users/mateuszstacel/Desktop/projects/final-project/Meet-and-Eat/config/environment.rb": [
+      "/Users/asadk/Projects/Makers-Course/Week11/Meet-And-Eat/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/mateuszstacel/Desktop/projects/final-project/Meet-and-Eat/config/application.rb": [
+      "/Users/asadk/Projects/Makers-Course/Week11/Meet-And-Eat/config/application.rb": [
         1,
         null,
         1,
@@ -113,13 +113,13 @@
         null,
         null
       ],
-      "/Users/mateuszstacel/Desktop/projects/final-project/Meet-and-Eat/config/boot.rb": [
+      "/Users/asadk/Projects/Makers-Course/Week11/Meet-And-Eat/config/boot.rb": [
         1,
         null,
         1,
         1
       ],
-      "/Users/mateuszstacel/Desktop/projects/final-project/Meet-and-Eat/config/environments/test.rb": [
+      "/Users/asadk/Projects/Makers-Course/Week11/Meet-And-Eat/config/environments/test.rb": [
         1,
         null,
         null,
@@ -167,7 +167,7 @@
         null,
         null
       ],
-      "/Users/mateuszstacel/Desktop/projects/final-project/Meet-and-Eat/config/initializers/application_controller_renderer.rb": [
+      "/Users/asadk/Projects/Makers-Course/Week11/Meet-And-Eat/config/initializers/application_controller_renderer.rb": [
         null,
         null,
         null,
@@ -177,7 +177,7 @@
         null,
         null
       ],
-      "/Users/mateuszstacel/Desktop/projects/final-project/Meet-and-Eat/config/initializers/assets.rb": [
+      "/Users/asadk/Projects/Makers-Course/Week11/Meet-And-Eat/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -193,7 +193,7 @@
         null,
         null
       ],
-      "/Users/mateuszstacel/Desktop/projects/final-project/Meet-and-Eat/config/initializers/backtrace_silencers.rb": [
+      "/Users/asadk/Projects/Makers-Course/Week11/Meet-And-Eat/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -202,7 +202,7 @@
         null,
         null
       ],
-      "/Users/mateuszstacel/Desktop/projects/final-project/Meet-and-Eat/config/initializers/content_security_policy.rb": [
+      "/Users/asadk/Projects/Makers-Course/Week11/Meet-And-Eat/config/initializers/content_security_policy.rb": [
         null,
         null,
         null,
@@ -229,14 +229,14 @@
         null,
         null
       ],
-      "/Users/mateuszstacel/Desktop/projects/final-project/Meet-and-Eat/config/initializers/cookies_serializer.rb": [
+      "/Users/asadk/Projects/Makers-Course/Week11/Meet-And-Eat/config/initializers/cookies_serializer.rb": [
         null,
         null,
         null,
         null,
         1
       ],
-      "/Users/mateuszstacel/Desktop/projects/final-project/Meet-and-Eat/config/initializers/devise.rb": [
+      "/Users/asadk/Projects/Makers-Course/Week11/Meet-And-Eat/config/initializers/devise.rb": [
         null,
         null,
         null,
@@ -529,13 +529,13 @@
         null,
         null
       ],
-      "/Users/mateuszstacel/Desktop/projects/final-project/Meet-and-Eat/config/initializers/filter_parameter_logging.rb": [
+      "/Users/asadk/Projects/Makers-Course/Week11/Meet-And-Eat/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/Users/mateuszstacel/Desktop/projects/final-project/Meet-and-Eat/config/initializers/inflections.rb": [
+      "/Users/asadk/Projects/Makers-Course/Week11/Meet-And-Eat/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -553,13 +553,13 @@
         null,
         null
       ],
-      "/Users/mateuszstacel/Desktop/projects/final-project/Meet-and-Eat/config/initializers/mime_types.rb": [
+      "/Users/asadk/Projects/Makers-Course/Week11/Meet-And-Eat/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/Users/mateuszstacel/Desktop/projects/final-project/Meet-and-Eat/config/initializers/wrap_parameters.rb": [
+      "/Users/asadk/Projects/Makers-Course/Week11/Meet-And-Eat/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -575,22 +575,18 @@
         null,
         null
       ],
-      "/Users/mateuszstacel/Desktop/projects/final-project/Meet-and-Eat/config/routes.rb": [
+      "/Users/asadk/Projects/Makers-Course/Week11/Meet-And-Eat/config/routes.rb": [
         1,
         1,
         null,
         null,
         1,
-        1,
-        null,
         null,
         1,
-        1,
-        null,
         null,
         null
       ],
-      "/Users/mateuszstacel/Desktop/projects/final-project/Meet-and-Eat/app/models/user.rb": [
+      "/Users/asadk/Projects/Makers-Course/Week11/Meet-And-Eat/app/models/user.rb": [
         1,
         null,
         null,
@@ -598,20 +594,24 @@
         null,
         null
       ],
-      "/Users/mateuszstacel/Desktop/projects/final-project/Meet-and-Eat/app/models/application_record.rb": [
+      "/Users/asadk/Projects/Makers-Course/Week11/Meet-And-Eat/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/Users/mateuszstacel/Desktop/projects/final-project/Meet-and-Eat/app/helpers/application_helper.rb": [
+      "/Users/asadk/Projects/Makers-Course/Week11/Meet-And-Eat/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/mateuszstacel/Desktop/projects/final-project/Meet-and-Eat/app/helpers/home_helper.rb": [
+      "/Users/asadk/Projects/Makers-Course/Week11/Meet-And-Eat/app/helpers/home_helper.rb": [
         1,
         null
       ],
-      "/Users/mateuszstacel/Desktop/projects/final-project/Meet-and-Eat/app/controllers/home_controller.rb": [
+      "/Users/asadk/Projects/Makers-Course/Week11/Meet-And-Eat/app/helpers/spots_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/asadk/Projects/Makers-Course/Week11/Meet-And-Eat/app/controllers/home_controller.rb": [
         1,
         null,
         1,
@@ -619,7 +619,7 @@
         null,
         null
       ],
-      "/Users/mateuszstacel/Desktop/projects/final-project/Meet-and-Eat/app/controllers/application_controller.rb": [
+      "/Users/asadk/Projects/Makers-Course/Week11/Meet-And-Eat/app/controllers/application_controller.rb": [
         1,
         null,
         1,
@@ -634,7 +634,73 @@
         null,
         null
       ],
-      "/Users/mateuszstacel/Desktop/projects/final-project/Meet-and-Eat/spec/features/user_sign_in_spec.rb": [
+      "/Users/asadk/Projects/Makers-Course/Week11/Meet-And-Eat/spec/controllers/spots_controller_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/asadk/Projects/Makers-Course/Week11/Meet-And-Eat/app/controllers/spots_controller.rb": [
+        1,
+        1,
+        5,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/asadk/Projects/Makers-Course/Week11/Meet-And-Eat/spec/features/user_can_add_spot_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/asadk/Projects/Makers-Course/Week11/Meet-And-Eat/spec/features/user_can_view_hompage_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null
+      ],
+      "/Users/asadk/Projects/Makers-Course/Week11/Meet-And-Eat/spec/features/user_sign_in_spec.rb": [
         1,
         null,
         1,
@@ -655,7 +721,7 @@
         null,
         null
       ],
-      "/Users/mateuszstacel/Desktop/projects/final-project/Meet-and-Eat/spec/features/user_sign_up_spec.rb": [
+      "/Users/asadk/Projects/Makers-Course/Week11/Meet-And-Eat/spec/features/user_sign_up_spec.rb": [
         1,
         null,
         1,
@@ -669,9 +735,37 @@
         1,
         1,
         null,
+        null
+      ],
+      "/Users/asadk/Projects/Makers-Course/Week11/Meet-And-Eat/spec/helpers/spots_helper_spec.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/asadk/Projects/Makers-Course/Week11/Meet-And-Eat/spec/models/spot_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/asadk/Projects/Makers-Course/Week11/Meet-And-Eat/app/models/spot.rb": [
+        1,
         null
       ]
     },
-    "timestamp": 1548083863
+    "timestamp": 1548090110
   }
 }
