@@ -2,3 +2,9 @@
 <p><%= @spot.time %></p>
 <p><%= @spot.location %></p>
 <p><%= @spot.info %></p>
+<hr>
+<%= link_to "Edit", edit_spot_path(@spot), :class => 'btn btn-default' %>
+<%= link_to "Delete", spot_path(@spot),
+                                      method: :delete,
+                                      data: {confirm: 'Are you sure?'},
+                                      :class => 'btn btn-danger' %>
