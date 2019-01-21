@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root 'spots#index', as: 'home'
-
+  get 'users/:id', to: 'users#show', as: :profile
   resources :spots
 
 end
