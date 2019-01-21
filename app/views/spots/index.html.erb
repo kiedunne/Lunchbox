@@ -1,11 +1,14 @@
-<h1>Welcome to Meet and Eat!</h1>
-Please see the spots available below
+<div class="text">
+  <h1>Welcome <%= current_user.username %> to Meet and Eat!</h1>
+  Please see the spots available below
+</div><br>
+
 <% @spots.each do |spot| %>
-  <div class="well">
-    <h3><%= spot.spot %></h3>
-    <p><%= spot.time %></p>
-    <p><%= spot.location %></p>
-    <p><%= spot.info %></p>
-    <%= link_to "Read More", spot_path(spot), :class => 'btn btn-default' %>
+  <div id="all-spots">
+      <h3><%= spot.spot %></h3>
+      <p><%= spot.time %></p>
+      <p><%= spot.location %></p>
+      <p><%= spot.info %></p>
+      <p><%= link_to "View", spot_path(spot)%><p>
   </div>
 <% end %>
