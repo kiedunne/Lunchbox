@@ -1,1 +1,26 @@
 <h1>Add Spots!</h1>
+<%= form_for :spot, url: spots_path do |f| %>
+  <p>
+    <%= f.label :Lunch_Spot %><br>
+    <%= f.text_field :spot %>
+  </p>
+
+  <p>
+    <%= f.label :Time %><br>
+    <%= f.text_area :time %>
+  </p>
+
+  <p>
+    <%= f.label :Location %><br>
+    <%= f.text_area :location %>
+  </p>
+
+  <p>
+    <%= f.label :Extra_Info %><br>
+    <%= f.text_area :info %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
