@@ -13,3 +13,20 @@
   margin: auto;
   border-radius: 5px;
 }
+h1 {
+  font-size: 50px;
+  padding: 20px;
+}
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
