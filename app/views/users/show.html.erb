@@ -7,6 +7,26 @@
     <% if current_user.id == @user.id %>
       <a <%= link_to 'Edit profile', edit_user_registration_path, :class => 'btn btn-info' %></a>
       <a <%= link_to 'Post spot', new_spot_path, :class => 'btn btn-success' %></a>
+      <button type="button" class="btn btn-secondary" onclick="showDiv()">My spots</button>
     <% end %>
   </div>
 </div>
+
+  <% if @spots != nil %>
+    <div id="UserPosts"  style="display:none;">
+    <% @spots.each do |spot| %>
+      <div id='all-spots'>
+        <h3><%= spot.spot %></h3>
+        <p><%= spot.username %></p>
+        <p><%= spot.time %></p>
+        <p><%= spot.location %></p>
+        <p><%= spot.info %></p>
+        <p><%= link_to "View", spot_path(spot)%><p>
+      </div>
+    <% end %>
+      </div>
+  <% else %>
+      <h2>No spots yet :/</h2>
+      <br>
+      <a class="nav-link" <%= link_to "Post a spot!", new_spot_path %> </a>
+    <% end %>
