@@ -4,9 +4,23 @@
   <p><%= @spot.location %></p>
   <p><%= @spot.info %></p>
   <p><%= @spot.username %></p>
+
 <%= link_to "Edit", edit_spot_path(@spot), :class => 'btn btn-default' %>
 <%= link_to "Delete", spot_path(@spot),
                                       method: :delete,
                                       data: {confirm: 'Are you sure?'},
                                       :class => 'btn btn-danger' %>
+<%= form_tag follow_spot_path(id: @spot.id), method: :post, remote: true do  %>
+    <%= button_tag 'Follow', :class => 'btn btn-success' %>
+<% end %>
+
+  <div id="followers">
+    <% if @follows != nil %>
+      <% @follows.each do |follow| %>
+        <% if follow.followable_id == @spot.id %>
+        <h3><%= follow.followable.username %></h3>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
 </div>

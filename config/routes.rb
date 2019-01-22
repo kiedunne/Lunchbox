@@ -3,10 +3,13 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :spots
-
+  resources :follows
   authenticated :user do
     root 'spots#index', as: :authenticated_root
     get 'users/:id', to: 'users#show', as: :profile
+
+    post 'spots/follow', to: 'spots#follow', as: :follow_spot
+    delete 'spots/unfollow', to: 'spots#unfollow', as: :unfollow_spot
   end
 
   unauthenticated do

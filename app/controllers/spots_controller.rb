@@ -8,6 +8,7 @@ class SpotsController < ApplicationController
 
   def show
     @spot = Spot.find(params[:id])
+    @follows = Follow.all.order('follows.created_at DESC')
   end
 
   def new
@@ -22,6 +23,22 @@ class SpotsController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def follow
+    @spot = Spot.find(params[:id])
+    current_user.follow(@spot)
+    redirect_to authenticated_root_url
+  end
+
+  def unfollow
+    @spot = Spot.find(params[:id])
+    current_user.stop_following(@spot)
+    redirect_to authenticated_root_url
+  end
+
+  def find
+    @spot = Spot.find(params[:id])
   end
 
   def edit
