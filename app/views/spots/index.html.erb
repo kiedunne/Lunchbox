@@ -4,31 +4,34 @@
     Please see the spots available below
   </div><br>
 
-<div class="container">
-  <% @spots.each do |spot| %>
-   <div class="row">
-    <div class="col-lg-4 col-sm-6 portfolio-item">
+  <div class="container">
+    <% @spots.each do |spot| %>
+     <div class="row">
+      <div class="col-lg-4 col-sm-6 portfolio-item">
 
-      <div class="card h-100">
-        <%= link_to spot_path(spot) do %>
-          <img class="card-img-top" src="http://placehold.it/700x400" alt="">
-        <% end %>
-        <div class="card-body">
-          <h4 class="card-title"><a <%= link_to spot.spot, spot_path(spot)%></a></h4>
-          <p class="card-text">
-            <p><%= spot.time %></p>
-            <p><%= spot.location %></p>
-            <p><%= spot.info %></p>
-            <% spot.followers.each do |follower| %>
-              <%= link_to profile_path(follower.id) do %>
-                <%= image_tag follower.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
+        <div class="card h-100">
+          <%= link_to spot_path(spot) do %>
+            <img class="card-img-top" src="http://placehold.it/700x400" alt="">
+          <% end %>
+          <div class="card-body">
+            <h4 class="card-title"><a <%= link_to spot.spot, spot_path(spot)%></a></h4>
+            <p class="card-text">
+              <p><%= spot.time %></p>
+              <p><%= spot.location %></p>
+              <p><%= spot.info %></p>
+              <% spot.followers.each do |follower| %>
+                <%= link_to profile_path(follower.id) do %>
+                  <% if follower.avatar.attached? %>
+                    <%= image_tag follower.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
+                  <% else %>
+                    <%= image_tag gravatar_image_url(follower.email, size: 75), height: 100, width: 100, class: "tar rounded-circle" %>
+                  <% end %>
+                <% end %>
               <% end %>
-            <% end %>
+          </div>
         </div>
       </div>
-
     </div>
-</div>
   </div>
   <% end %>
-  </div>
+</div>
