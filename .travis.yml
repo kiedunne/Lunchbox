@@ -4,10 +4,7 @@ cache:
 rvm:
 - 2.5.3
 env:
-  matrix:
-  - DB=postgresql
-  global:
-    secure: pBWoRr2AaLfxwrYYXP6RpH0q7tCd30Jo+d87mgGaE11zqpVcd3VTj2AvZo+WtRSOHoozk9Pru5zW1FaIoKiX2gwcvT8jrmbR82ljv5kIjhmaCjH65bsph45D5p+bwIhZL0tnMY3TtspzAMZfuhAAhSRvYqeJrhnvNh143fuHzvVWqEViLDFrLij0Sjv9C9q18OWeKJX+drqPWlFQCpThzI2Zv5S/7/+j1EKjVgxabT2p00KYqoXHgMH1TAC7uyUCxoLNaILZvqjnLebQ3ofrs9It0DgVemN7AWlVlgS+MNu2bZ9dApkU0MpDfNPcL1wFHDfni+1XEq2DP+0IrGgGBEu9b6HHnpLdF5Xj3yZKoKKV9qvrzNXEurUZ9m9GfpS2uW4+Ja+23eOT++MBvNYc+7xMWLem++dvnrmoU4VY9aNQyCRvexQJAC/F3VaUPOxV2Yy8y9hkPupAoSKX/QLyJnAaEQOW9uxjeAH5cZ3oB2CdabZK5+EDShY1UTTS2hkZMK2H9MvLfSKDdAvW5cyk60ygc183N+stwOY020dLHhwCquuRdjnjB1YU+Y9cPUTOOQ/huJPxxwnXPpSZQt+cE855WiHRL5YSadij2dbFYtwQOIw4H6y8DtI5Kw2SNFdu+B0548Zq4x41fzJ9n4mjm6sY1Li+xsA6tpCZbkOosAM=
+- DB=postgresql
 script:
 - bundle exec rake db:test:prepare
 - bundle exec rspec spec/
