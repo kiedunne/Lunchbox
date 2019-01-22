@@ -5,12 +5,12 @@ Rails.application.routes.draw do
   resources :spots
 
   authenticated :user do
-     root 'spots#index', as: :authenticated_root
-     get 'users/:id', to: 'users#show', as: :profile
-   end
+    root 'spots#index', as: :authenticated_root
+    get 'users/:id', to: 'users#show', as: :profile
+  end
 
-   unauthenticated do
-     root 'home#index', as: :unauthenticated_root
-   end
+  unauthenticated do
+    root 'home#index', as: :unauthenticated_root
+  end
 
 end
