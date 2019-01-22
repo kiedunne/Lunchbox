@@ -1,5 +1,5 @@
-<h1>Add Spots!</h1>
-<%= form_for :spot, url: spots_path do |f| %>
+<h1>Edit Spot</h1>
+<%= form_for :spot, url: spot_path(@spot), method: :patch do |f| %>
     <% if @spot.errors.any? %>
       <% @spot.errors.full_messages.each do |msg| %>
         <div class="alert alert-danger"><%= msg %></div>
