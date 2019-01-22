@@ -3,7 +3,7 @@ class SpotsController < ApplicationController
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def index
-    @spots = Spot.all
+    @spots = Spot.all.order('spots.created_at DESC')
   end
 
   def show
