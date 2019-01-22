@@ -30,6 +30,10 @@ h1 {
   align-items: center;
   padding: 30px;
 }
+
+.user-buttons {
+  padding: 20px;
+
 #form-group
 {
   -webkit-box-shadow: 5px 5px 15px 5px #000000;
