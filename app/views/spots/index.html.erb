@@ -2,9 +2,16 @@
   <h1>Welcome <%= current_user.username %> to Meet and Eat!</h1>
   Please see the spots available below
 </div><br>
+<p><% if current_user.avatar.attached? %>
+          <%= image_tag current_user.avatar.variant(resize: "75x75!"), class: "tar rounded-circle" %>
+        <% else %>
+          <%= image_tag gravatar_image_url(current_user.email, size: 75), height: 75, width: 75, class: "tar rounded-circle" %>
+        <% end %>
+      </p>
 <% @spots.each do |spot| %>
   <div id="all-spots">
       <h3><%= spot.spot %></h3>
+      <p><%= spot.username %></p>
       <p><%= spot.time %></p>
       <p><%= spot.location %></p>
       <p><%= spot.info %></p>

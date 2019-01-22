@@ -1,6 +1,6 @@
 language: ruby
 cache:
-- bundler
+- bundle
 rvm:
 - 2.5.3
 env:
@@ -13,10 +13,12 @@ before_script:
 before_install:
 - gem update --system
 - gem install bundler
+install:
+- bundle install --deployment
 deploy:
   provider: heroku
   api_key:
-    secure: MGIAPgEdptNi9cwkXKOsz76EYJHwBvxfFar050e8f7qyJ7HeB/Wg6tKQupLnWGaGVtBqePkf/2GRJXar7hTi6Y1g3B67FNd9Tc6z3ac+d9xpdSx8eOPeYcxcSoyV6jpupUjF5tH0YV8ejlgV0INlVmdURBEVXvZqMpYo0lhQP3Da4rrZslSjtR+j6Nd7qmJwwMGXDAW80LlN9Jea1yyVmAREXomR6kCTX58tlsIc4fy/+lMyk7BKZqpY7tfiWORLjxqFA0RDG8ehsBgXXda1tBOzUVmXouxQgC/Y4zw/g4L3vNyZ684i48ZvM+LeGu1j54j+1hn8ZbQ6N/PZjVCllqMZiqHRsPH1y5H6eaVD50yOkEGfOO2ImkXDqn0cSRiCFTEN3Oyt4jTcIVXFkb5pCri8984Q5IWWC0iTse6WpBDaDK2isyUofWYymrZScbMfsS9UN0tp1aSziDXgpL0I2VMh5cOJDoyb+sUrt5AH8V3qVh7wuejLUC0FB6xccnwSyZjcJkFwY+R+4aGJYvVtQ1mSuRzSgb20r8mIiX9iOhbzaXKgzMlAt+fQUXkE3MH17Q4I7dO/LOkxRWfr870vtvehGNgVhr1OeCJVo6rrwRcrENxBow2B+R7HTOFkD7y41dZRYGy1AJ+4MCoHq3QXIeRzPSVyz+5oIOgKeleOe9k=
+    secure: pl4vV4EoovYjtrwSlsZF1pfpsdAa2Ehl7Gc1ipJI5mnbcxstH22jTIyMAfYoV+WLj5ffy/Ji0VROVIrmec1KzGxb0YKRvth3R7WoHs9f7wBzVgwWpYkuqE5rEcaAr+cUy9E+oLtkb6Ueg1UZDrkPymYhPltz8ZvpNMQducfpCHWdRZVIjnEwj1MiUjA1BZv8kXTjM94rFI+XMH/MeEqNVIj+KEVXZHRwm0oXxJf0PivvZ3+fWOSFCUk0UVg2d5gVM/bEZSAuCdjMRqhnRwkdEzws426ucXmpQkDVkEtZGbtphg8jnpsec/dvnj3xkgS8GvcBe7VZgPBLIAz7heYtA/lN/Xlvagyy3JCd1GQ8MXd62cMz3dprfBwoxC7ptgvK+XmaAoFHoQn2omORrdNeP6JTTRREA+fWRPt/EIIV2vnek7xqRljQ4w9cdZyo/4AGaYGiaaATpGqsZ35bNkZvGnyaZxtok+oUNnTiu9RuYqVaqXB0xnN6kionn+6DomHyvkak0NoHPDhsoxc9ra/HGHMuaulxp8F5dQnULLGcYvaz15jYWjs/+dXfOhvw7ds/5aJzGuzQqTFFwKXZkj1u9VoMQetNIF1np87QJIaDKlqqR9yWK0OOBNZ4AMRy5CRuWzMLniCATWJFJW1WGsScrm/4wr+J8NxTiKZJDTm/Xb0=
   app: meet-andeat
   on:
     repo: AsadK47/Meet-and-Eat
