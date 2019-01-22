@@ -1,4 +1,7 @@
 class SpotsController < ApplicationController
+  before_action :authenticate_user!, except: :index
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
   def index
     @spots = Spot.all
   end
@@ -12,7 +15,7 @@ class SpotsController < ApplicationController
   end
 
   def create
-    @spot = Spot.new(post_params)
+    @spot = Spot.new(merge_params)
 
     if(@spot.save)
       redirect_to @spot
@@ -42,9 +45,11 @@ class SpotsController < ApplicationController
     redirect_to spots_path
   end
 
-  private
-
   def post_params
-    params.require(:spot).permit(:spot, :time, :location, :info)
+    params.require(:spot).permit(:spot, :time, :location, :info, :user_id, :username)
+  end
+
+  def merge_params
+    post_params.merge(user_id: current_user.id, username: current_user.username)
   end
 end
