@@ -1,22 +1,34 @@
-<div class="text">
-  <h1>Welcome <%= current_user.username %> to Meet and Eat!</h1>
-  Please see the spots available below
-</div><br>
-<p><% if current_user.avatar.attached? %>
-          <%= image_tag current_user.avatar.variant(resize: "75x75!"), class: "tar rounded-circle" %>
-        <% else %>
-          <%= image_tag gravatar_image_url(current_user.email, size: 75), height: 75, width: 75, class: "tar rounded-circle" %>
+
+  <div class="text">
+    <h1>Welcome <%= current_user.username %> to Meet and Eat!</h1>
+    Please see the spots available below
+  </div><br>
+
+<div class="container">
+  <% @spots.each do |spot| %>
+   <div class="row">
+    <div class="col-lg-4 col-sm-6 portfolio-item">
+
+      <div class="card h-100">
+        <%= link_to spot_path(spot) do %>
+          <img class="card-img-top" src="http://placehold.it/700x400" alt="">
         <% end %>
-      </p>
-<% @spots.each do |spot| %>
-  <div id="all-spots">
-      <h3><%= spot.spot %></h3>
-      <p><%= spot.username %></p>
-      <p><%= spot.time %></p>
-      <p><%= spot.location %></p>
-      <p><%= spot.info %></p>
-      <% spot.followers.each do |follower| %>
-       <p><%= follower.username %></p>
-      <% end %>
+        <div class="card-body">
+          <h4 class="card-title"><a <%= link_to spot.spot, spot_path(spot)%></a></h4>
+          <p class="card-text">
+            <p><%= spot.time %></p>
+            <p><%= spot.location %></p>
+            <p><%= spot.info %></p>
+            <% spot.followers.each do |follower| %>
+              <%= link_to profile_path(follower.id) do %>
+                <%= image_tag follower.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
+              <% end %>
+            <% end %>
+        </div>
+      </div>
+
+    </div>
+</div>
   </div>
-<% end %>
+  <% end %>
+  </div>
