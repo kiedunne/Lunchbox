@@ -37,7 +37,7 @@
 # designed to make you write more readable code - not less.
 
 Metrics/LineLength:
-  Max: 100
+ Max: 3000
 
 # We want to encourage testing, but it can be verbose in the early stages.
 # So we'll give you a break. As you learn, try removing the next two sections.
@@ -46,11 +46,52 @@ Metrics/LineLength:
   Exclude:
     - 'spec/**/*'
     - 'test/**/*'
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'Rakefile'
+    - 'Gemfile'
+    - 'db/migrate'
+    - 'app/controllers/application_controller.rb'
+    - 'app/controllers/spots_controller.rb'
 
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
     - 'test/**/*'
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'Rakefile'
+    - 'Gemfile'
+    - 'db/migrate'
+
+Metrics/MethodLength:
+  Exclude:
+    - 'spec/**/*'
+    - 'test/**/*'
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'Rakefile'
+    - 'Gemfile'
+    - 'db/migrate'
+
+Metrics/AbcSize:
+  Exclude:
+    - 'spec/**/*'
+    - 'test/**/*'
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'Rakefile'
+    - 'Gemfile'
+    - 'db/migrate'
+
+Style/MixinUsage:
+  Exclude:
+    - 'bin/update'
+    - 'bin/setup'
+
+Layout/DefEndAlignment:
+  Exclude:
+    - 'db/migrate/20190122105037_add_avatar_to_users.rb'
 
 # Code Style
 # ==========

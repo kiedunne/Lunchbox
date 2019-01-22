@@ -10,9 +10,9 @@ RSpec.feature 'Signin', type: :feature do
     click_button 'Sign up'
     click_link 'Sign out'
     click_link 'Login'
-   fill_in 'user_email', with: 'test123@gmail.com'
-   fill_in 'user_password', with: '123456'
-   click_button 'Log in'
-   expect(page).to have_content('test')
- end
+    fill_in 'user_email', with: 'test123@gmail.com'
+    fill_in 'user_password', with: '123456'
+    click_button 'Log in'
+    expect(page).to have_content('test')
+  end
 end

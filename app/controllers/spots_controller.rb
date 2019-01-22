@@ -20,7 +20,7 @@ class SpotsController < ApplicationController
   def create
     @spot = Spot.new(merge_params)
 
-    if(@spot.save)
+    if @spot.save
       redirect_to @spot
     else
       render 'new'
@@ -34,7 +34,7 @@ class SpotsController < ApplicationController
   def update
     @spot = Spot.find(params[:id])
 
-    if(@spot.update(post_params))
+    if @spot.update(post_params)
       redirect_to @spot
     else
       render 'edit'
