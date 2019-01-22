@@ -2,7 +2,6 @@
   <h1>Welcome <%= current_user.username %> to Meet and Eat!</h1>
   Please see the spots available below
 </div><br>
-<p><%= image_tag current_user.avatar %></p>
 <% @spots.each do |spot| %>
   <div id="all-spots">
       <h3><%= spot.spot %></h3>
