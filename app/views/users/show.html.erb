@@ -1,7 +1,12 @@
-<div class='user-buttons'>
-  <% if current_user.id == @user.id %>
-    <a <%= link_to 'Edit profile', edit_user_registration_path, :class => 'btn btn-info' %></a>
-    <a <%= link_to 'Post spot', new_spot_path, :class => 'btn btn-success' %></a>
-  <% end %>
-    <%= image_tag gravatar_image_url(@user.email, size: 75), height: 75, width: 75, class: "tar rounded-circle" %>
+<div class='profile-container'>
+  <div class='user-info'>
+    <%= image_tag gravatar_image_url(@user.email, size: 75), height: 100, width: 100, class: "tar rounded-circle" %>
+    <h1><%= @user.username %></h1>
+  </div>
+  <div class='user-buttons'>
+    <% if current_user.id == @user.id %>
+      <a <%= link_to 'Edit profile', edit_user_registration_path, :class => 'btn btn-info' %></a>
+      <a <%= link_to 'Post spot', new_spot_path, :class => 'btn btn-success' %></a>
+    <% end %>
+  </div>
 </div>
