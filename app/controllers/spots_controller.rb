@@ -4,6 +4,8 @@ class SpotsController < ApplicationController
 
   def index
     @spots = Spot.all.order('spots.created_at DESC')
+    # @spot = Spot.find(params[:id])
+    @follows = Follow.all.order('follows.created_at DESC')
   end
 
   def show
@@ -25,22 +27,6 @@ class SpotsController < ApplicationController
     end
   end
 
-  def follow
-    @spot = Spot.find(params[:id])
-    current_user.follow(@spot)
-    redirect_to authenticated_root_url
-  end
-
-  def unfollow
-    @spot = Spot.find(params[:id])
-    current_user.stop_following(@spot)
-    redirect_to authenticated_root_url
-  end
-
-  def find
-    @spot = Spot.find(params[:id])
-  end
-
   def edit
     @spot = Spot.find(params[:id])
   end
@@ -58,7 +44,6 @@ class SpotsController < ApplicationController
   def destroy
     @spot = Spot.find(params[:id])
     @spot.destroy
-
     redirect_to spots_path
   end
 

@@ -14,11 +14,11 @@
     <%= button_tag 'Follow', :class => 'btn btn-success' %>
 <% end %>
 
-  <div id="followers">
+  <div id="spot-followers">
     <% if @follows != nil %>
       <% @follows.each do |follow| %>
         <% if follow.followable_id == @spot.id %>
-        <h3><%= follow.followable.username %></h3>
+        <h3><%= follow.follower.username %></h3>
         <% end %>
       <% end %>
     <% end %>

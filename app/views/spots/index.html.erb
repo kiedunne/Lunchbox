@@ -15,6 +15,8 @@
       <p><%= spot.time %></p>
       <p><%= spot.location %></p>
       <p><%= spot.info %></p>
-      <p><%= link_to "View", spot_path(spot)%><p>
+      <% spot.followers.each do |follower| %>
+       <p><%= follower.username %></p>
+      <% end %>
   </div>
 <% end %>

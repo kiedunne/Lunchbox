@@ -33,7 +33,7 @@ h1 {
 
 .user-buttons {
   padding: 20px;
-
+}
 #form-group
 {
   -webkit-box-shadow: 5px 5px 15px 5px #000000;
@@ -52,4 +52,8 @@ h1 {
 #avatar
 {
   margin-left: 30%;
+}
+
+#spot-followers {
+  padding: 20px;
 }
