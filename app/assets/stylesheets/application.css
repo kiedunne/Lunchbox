@@ -30,6 +30,26 @@ h1 {
   align-items: center;
   padding: 30px;
 }
+
 .user-buttons {
   padding: 20px;
+
+#form-group
+{
+  -webkit-box-shadow: 5px 5px 15px 5px #000000;
+  box-shadow: 1px 1px 1px 2px #000000;
+  background-color: white;
+  width: 43%;
+  margin: auto;
+  border-radius: 10px;
+}
+.form{
+  padding: 10px;
+  text-align: center;
+  margin: auto;
+
+}
+#avatar
+{
+  margin-left: 30%;
 }
