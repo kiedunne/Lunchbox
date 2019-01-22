@@ -7,5 +7,5 @@ RSpec.feature 'Sign in', type: :feature do
     click_link 'Sign out'
     sign_in
     expect(page).to have_content('test-username')
- end
+  end
 end
