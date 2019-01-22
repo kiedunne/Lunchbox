@@ -9,7 +9,6 @@ FactoryBot.define do
 
   factory :spot do
     spot { "hello, world!" }
-    time { "hello, world!" }
     location { "hello, world!" }
     info { "hello, world!" }
   end
