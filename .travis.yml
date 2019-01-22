@@ -1,7 +1,6 @@
 language: ruby
 cache:
-  directories:
-  - vendor/bundle
+- bundle
 rvm:
 - 2.5.3
 env:
