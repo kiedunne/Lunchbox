@@ -22,3 +22,4 @@ deploy:
   app: meet-andeat
   on:
     repo: AsadK47/Meet-and-Eat
+  skip_cleanup: true
