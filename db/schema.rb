@@ -9,17 +9,11 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
-
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_01_22_110102) do
-=======
-ActiveRecord::Schema.define(version: 2019_01_21_150259) do
->>>>>>> 91165cc224e305d2cdbee8338701a17d59f73fbb
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-<<<<<<< HEAD
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -65,28 +59,4 @@ ActiveRecord::Schema.define(version: 2019_01_21_150259) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-=======
-  create_table "spots", force: :cascade do |t|
-    t.string "spot"
-    t.text "time"
-    t.text "location"
-    t.text "info"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.text "username"
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  end
-
->>>>>>> 91165cc224e305d2cdbee8338701a17d59f73fbb
-end
+end 
