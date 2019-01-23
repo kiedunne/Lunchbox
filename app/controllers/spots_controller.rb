@@ -48,7 +48,7 @@ class SpotsController < ApplicationController
   end
 
   def post_params
-    params.require(:spot).permit(:spot, :time, :location, :info, :user_id, :username, :avatar)
+    params.require(:spot).permit(:spot, :time, :location, :info, :user_id, :username, :avatar, :time_start, :time_end)
   end
 
   def merge_params

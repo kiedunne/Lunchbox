@@ -12,7 +12,7 @@
           <div class="card-body">
             <div class="spot-title-time"
               <h1><a class="spot-title"<%= link_to spot.spot, spot_path(spot)%></a></h1>
-              <p><%= spot.time %></p>
+              <p class="spot-time"><%= spot.time_start %> - <%= spot.time_end %></p>
             </div>
             <p><%= spot.location %></p>
             <p><%= spot.info %></p>
@@ -32,13 +32,14 @@
               <% end %>
             </div>
           </div>
-
       </div>
-
   <% end %>
 </div>
 
 <style>
+.text {
+  text-align: center;
+}
 a.spot-title {
   font-size: 30px;
   text-decoration: none;
@@ -53,6 +54,10 @@ a.spot-title {
   align-items: flex-end;
   justify-content: space-between;
   font-size: 20px;
+}
+
+p.spot-time {
+  text-align: right;
 }
 .card-total {
   border-style: solid;
