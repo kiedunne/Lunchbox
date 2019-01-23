@@ -22,6 +22,16 @@ RSpec.describe SpotsController, type: :controller do
 								expect(response).to have_http_status(200)
 						end
 				end
+
+				describe "Get #show" do
+					 it 'should show post' do
+						 post = Spot.create!(spot: 'test', time: 'now', location: 'close', info: 'test',
+						 	user_id: user.id, username: user.username, time_start: '6', time_end: '7' 
+						 	)
+						 get :show, params: { id: post.id }
+						 expect(response.status).to eq(200)
+					end
+				end
 				# describe "GET #show" do
 				# 		it "responds with 200" do
 				# 				get :show, params: { id: test_spot.id }
