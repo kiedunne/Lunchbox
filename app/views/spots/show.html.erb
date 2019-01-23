@@ -4,8 +4,9 @@
   <p><%= @spot.location %></p>
   <p><%= @spot.info %></p>
   <p><%= @spot.username %></p>
-<%= link_to "Edit", edit_spot_path(@spot), :class => 'btn btn-default' %>
-<%= link_to "Delete", spot_path(@spot),
+  <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=400x300&markers=size:small%7Ccolor:red%7C#{@spot.latitude},#{@spot.longitude}&key=#{Rails.application.credentials.google_maps_api_key}", alt: "Map" %>
+  <%= link_to "Edit", edit_spot_path(@spot), :class => 'btn btn-default' %>
+  <%= link_to "Delete", spot_path(@spot),
                                       method: :delete,
                                       data: {confirm: 'Are you sure?'},
                                       :class => 'btn btn-danger' %>
