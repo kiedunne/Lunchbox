@@ -7,6 +7,7 @@ gem 'aws-sdk-s3', require: false
 gem 'bootstrap-datepicker-rails'
 gem 'cancan'
 gem 'codecov', :require => false, :group => :test
+gem 'coveralls', require: false
 gem 'devise'
 gem 'figaro'
 gem 'gravatar_image_tag', github: 'mdeering/gravatar_image_tag'

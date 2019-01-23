@@ -6,7 +6,6 @@ rvm:
 env:
 - DB=postgresql
 - CODECOV_TOKEN="3c94ab2d-7f66-47a4-8d5f-de4fd836a850"
-
 script:
 - bundle exec rake db:test:prepare
 - bundle exec rspec spec/
@@ -17,6 +16,8 @@ before_install:
 - gem install bundler
 install:
 - bundle install
+after_script:
+  - bundle exec rake coveralls:push
 after_success:
 - bash <(curl -s https://codecov.io/bash)
 deploy:
