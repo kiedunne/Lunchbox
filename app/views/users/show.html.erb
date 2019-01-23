@@ -22,14 +22,14 @@
         <% @spots.each do |spot| %>
           <div class="card-total">
             <%= link_to spot_path(spot) do %>
-              <img class="card-img-top" src="http://placehold.it/700x400" alt="">
+              <img class="card-img-top"><%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=700x400&markers=size:small%7Ccolor:red%7C#{spot.latitude},#{spot.longitude}&key=#{Rails.application.credentials.google_maps_api_key}", alt: "Map" %>
             <% end %>
 
               <div class="card-body">
 
                 <div class="spot-title-time"
                   <h1><a class="spot-title"<%= link_to spot.spot, spot_path(spot)%></a></h1>
-                  <p><%= spot.time %></p>
+                  <p class="spot-time"><%= spot.time_start %> - <%= spot.time_end %></p>
                 </div>
 
                 <p><%= spot.location %></p>
