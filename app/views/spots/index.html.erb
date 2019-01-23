@@ -6,7 +6,7 @@
 
       <div class="card-total">
         <%= link_to spot_path(spot) do %>
-        <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=700x400&markers=size:small%7Ccolor:red%7C#{spot.latitude},#{spot.longitude}&key=#{Rails.application.credentials.google_maps_api_key}", alt: "Map" %></iframe>
+        <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=700x400&markers=size:small%7Ccolor:red%7C#{spot.latitude},#{spot.longitude}&key=#{Rails.application.credentials.google_maps_api_key}", alt: "Map" %>
         <% end %>
 
           <div class="card-body">
