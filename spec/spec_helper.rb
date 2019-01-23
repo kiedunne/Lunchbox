@@ -16,9 +16,12 @@
 
 require 'simplecov'
 require 'simplecov-console'
+require 'codecov'
 
 SimpleCov.formatter = SimpleCov::Formatter::Console
 SimpleCov.start do
+  require 'codecov'
+  SimpleCov.formatter = SimpleCov::Formatter::Codecov
   add_filter "spec"
 end
 
