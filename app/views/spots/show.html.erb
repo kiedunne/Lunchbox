@@ -1,26 +1,106 @@
-<div id="all-spots">
-  <h2><%= @spot.spot %></h2>
-  <p><%= @spot.time %></p>
-  <p><%= @spot.location %></p>
-  <p><%= @spot.info %></p>
-  <p><%= @spot.username %></p>
-  <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=400x300&markers=size:small%7Ccolor:red%7C#{@spot.latitude},#{@spot.longitude}&key=#{Rails.application.credentials.google_maps_api_key}", alt: "Map" %>
-<%= link_to "Edit", edit_spot_path(@spot), :class => 'btn btn-default' %>
-<%= link_to "Delete", spot_path(@spot),
-                                      method: :delete,
-                                      data: {confirm: 'Are you sure?'},
-                                      :class => 'btn btn-danger' %>
-<%= form_tag follow_spot_path(id: @spot.id), method: :post, remote: true do  %>
-    <%= button_tag 'Follow', :class => 'btn btn-success' %>
-<% end %>
 
-  <div id="spot-followers">
-    <% if @follows != nil %>
-      <% @follows.each do |follow| %>
-        <% if follow.followable_id == @spot.id %>
-        <h3><%= follow.follower.username %></h3>
+<div class="container">
+<div class="card-total">
+  <%= link_to spot_path(@spot) do %>
+    <img class="card-img-top" src="http://placehold.it/700x400" alt="">
+  <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=400x300&markers=size:small%7Ccolor:red%7C#{@spot.latitude},#{@spot.longitude}&key=#{Rails.application.credentials.google_maps_api_key}", alt: "Map" %>
+  <% end %>
+
+    <div class="card-body">
+      <div class="spot-title-time"
+        <h1><a class="spot-title"<%= link_to @spot.spot, spot_path(@spot)%></a></h1>
+        <p><%= @spot.time %></p>
+      </div>
+
+      <p><%= @spot.location %></p>
+      <p><%= @spot.info %></p>
+      <h4>Lunchers</h4>
+
+      <div class="spot-followers"
+        <p><%= @spot.username %></p>
+        <% @spot.followers.each do |follower| %>
+          <div class="spot-each-follower"
+            <%= link_to profile_path(follower.id) do %>
+              <% if follower.avatar.attached? %>
+                <%= image_tag follower.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
+              <% else %>
+                <%= image_tag gravatar_image_url(follower.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
+              <% end %>
+          </div>
+          <% end %>
+
         <% end %>
-      <% end %>
-    <% end %>
+      </div>
+
+        <div class="spot-user-options">
+          <div class="spot-user-option">
+            <%= link_to "Edit", edit_spot_path(@spot), :class => 'btn btn-info' %>
+          </div>
+          <div class="spot-user-option">
+          <%= link_to "Delete", spot_path(@spot),
+                                                method: :delete,
+                                                data: {confirm: 'Are you sure?'},
+                                                :class => 'btn btn-danger' %>
+          </div>
+      </div>
+
+    </div>
   </div>
-</div>
+
+    <style>
+    a.spot-title {
+      font-size: 30px;
+      text-decoration: none;
+      color: inherit;
+      font-weight: bold;
+      font-size: 40px;
+    }
+
+    .spot-title-time {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
+      font-size: 20px;
+    }
+    .card-total {
+      border-style: solid;
+      border-color: grey;
+      border-radius: 25px;
+      width: 75%;
+      margin: 20px;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .card-body {
+      padding: 30px;
+    }
+
+    .card-img-top {
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+
+    .spot-followers {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .spot-each-follower {
+      padding: 10px;
+    }
+
+    .spot-user-options {
+      display: flex;
+      flex-direction: row;
+      padding-top: 10px;
+    }
+
+    .spot-user-option {
+      padding: 5px;
+    }
+    </style>

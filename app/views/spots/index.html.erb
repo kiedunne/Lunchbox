@@ -1,38 +1,92 @@
 
-  <div class="text">
-    <h1>Welcome <%= current_user.username %> to Meet and Eat!</h1>
-    Please see the spots available below
-  </div><br>
+<h1 class ="text">Hi, <%= current_user.username %>!  Where do you feel like lunching today?</h1>
 
-  <div class="container">
-    <% @spots.each do |spot| %>
-     <div class="row">
-      <div class="col-lg-4 col-sm-6 portfolio-item">
+<div class="container">
+  <% @spots.each do |spot| %>
 
-        <div class="card h-100">
-          <%= link_to spot_path(spot) do %>
-            <img class="card-img-top" src="http://placehold.it/700x400" alt="">
-          <% end %>
+      <div class="card-total">
+        <%= link_to spot_path(spot) do %>
+          <img class="card-img-top" src="http://placehold.it/700x400" alt="">
+        <% end %>
+
           <div class="card-body">
-            <h4 class="card-title"><a <%= link_to spot.spot, spot_path(spot)%></a></h4>
-            <p class="card-text">
-              <p><%= spot.time %></p>
-              <p><%= spot.location %></p>
-              <p><%= spot.info %></p>
+            <div class="spot-title-time"
+              <h1><a class="spot-title"<%= link_to spot.spot, spot_path(spot)%></a></h1>
+              <p class="spot-time"><%= spot.time_start %> - <%= spot.time_end %></p>
+            </div>
+            <p><%= spot.location %></p>
+            <p><%= spot.info %></p>
+            <h4>Lunchers</h4>
+            <div class="spot-followers"
+              <p><%= spot.username %></p>
               <% spot.followers.each do |follower| %>
+              <div class="spot-each-follower"
                 <%= link_to profile_path(follower.id) do %>
                   <% if follower.avatar.attached? %>
                     <%= image_tag follower.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
                   <% else %>
-                    <%= image_tag gravatar_image_url(follower.email, size: 75), height: 100, width: 100, class: "tar rounded-circle" %>
+                    <%= image_tag gravatar_image_url(follower.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
                   <% end %>
+              </div>
                 <% end %>
               <% end %>
+            </div>
           </div>
-        </div>
       </div>
-    </div>
-
-  </div>
   <% end %>
 </div>
+
+<style>
+.text {
+  text-align: center;
+}
+a.spot-title {
+  font-size: 30px;
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.spot-title-time {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  font-size: 20px;
+}
+
+p.spot-time {
+  text-align: right;
+}
+.card-total {
+  border-style: solid;
+  border-color: grey;
+  border-radius: 25px;
+  width: 75%;
+  margin: 20px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-body {
+  padding: 30px;
+}
+
+.card-img-top {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.spot-followers {
+  display: flex;
+  flex-direction: row;
+}
+
+.spot-each-follower {
+  padding: 5px;
+}
+</style>

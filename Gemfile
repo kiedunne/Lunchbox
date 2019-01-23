@@ -4,10 +4,12 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.3'
 gem 'acts_as_follower', github: 'tcocca/acts_as_follower'
 gem 'aws-sdk-s3', require: false
+gem 'bootstrap-datepicker-rails'
 gem 'cancan'
 gem 'devise'
 gem 'figaro'
 gem 'gravatar_image_tag', github: 'mdeering/gravatar_image_tag'
+gem 'jquery-ui-rails'
 gem 'mini_magick', '~> 4.9', '>= 4.9.2'
 gem 'pry'
 gem 'geocoder'
