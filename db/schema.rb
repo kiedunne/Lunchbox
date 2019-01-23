@@ -58,6 +58,8 @@ ActiveRecord::Schema.define(version: 2019_01_23_125105) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.decimal "latitude"
+    t.decimal "longitude"
     t.string "username"
     t.string "avatar"
     t.datetime "time_start"

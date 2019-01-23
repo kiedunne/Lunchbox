@@ -12,6 +12,8 @@ gem 'gravatar_image_tag', github: 'mdeering/gravatar_image_tag'
 gem 'jquery-ui-rails'
 gem 'mini_magick', '~> 4.9', '>= 4.9.2'
 gem 'pry'
+gem 'geocoder'
+gem 'gmaps4rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
@@ -45,6 +47,11 @@ gem 'jbuilder', '~> 2.5'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'factory_bot_rails'
+
+group :test do
+  gem 'database_cleaner'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

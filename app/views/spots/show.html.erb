@@ -1,7 +1,9 @@
+
 <div class="container">
 <div class="card-total">
   <%= link_to spot_path(@spot) do %>
     <img class="card-img-top" src="http://placehold.it/700x400" alt="">
+  <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=400x300&markers=size:small%7Ccolor:red%7C#{@spot.latitude},#{@spot.longitude}&key=#{Rails.application.credentials.google_maps_api_key}", alt: "Map" %>
   <% end %>
 
     <div class="card-body">
@@ -26,6 +28,7 @@
               <% end %>
           </div>
           <% end %>
+
         <% end %>
       </div>
 
