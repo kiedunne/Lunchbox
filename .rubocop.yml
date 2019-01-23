@@ -93,6 +93,10 @@ Layout/DefEndAlignment:
   Exclude:
     - 'db/migrate/20190122105037_add_avatar_to_users.rb'
 
+Style/NumericLiterals:
+  Exclude:
+    - 'db/schema.rb'
+
 # Code Style
 # ==========
 #
