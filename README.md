@@ -1,7 +1,7 @@
+# Meet&Eat
+
 [![Build Status](https://travis-ci.org/AsadK47/Meet-and-Eat.svg?branch=master)](https://travis-ci.org/AsadK47/Meet-and-Eat)
 [![codecov](https://codecov.io/gh/AsadK47/Meet-and-Eat/branch/master/graph/badge.svg)](https://codecov.io/gh/AsadK47/Meet-and-Eat)
-
-# Meet&Eat
 
 Welcome to Meet&Eatt, the best place to find friends, food and fun.
 
