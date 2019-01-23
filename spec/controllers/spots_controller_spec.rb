@@ -36,6 +36,13 @@ RSpec.describe SpotsController, type: :controller do
 					 		expect { create_spot }.to change { Spot.count }.by(1)
 					 end
 				end
+
+				describe "Spots #create" do
+					 it "Render to the post after creating it with 200" do
+					 	 spot = create_spot
+					 	 expect(response).to have_http_status(200)
+					 end
+				end
 		
 			describe "GET #new " do
 				 it "responds with 200" do
