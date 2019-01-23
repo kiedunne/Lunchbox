@@ -5,6 +5,7 @@ rvm:
 - 2.5.3
 env:
 - DB=postgresql
+- CODECOV_TOKEN=“3c94ab2d-7f66-47a4-8d5f-de4fd836a850”
 script:
 - bundle exec rake db:test:prepare
 - bundle exec rspec spec/
