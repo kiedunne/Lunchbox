@@ -1,10 +1,35 @@
-# Meet-and-Eat
-Welcome to meet and eat, the best place to find friends, food and fun
+[![Build Status](https://travis-ci.org/AsadK47/Meet-and-Eat.svg?branch=master)](https://travis-ci.org/AsadK47/Meet-and-Eat)
+
+# Meet&Eat
+==============
+
+Welcome to Meet&Eatt, the best place to find friends, food and fun.
 
 ![](assets/README-559a088e.png)
 
-## Build Status
-[![Build Status](https://travis-ci.org/AsadK47/Meet-and-Eat.svg?branch=master)](https://travis-ci.org/AsadK47/Meet-and-Eat)
+## Iteration 1.0 Features
+
+:white_check_mark: Users can sign up and sign in to Meet&Eat
+:white_check_mark: Users can upload an avatar
+:white_check_mark: Users can post a lunch spot with a date, time, location and description
+:white_check_mark: Lunch spots appear on a map with the location marked
+:white_check_mark: Users can see all posted lunch spots on the homepage
+:white_check_mark: Users have a profile that displays the lunch spots they've posted
+:white_check_mark: Users can only edit or delete their own lunch spots
+:white_check_mark: Users are automatically an attendee of a lunch spot they post
+:white_check_mark: Users can join a lunch spot they'd like to attend
+
+## Iteration 2.0 Features
+
+:negative_squared_cross_mark: Expired lunch spots are not listed
+:negative_squared_cross_mark: Users can assign themselves interest tags (ex. coding)
+:negative_squared_cross_mark: Interest tags can be edited or deleted
+:negative_squared_cross_mark: Interest tags are attached to any lunch spot a user posts
+:negative_squared_cross_mark: Interest tags are attached to any lunch spot a user joins
+:negative_squared_cross_mark: Users can see the interest tags of all users who have joined a lunch spot
+:negative_squared_cross_mark: Users can filter lunch spots by time and date
+:negative_squared_cross_mark: Users can filter lunch spots by location
+
 
 ## Links to the application and development board
 
