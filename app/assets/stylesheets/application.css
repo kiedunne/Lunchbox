@@ -2,18 +2,7 @@
 {
   text-align: center;
 }
-#all-spots
-{
-  margin: auto;
-  text-align: center;
-  -webkit-box-shadow: 5px 5px 15px 5px #000000;
-  box-shadow: 5px 5px 15px 5px #000000;
-  background-color: white;
-  width: 50%;
-  border-radius: 5px;
-  margin: 0px;
 
-}
 h1 {
   font-size: 50px;
   padding: 20px;
@@ -53,8 +42,4 @@ h1 {
 #avatar
 {
   margin-left: 30%;
-}
-
-#spot-followers {
-  padding: 20px;
 }
