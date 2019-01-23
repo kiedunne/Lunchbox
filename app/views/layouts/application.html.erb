@@ -10,9 +10,6 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'users', 'data-turbolinks-track': 'reload' %>
 
-  </head>
-
-  <body>
     <div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light ">
       <% if user_signed_in? %>
@@ -33,15 +30,16 @@
           <li><a class="nav-link"<%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></a></li>
           <li><a class="nav-link"<%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></a></li>
           <% end %>
-
         </div>
       </div>
     </nav>
     </div>
-
-
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
+  </head>
+
+  <body>
+
   </body>
 </html>
