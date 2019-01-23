@@ -6,13 +6,7 @@ FactoryBot.define do
     password { "password" }
     username { "John" }
   end
-
-  factory :spot do
-    spot { "hello, world!" }
-    location { "hello, world!" }
-    info { "hello, world!" }
-  end
-
+  
   sequence :email do |n|
     "email#{n}@gmail.com"
   end

@@ -49,10 +49,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'factory_bot_rails'
 
-group :test do
-  gem 'database_cleaner'
-end
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -64,6 +60,8 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
+  gem 'shoulda-matchers', '4.0.0.rc1'
+  gem 'rails-controller-testing' # If you are using Rails 5.x
 end
 
 group :development do

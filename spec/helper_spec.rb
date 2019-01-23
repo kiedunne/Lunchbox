@@ -1,10 +1,33 @@
 def create_spot
-  spot = FactoryBot.create(:spot)
-  user_with_spot = FactoryBot.create(:user, spot: spot)
-  allow(User).to receive(:find).and_return(user_with_spot)
-  spots :create, params: { spot: { id: test_post.id, spot: test_post.spot, location: spot.location, username: spot.user.username } }
+  Spot.create!(params)
 end
 
-def delete_post
-  delete :destroy, params: { id: post_in_db.id }
+def delete_post(spot_id)
+  delete :destroy, params: { :id => spot_id }
+end
+
+def update_spot(spot_id)
+	 put :update, :params => { :id => spot_id, :spot => {
+	 	spot: 'test2', 
+		time: 'now2', 
+		location: 'close2', 
+		info: 'test2',
+		user_id: user.id, 
+		username: user.username, 
+		time_start: '7', 
+		time_end: '8'
+	  } }
+end
+
+def params
+	 {
+	spot: 'test', 
+	time: 'now', 
+	location: 'close', 
+	info: 'test',
+	user_id: user.id, 
+	username: user.username, 
+	time_start: '6', 
+	time_end: '7'
+	}
 end
