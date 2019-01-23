@@ -4,10 +4,13 @@ class SpotsController < ApplicationController
 
   def index
     @spots = Spot.all.order('spots.created_at DESC')
+    # @spot = Spot.find(params[:id])
+    @follows = Follow.all.order('follows.created_at DESC')
   end
 
   def show
     @spot = Spot.find(params[:id])
+    @follows = Follow.all.order('follows.created_at DESC')
   end
 
   def new
@@ -41,7 +44,6 @@ class SpotsController < ApplicationController
   def destroy
     @spot = Spot.find(params[:id])
     @spot.destroy
-
     redirect_to spots_path
   end
 
