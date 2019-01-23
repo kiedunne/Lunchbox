@@ -1,9 +1,10 @@
 # Meet&Eat
 
-[![Build Status](https://travis-ci.org/AsadK47/Meet-and-Eat.svg?branch=master)](https://travis-ci.org/AsadK47/Meet-and-Eat)
+[![Build Status](https://travis-ci.com/AsadK47/Meet-and-Eat.svg?branch=master)](https://travis-ci.com/AsadK47/Meet-and-Eat)
+[![Maintainability](https://api.codeclimate.com/v1/badges/80296a48bd19ade48130/maintainability)](https://codeclimate.com/github/AsadK47/Meet-and-Eat/maintainability)
 [![codecov](https://codecov.io/gh/AsadK47/Meet-and-Eat/branch/master/graph/badge.svg)](https://codecov.io/gh/AsadK47/Meet-and-Eat)
 
-Welcome to Meet&Eatt, the best place to find friends, food and fun.
+Welcome to Meet&Eat, the best place to find friends, food and fun.
 
 ![](assets/README-559a088e.png)
 

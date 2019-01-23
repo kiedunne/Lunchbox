@@ -8,12 +8,12 @@ gem 'bootstrap-datepicker-rails'
 gem 'cancan'
 gem 'devise'
 gem 'figaro'
+gem 'geocoder'
+gem 'gmaps4rails'
 gem 'gravatar_image_tag', github: 'mdeering/gravatar_image_tag'
 gem 'jquery-ui-rails'
 gem 'mini_magick', '~> 4.9', '>= 4.9.2'
 gem 'pry'
-gem 'geocoder'
-gem 'gmaps4rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
@@ -58,10 +58,9 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'rubocop', '~> 0.61.1'
   gem 'selenium-webdriver'
+  gem 'shoulda-matchers', '4.0.0.rc1'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
-  gem 'shoulda-matchers', '4.0.0.rc1'
-  gem 'rails-controller-testing' # If you are using Rails 5.x
 end
 
 group :development do
