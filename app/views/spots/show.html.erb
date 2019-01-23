@@ -5,6 +5,7 @@
   <p><%= @spot.info %></p>
   <p><%= @spot.username %></p>
 
+  <%= @spot.avatar %>
 <%= link_to "Edit", edit_spot_path(@spot), :class => 'btn btn-default' %>
 <%= link_to "Delete", spot_path(@spot),
                                       method: :delete,

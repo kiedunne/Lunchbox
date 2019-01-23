@@ -11,24 +11,73 @@
 
           <div class="card-body">
             <div class="spot-title-time"
-              <h1 class ="text"><a <%= link_to spot.spot, spot_path(spot)%></a></h1>
+              <h1><a class="spot-title"<%= link_to spot.spot, spot_path(spot)%></a></h1>
               <p><%= spot.time %></p>
             </div>
             <p><%= spot.location %></p>
             <p><%= spot.info %></p>
             <h4>Lunchers</h4>
-            <% spot.followers.each do |follower| %>
-              <%= link_to profile_path(follower.id) do %>
-                <% if follower.avatar.attached? %>
-                  <%= image_tag follower.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
-                <% else %>
-                  <%= image_tag gravatar_image_url(follower.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
+            <div class="spot-followers"
+              <p><%= spot.username %></p>
+              <% spot.followers.each do |follower| %>
+              <div class="spot-each-follower"
+                <%= link_to profile_path(follower.id) do %>
+                  <% if follower.avatar.attached? %>
+                    <%= image_tag follower.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
+                  <% else %>
+                    <%= image_tag gravatar_image_url(follower.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
+                  <% end %>
+              </div>
                 <% end %>
               <% end %>
-            <% end %>
+            </div>
           </div>
 
       </div>
 
   <% end %>
 </div>
+
+<style>
+a.spot-title {
+  font-size: 30px;
+}
+
+.spot-title-time {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  font-size: 20px;
+}
+.card-total {
+  border-style: solid;
+  border-color: grey;
+  border-radius: 25px;
+  width: 75%;
+  margin: 20px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-body {
+  padding: 30px;
+}
+
+.card-img-top {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.spot-followers {
+  display: flex;
+  flex-direction: row;
+}
+
+.spot-each-follower {
+  padding: 5px;
+}
+</style>
