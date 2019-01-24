@@ -9,27 +9,31 @@ Welcome to Meet&Eat, the best place to find friends, food and fun.
 ![](assets/README-559a088e.png)
 
 ## Iteration 1.0 Features
-
 :white_check_mark: Users can sign up and sign in to Meet&Eat<br />
 :white_check_mark: Users can upload an avatar<br />
 :white_check_mark: Users can post a lunch spot with a date, time, location and description<br />
+:white_check_mark: Users can only edit or delete their own lunch spots<br />
 :white_check_mark: Lunch spots appear on a map with the location marked<br />
 :white_check_mark: Users can see all posted lunch spots on the homepage<br />
 :white_check_mark: Users have a profile that displays the lunch spots they've posted<br />
-:white_check_mark: Users can only edit or delete their own lunch spots<br />
 :white_check_mark: Users are automatically an attendee of a lunch spot they post<br />
 :white_check_mark: Users can join a lunch spot they'd like to attend<br />
 
 ## Iteration 2.0 Features
-
+:negative_squared_cross_mark: Users can leave create, edit and delete comments on a lunch spot <br />
 :negative_squared_cross_mark: Expired lunch spots are not listed<br />
-:negative_squared_cross_mark: Users can assign themselves interest tags (ex. coding)<br />
-:negative_squared_cross_mark: Interest tags can be edited or deleted<br />
-:negative_squared_cross_mark: Interest tags are attached to any lunch spot a user posts<br />
-:negative_squared_cross_mark: Interest tags are attached to any lunch spot a user joins<br />
-:negative_squared_cross_mark: Users can see the interest tags of all users who have joined a lunch spot<br />
 :negative_squared_cross_mark: Users can filter lunch spots by time and date<br />
 :negative_squared_cross_mark: Users can filter lunch spots by location<br />
+
+## Iteration 2.0 Features
+:negative_squared_cross_mark: All active lunch spots display on a map<br />
+:negative_squared_cross_mark: All active lunch spots display on a calendar<br />
+:negative_squared_cross_mark: Users can choose a dietary preference (ex. vegetarian, pescitarian)<br />
+:negative_squared_cross_mark: Users can change their dietary preference<br />
+:negative_squared_cross_mark: Users can assign themselves interest tags (ex. coding, illustration)<br />
+:negative_squared_cross_mark: Interest tags can be edited or deleted<br />
+:negative_squared_cross_mark: A User's interest tags are attached to any lunch spot they post or join<br />
+:negative_squared_cross_mark: Users can see the interest tags of all users who have joined a lunch spot<br />
 
 ## Links to the application and development board
 

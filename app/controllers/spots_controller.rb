@@ -4,13 +4,14 @@ class SpotsController < ApplicationController
 
   def index
     @spots = Spot.all.order('spots.created_at DESC')
-    # @spot = Spot.find(params[:id])
     @follows = Follow.all.order('follows.created_at DESC')
+    @users = User.all
   end
 
   def show
     @spot = Spot.find(params[:id])
     @follows = Follow.all.order('follows.created_at DESC')
+    @user = User.find(@spot.user_id)
   end
 
   def new

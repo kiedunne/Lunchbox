@@ -27,7 +27,12 @@ def params
 	info: 'test',
 	user_id: user.id, 
 	username: user.username, 
-	time_start: "2019-01-23 20:21:22.685098", 
-	time_end: "2019-01-23 20:21:22.685098"
+	time_start: Time.now, 
+	time_end: Time.now
 	}
 end
+
+# def create_follow
+# 	 allow(controller).to receive(:current_user).and_return(user)
+# 	 user.follow(test_spot)
+# end

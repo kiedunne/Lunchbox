@@ -14,15 +14,13 @@
     <%= f.label :spot %><br>
     <%= f.text_field(:spot, {:class => 'form-control'}) %>
   </p>
-
+    <%= f.label :time_start %> (24h)<br>
+    <%= f.text_field(:time_start, {:class => 'form-control'}) %>
   <p>
-    <%= f.label :time_start %><br>
-    <%= f.text_field(:time_start, data:{ provide:'datepicker' }) %>
-  </p>
-
   <p>
-    <%= f.label :time_end %><br>
-    <%= f.text_field(:time_end, data:{ provide:'datepicker' }) %>
+    <%= f.label :time_end %> (24h)<br>
+    <%= f.text_field(:time_end, {:class => 'form-control'}) %>
+
   </p>
 
   <p>

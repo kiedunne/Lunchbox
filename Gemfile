@@ -53,6 +53,8 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
+  gem 'codecov', require: false
+  gem 'coveralls', require: false
   gem 'factory_bot'
   gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 3.5'
@@ -61,8 +63,6 @@ group :development, :test do
   gem 'shoulda-matchers', '4.0.0.rc1'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
-  gem 'coveralls', require: false
-  gem 'codecov', require: false
 end
 
 group :development do

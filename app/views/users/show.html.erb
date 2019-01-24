@@ -22,59 +22,81 @@
         <% @spots.each do |spot| %>
           <div class="card-total">
             <%= link_to spot_path(spot) do %>
-            <iframe
-            width="600"
-            height="450"
-            frameborder="0" style="border:0"
-            src="https://www.google.com/maps/embed/v1/place?key=<%=ENV['google_maps_api_key']%>
-              &q=<%="#{spot.latitude}"%>,<%="#{spot.longitude}"%>" allowfullscreen>
-            </iframe>
             <% end %>
 
               <div class="card-body">
-
+                <iframe
+                width="600"
+                height="450"
+                frameborder="0" style="border:0"
+                src="https://www.google.com/maps/embed/v1/place?key=<%=ENV['google_maps_api_key']%>
+                  &q=<%="#{spot.spot}"%><% "#{spot.location}"%>" allowfullscreen>
+                </iframe>
                 <div class="spot-title-time"
                   <h1><a class="spot-title"<%= link_to spot.spot, spot_path(spot)%></a></h1>
                   <p class="spot-time"><%= spot.time_start %> - <%= spot.time_end %></p>
                 </div>
-
                 <p><%= spot.location %></p>
                 <p><%= spot.info %></p>
 
-                <h4>Lunchers</h4>
                 <div class="spot-followers"
-                  <p><%= spot.username %></p>
+                <% @users.each do |user| %>
+                  <% if user.id == spot.user_id %>
+                    <%= link_to profile_path(user.id) do %>
+                      <% if user.avatar.attached? %>
+                        <%= image_tag user.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
+                      <% else %>
+                        <%= image_tag gravatar_image_url(user.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
+                      <% end %>
+                    <% end %>
+                  <% end %>
+                <% end %>
+
                   <% spot.followers.each do |follower| %>
-                  <div class="spot-each-follower"
                     <%= link_to profile_path(follower.id) do %>
                       <% if follower.avatar.attached? %>
                         <%= image_tag follower.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
                       <% else %>
                         <%= image_tag gravatar_image_url(follower.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
                       <% end %>
-                  </div>
                     <% end %>
                   <% end %>
                 </div>
-              </div>
+
+                <div class="spot-user-options">
+                  <div class="spot-user-option">
+                    <%= link_to "Edit", edit_spot_path(spot.id), :class => 'btn btn-info' %>
+                  </div>
+                  <div class="spot-user-option">
+                  <%= link_to "Delete", spot_path(spot.id), method: :delete,data: {confirm: 'Delete your spot?'}, :class => 'btn btn-danger' %>
+                  </div>
+                </div>
+            </div>
+
           </div>
       <% end %>
     </div>
+
       <% else %>
         <h2>No spots yet :/</h2>
         <br>
         <a class="nav-link" <%= link_to "Post a spot!", new_spot_path %> </a>
       <% end %>
+
   </div>
 </div>
+
+
+
     <style>
-      .card-total {
-        border-style: solid;
-        border-color: grey;
-        border-radius: 25px;
-        width: 59%;
-        margin: 20px;
-      }
+    .card-total {
+      border-style: solid;
+      border-color: grey;
+      border-radius: 25px;
+      width: 59%;
+      margin: 20px;
+    }
+
     a.spot-title {
       font-size: 30px;
       text-decoration: none;
@@ -109,9 +131,17 @@
     .spot-followers {
       display: flex;
       flex-direction: row;
+      padding-top: 10px;
+    }
+    .spot-user-options {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      padding-top: 10px;
     }
 
-    .spot-each-follower {
+    .spot-user-option {
       padding: 5px;
     }
+
     </style>
