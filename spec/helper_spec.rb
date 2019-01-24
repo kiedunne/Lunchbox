@@ -31,3 +31,7 @@ def params
 	time_end: "2019-01-23 20:21:22.685098"
 	}
 end
+
+def create_follow(spot, user)
+	 user.follow(spot)
+end
