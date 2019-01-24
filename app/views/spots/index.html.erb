@@ -22,20 +22,31 @@
             </div>
             <p><%= spot.location %></p>
             <p><%= spot.info %></p>
-            <h4>Lunchers</h4>
+
             <div class="spot-followers"
-              <p><%= spot.username %></p>
+
+            <% @users.each do |user| %>
+              <% if user.id == spot.user_id %>
+                <%= link_to profile_path(user.id) do %>
+                  <% if user.avatar.attached? %>
+                    <%= image_tag user.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
+                  <% else %>
+                    <%= image_tag gravatar_image_url(user.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
+                  <% end %>
+                <% end %>
+              <% end %>
+            <% end %>
+
               <% spot.followers.each do |follower| %>
-              <div class="spot-each-follower"
                 <%= link_to profile_path(follower.id) do %>
                   <% if follower.avatar.attached? %>
                     <%= image_tag follower.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
                   <% else %>
                     <%= image_tag gravatar_image_url(follower.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
                   <% end %>
-              </div>
                 <% end %>
               <% end %>
+
             </div>
           </div>
       </div>
@@ -90,9 +101,6 @@ p.spot-time {
 .spot-followers {
   display: flex;
   flex-direction: row;
-}
-
-.spot-each-follower {
-  padding: 5px;
+  padding-top: 10px;
 }
 </style>

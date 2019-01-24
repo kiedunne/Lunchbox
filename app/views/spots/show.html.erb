@@ -19,37 +19,60 @@
 
       <p><%= @spot.location %></p>
       <p><%= @spot.info %></p>
-      <h4>Lunchers</h4>
 
       <div class="spot-followers"
-        <p><%= @spot.username %></p>
-        <% @spot.followers.each do |follower| %>
-          <div class="spot-each-follower"
-            <%= link_to profile_path(follower.id) do %>
-              <% if follower.avatar.attached? %>
-                <%= image_tag follower.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
-              <% else %>
-                <%= image_tag gravatar_image_url(follower.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
-              <% end %>
-          </div>
+
+          <%= link_to profile_path(@user.id) do %>
+            <% if @user.avatar.attached? %>
+              <%= image_tag @user.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
+            <% else %>
+              <%= image_tag gravatar_image_url(@user.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
+            <% end %>
           <% end %>
 
-        <% end %>
+          <% @spot.followers.each do |follower| %>
+              <%= link_to profile_path(follower.id) do %>
+                <% if follower.avatar.attached? %>
+                  <%= image_tag follower.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
+                <% else %>
+                  <%= image_tag gravatar_image_url(follower.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
+                <% end %>
+            <% end %>
+          <% end %>
+
       </div>
 
+      <% if current_user.id == @spot.user_id %>
         <div class="spot-user-options">
           <div class="spot-user-option">
             <%= link_to "Edit", edit_spot_path(@spot), :class => 'btn btn-info' %>
           </div>
           <div class="spot-user-option">
-          <%= link_to "Delete", spot_path(@spot),
-                                                method: :delete,
-                                                data: {confirm: 'Are you sure?'},
-                                                :class => 'btn btn-danger' %>
+          <%= link_to "Delete", spot_path(@spot), method: :delete,data: {confirm: 'Delete your spot?'}, :class => 'btn btn-danger' %>
           </div>
-      </div>
+        </div>
+    <% else %>
+        <% if @spot.followed_by?(current_user) %>
+        <div class="spot-user-options">
+          <div class="spot-user-option">
+            <%= form_tag unfollow_spot_path(id: @spot.id), method: :post, data: {confirm: 'You monster.'}, remote: true do  %>
+            <%= button_tag 'Leave Spot', :class => 'btn btn-danger' %><% end %>
+          </div>
+        </div>
+        <% else %>
+        <div class="spot-user-options">
+          <div class="spot-user-option">
+            <%= form_tag follow_spot_path(id: @spot.id), method: :post, data: {confirm: 'Joined a lunch spot!'}, remote: true do  %>
+            <%= button_tag 'Join Spot', :class => 'btn btn-success' %><% end %>
+          </div>
+        </div>
+        <% end %>
+        </div>
+    <% end %>
 
-    </div>
+
+  </div>
+
   </div>
 
     <style>
@@ -93,15 +116,13 @@
     .spot-followers {
       display: flex;
       flex-direction: row;
-    }
-
-    .spot-each-follower {
-      padding: 10px;
+      padding-top: 10px;
     }
 
     .spot-user-options {
       display: flex;
       flex-direction: row;
+      justify-content: flex-end;
       padding-top: 10px;
     }
 
