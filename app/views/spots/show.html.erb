@@ -50,6 +50,8 @@
           <div class="spot-user-option">
           <%= link_to "Delete", spot_path(@spot), method: :delete,data: {confirm: 'Delete your spot?'}, :class => 'btn btn-danger' %>
           </div>
+
+      </div>
         </div>
     <% else %>
         <% if @spot.followed_by?(current_user) %>
@@ -70,8 +72,31 @@
         </div>
     <% end %>
 
+    <h3>Comments</h3>
+          <% @spot.comments.each do |comment| %>
+          <div>
+            <p><small>commented by :
+              <%= link_to profile_path(comment.user_id) do %>
+              <%= comment.username%></small></p>
+              <% end %>
+            <p><%= comment.content%></p>
+            <hr>
+          </div>
+          <% end %>
+          <h3>Add comment</h3>
+        <hr>
+        <%= form_for ([@spot, @spot.comments.build]) do |f| %>
 
+          <p>
+            <%= f.label :comment %><br>
+            <%= f.text_field(:content, {:class => 'form-control'}) %>
+          </p>
+          <p>
+            <%= f.submit({:class => 'btn btn-primary'}) %>
+          </p>
+          <% end %>
   </div>
+
 
   </div>
 

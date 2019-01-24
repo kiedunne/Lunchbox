@@ -1,4 +1,9 @@
 FactoryBot.define do
+  factory :comment do
+    content { "MyText" }
+    user { nil }
+    spot { nil }
+  end
 
   factory :user do
     id { generate :user_id }
