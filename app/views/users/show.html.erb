@@ -26,16 +26,13 @@
             <% end %>
 
               <div class="card-body">
-
                 <div class="spot-title-time"
                   <h1><a class="spot-title"<%= link_to spot.spot, spot_path(spot)%></a></h1>
                   <p class="spot-time"><%= spot.time_start %> - <%= spot.time_end %></p>
                 </div>
-
                 <p><%= spot.location %></p>
                 <p><%= spot.info %></p>
 
-                <h4>Lunchers</h4>
                 <div class="spot-followers"
                 <% @users.each do |user| %>
                   <% if user.id == spot.user_id %>
@@ -49,28 +46,28 @@
                   <% end %>
                 <% end %>
 
-
                   <% spot.followers.each do |follower| %>
-                  <div class="spot-each-follower"
                     <%= link_to profile_path(follower.id) do %>
                       <% if follower.avatar.attached? %>
                         <%= image_tag follower.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
                       <% else %>
                         <%= image_tag gravatar_image_url(follower.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
                       <% end %>
-                  </div>
                     <% end %>
                   <% end %>
                 </div>
-              </div>
+            </div>
+
           </div>
       <% end %>
     </div>
+
       <% else %>
         <h2>No spots yet :/</h2>
         <br>
         <a class="nav-link" <%= link_to "Post a spot!", new_spot_path %> </a>
       <% end %>
+
   </div>
 </div>
 
@@ -118,9 +115,7 @@
     .spot-followers {
       display: flex;
       flex-direction: row;
+      padding-top: 10px;
     }
 
-    .spot-each-follower {
-      padding: 5px;
-    }
     </style>

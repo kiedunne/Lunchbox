@@ -17,7 +17,7 @@
             <p><%= spot.location %></p>
             <p><%= spot.info %></p>
 
-            <h4>Lunchers</h4>
+
             <div class="spot-followers"
 
             <% @users.each do |user| %>
@@ -33,7 +33,6 @@
             <% end %>
 
               <% spot.followers.each do |follower| %>
-              <div class="spot-each-follower"
                 <%= link_to profile_path(follower.id) do %>
                   <% if follower.avatar.attached? %>
                     <%= image_tag follower.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
@@ -41,7 +40,6 @@
                     <%= image_tag gravatar_image_url(follower.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
                   <% end %>
                 <% end %>
-                </div>
               <% end %>
 
             </div>
@@ -98,9 +96,7 @@ p.spot-time {
 .spot-followers {
   display: flex;
   flex-direction: row;
+  padding-top: 10px;
 }
 
-.spot-each-follower {
-  padding-left: 5px;
-}
 </style>
