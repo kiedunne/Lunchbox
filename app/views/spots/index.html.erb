@@ -5,10 +5,11 @@
   <% @spots.each do |spot| %>
 
       <div class="card-total">
-        <%= link_to spot_path(spot) do %>
-        <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=700x400&markers=size:small%7Ccolor:red%7C#{spot.latitude},#{spot.longitude}&key=#{Rails.application.credentials.google_maps_api_key}", alt: "Map" %>
-        <% end %>
-
+        <div class="spot-map"
+          <%= link_to spot_path(spot) do %>
+          <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=800x400&markers=size:small%7Ccolor:red%7C#{spot.latitude},#{spot.longitude}&key=#{Rails.application.credentials.google_maps_api_key}", alt: "Map" %>
+          <% end %>
+        </div>
           <div class="card-body">
             <div class="spot-title-time"
               <h1><a class="spot-title"<%= link_to spot.spot, spot_path(spot)%></a></h1>
@@ -55,7 +56,10 @@ a.spot-title {
   justify-content: space-between;
   font-size: 20px;
 }
-
+.spot-map {
+  border-style: transparent;
+  border-radius: 10px;
+}
 p.spot-time {
   text-align: right;
 }
@@ -63,7 +67,7 @@ p.spot-time {
   border-style: solid;
   border-color: grey;
   border-radius: 25px;
-  width: 75%;
+  width: 60%;
   margin: 20px;
 }
 .container {
