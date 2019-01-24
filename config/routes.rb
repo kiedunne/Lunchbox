@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     get 'users/:id', to: 'users#show', as: :profile
 
     post 'spots/follow', to: 'follows#follow', as: :follow_spot
-    delete 'spots/unfollow', to: 'follows#unfollow', as: :unfollow_spot
+    post 'spots/unfollow', to: 'follows#unfollow', as: :unfollow_spot
   end
 
   unauthenticated do

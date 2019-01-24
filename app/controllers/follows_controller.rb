@@ -4,13 +4,13 @@ class FollowsController < ApplicationController
   def follow
     @spot = Spot.find(params[:id])
     current_user.follow(@spot)
-    redirect_to authenticated_root_url
+    redirect_to @spot
   end
 
   def unfollow
     @spot = Spot.find(params[:id])
     current_user.stop_following(@spot)
-    redirect_to authenticated_root_url
+    redirect_to @spot
   end
 
   def find
