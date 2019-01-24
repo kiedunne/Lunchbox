@@ -22,7 +22,13 @@
         <% @spots.each do |spot| %>
           <div class="card-total">
             <%= link_to spot_path(spot) do %>
-              <img class="card-img-top"><%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=700x400&markers=size:small%7Ccolor:red%7C#{spot.latitude},#{spot.longitude}&key=#{Rails.application.credentials.google_maps_api_key}", alt: "Map" %>
+            <iframe
+            width="600"
+            height="450"
+            frameborder="0" style="border:0"
+            src="https://www.google.com/maps/embed/v1/place?key=<%=ENV['google_maps_api_key']%>
+              &q=<%="#{spot.latitude}"%>,<%="#{spot.longitude}"%>" allowfullscreen>
+            </iframe>
             <% end %>
 
               <div class="card-body">
@@ -66,7 +72,7 @@
         border-style: solid;
         border-color: grey;
         border-radius: 25px;
-        width: 75%;
+        width: 59%;
         margin: 20px;
       }
     a.spot-title {

@@ -13,10 +13,10 @@
 # it.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
-
+require 'coveralls'
 require 'simplecov'
 require 'simplecov-console'
-
+Coveralls.wear!
 SimpleCov.formatter = SimpleCov::Formatter::Console
 SimpleCov.start do
   add_filter "spec"
