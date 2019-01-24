@@ -4,5 +4,5 @@ class Spot < ApplicationRecord
   belongs_to :user
   geocoded_by :location
   after_validation :geocode
-  has_many :comments
+  has_many :comments, dependent: :destroy
 end
