@@ -5,18 +5,11 @@ rvm:
 - 2.5.3
 env:
 - DB=postgresql
-- CC_TEST_REPORTER_ID=ABC123
 before_script:
 - psql -c 'create database my_app_test' -U postgres
-- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-- chmod +x ./cc-test-reporter
-- ./cc-test-reporter before-build
 script:
 - bundle exec rake db:test:prepare
 - bundle exec rspec spec/
-after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
-  - bundle exec rake coveralls:push
 before_install:
 - gem update --system
 - gem install bundler
