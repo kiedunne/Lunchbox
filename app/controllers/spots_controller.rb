@@ -12,6 +12,7 @@ class SpotsController < ApplicationController
     @spot = Spot.find(params[:id])
     @follows = Follow.all.order('follows.created_at DESC')
     @user = User.find(@spot.user_id)
+    @users = User.all
   end
 
   def new

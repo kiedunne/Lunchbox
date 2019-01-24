@@ -76,15 +76,25 @@
               <% @spot.comments.each do |comment| %>
               <div>
 
-                <p>
+                <div id="comment-picture">
                   <%= link_to profile_path(comment.user_id) do %>
-                  <%= image_tag @user.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
+                  <% @users.each do |user| %>
+                    <% if user.id == comment.user_id %>
+                      <%= link_to profile_path(user.id) do %>
+                        <% if user.avatar.attached? %>
+                          <%= image_tag user.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
+                        <% else %>
+                          <%= image_tag gravatar_image_url(user.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
+                        <% end %>
+                      <% end %>
+                    <% end %>
                   <% end %>
-                  <small><%= comment.username.capitalize%> comment:</small>
-                </p>
-
-                <p><%= comment.content%></p>
-
+                  <% end %>
+                </div>
+                <div id="comment-body">
+                  <p><%= comment.content%></p>
+                </div>
+                <div style="clear:both;"></div>
                 <hr>
               </div>
               <% end %>
@@ -108,6 +118,14 @@
   </div>
 
     <style>
+    #comment-picture{
+      float:left;
+    }
+    #comment-body {
+        padding: 10px;
+        float:left;
+        width: 80%;
+      }
     a.spot-title {
       font-size: 30px;
       text-decoration: none;
