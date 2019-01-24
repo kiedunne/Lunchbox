@@ -17,26 +17,25 @@
       <h4>Lunchers</h4>
 
       <div class="spot-followers"
-        <%= link_to profile_path(@user.id) do %>
-          <% if @user.avatar.attached? %>
-            <%= image_tag @user.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
-          <% else %>
-            <%= image_tag gravatar_image_url(@user.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
-          <% end %>
-        <% end %>
 
-        <% @spot.followers.each do |follower| %>
-          <div class="spot-each-follower"
-            <%= link_to profile_path(follower.id) do %>
-              <% if follower.avatar.attached? %>
-                <%= image_tag follower.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
-              <% else %>
-                <%= image_tag gravatar_image_url(follower.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
-              <% end %>
-          </div>
+          <%= link_to profile_path(@user.id) do %>
+            <% if @user.avatar.attached? %>
+              <%= image_tag @user.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
+            <% else %>
+              <%= image_tag gravatar_image_url(@user.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
+            <% end %>
           <% end %>
 
-        <% end %>
+          <% @spot.followers.each do |follower| %>
+              <%= link_to profile_path(follower.id) do %>
+                <% if follower.avatar.attached? %>
+                  <%= image_tag follower.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
+                <% else %>
+                  <%= image_tag gravatar_image_url(follower.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
+                <% end %>
+            <% end %>
+          <% end %>
+
       </div>
 
       <% if current_user.id == @spot.user_id %>
@@ -113,10 +112,8 @@
     .spot-followers {
       display: flex;
       flex-direction: row;
-    }
-
-    .spot-each-follower {
-      padding: 10px;
+      padding-top: 5px;
+      padding-bottom: 5px;
     }
 
     .spot-user-options {
