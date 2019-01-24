@@ -31,19 +31,30 @@
         <% end %>
       </div>
 
+      <% if current_user.id == @spot.user_id %>
         <div class="spot-user-options">
           <div class="spot-user-option">
             <%= link_to "Edit", edit_spot_path(@spot), :class => 'btn btn-info' %>
           </div>
           <div class="spot-user-option">
-          <%= link_to "Delete", spot_path(@spot),
-                                                method: :delete,
-                                                data: {confirm: 'Are you sure?'},
-                                                :class => 'btn btn-danger' %>
+          <%= link_to "Delete", spot_path(@spot), method: :delete,data: {confirm: 'Delete your spot?'}, :class => 'btn btn-danger' %>
+          </div>
+    <% else %>
+        <% if @spot.followed_by?(current_user) %>
+          <div class="spot-user-option">
+            <%= form_tag unfollow_spot_path(id: @spot.id), method: :delete, data: {confirm: 'You monster.'}, remote: true do  %>
+            <%= button_tag 'Unfollow', :class => 'btn btn-danger' %><% end %>
+          </div>
+        <% else %>
+          <div class="spot-user-option">
+        <%= form_tag follow_spot_path(id: @spot.id), method: :post, data: {confirm: 'Joined a lunch spot!'}, remote: true do  %>
+          <%= button_tag 'Join Spot', :class => 'btn btn-success' %><% end %>
+        <% end %>
           </div>
       </div>
+    <% end %>
+  </div>
 
-    </div>
   </div>
 
     <style>
