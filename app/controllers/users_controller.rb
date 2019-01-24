@@ -7,7 +7,4 @@ class UsersController < ApplicationController
     @spots = @user.spots.order(created_at: :desc)
   end
 
-  def find
-    @user = User.find(params[:id])
-  end
 end
