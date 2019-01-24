@@ -32,6 +32,7 @@ def params
 	}
 end
 
-def create_follow(spot, user)
-	 user.follow(spot)
-end
+# def create_follow
+# 	 allow(controller).to receive(:current_user).and_return(user)
+# 	 user.follow(test_spot)
+# end
