@@ -94,5 +94,6 @@ RSpec.describe SpotsController, type: :controller do
 		end
 		after :each do
 			 sign_out(user)
+
 		end
 end
