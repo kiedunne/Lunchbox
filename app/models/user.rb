@@ -6,5 +6,6 @@ class User < ApplicationRecord
 
   has_one_attached :avatar
   has_many :spots, dependent: :destroy
+  has_many :comments
   acts_as_follower
 end

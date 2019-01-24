@@ -48,6 +48,20 @@
                                                 :class => 'btn btn-danger' %>
           </div>
       </div>
+      <h3>Add comment</h3>
+      <hr>
+      <%= form_for ([@spot, @spot.comments.build]) do |f| %>
+
+        <p>
+          <%= f.label :comment %><br>
+          <%= f.text_field(:content, {:class => 'form-control'}) %>
+        </p>
+        <p>
+          <%= f.submit({:class => 'btn btn-primary'}) %>
+        </p>
+        <% end %>
+
+
 
     </div>
   </div>
