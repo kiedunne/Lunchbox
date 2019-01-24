@@ -95,6 +95,10 @@
                   <p><%= comment.content%></p>
                 </div>
                 <div style="clear:both;"></div>
+                <div id="created-at">
+                  <small><%= comment.created_at %></small>
+                </div>
+                <div style="clear:both;"></div>
                 <hr>
               </div>
               <% end %>
@@ -118,13 +122,19 @@
   </div>
 
     <style>
+    #created-at{
+      padding:10px;
+      float: right;
+    }
     #comment-picture{
       float:left;
+
     }
     #comment-body {
         padding: 10px;
         float:left;
         width: 80%;
+        word-wrap:break-word;
       }
     a.spot-title {
       font-size: 30px;
