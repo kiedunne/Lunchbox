@@ -2,12 +2,14 @@
 <div class="form text-color">
 
 <h1>Add a Lunch spot!</h1>
+
 <%= form_for :spot, url: spots_path do |f| %>
     <% if @spot.errors.any? %>
       <% @spot.errors.full_messages.each do |msg| %>
         <div class="alert alert-danger"><%= msg %></div>
       <% end %>
     <% end %>
+
   <p>
     <%= f.label :spot %><br>
     <%= f.text_field(:spot, {:class => 'form-control'}) %>
@@ -18,6 +20,7 @@
   <p>
     <%= f.label :time_end %> (24h)<br>
     <%= f.text_field(:time_end, {:class => 'form-control'}) %>
+
   </p>
 
   <p>
