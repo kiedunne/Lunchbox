@@ -75,11 +75,16 @@
         <h3>Comments</h3>
               <% @spot.comments.each do |comment| %>
               <div>
-                <p><small>commented by :
+
+                <p>
                   <%= link_to profile_path(comment.user_id) do %>
-                  <%= comment.username%></small></p>
+                  <%= image_tag @user.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
                   <% end %>
+                  <small><%= comment.username.capitalize%> comment:</small>
+                </p>
+
                 <p><%= comment.content%></p>
+
                 <hr>
               </div>
               <% end %>
