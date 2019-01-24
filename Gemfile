@@ -6,6 +6,8 @@ gem 'acts_as_follower', github: 'tcocca/acts_as_follower'
 gem 'aws-sdk-s3', require: false
 gem 'bootstrap-datepicker-rails'
 gem 'cancan'
+gem 'codecov'
+gem 'coveralls', require: false
 gem 'devise'
 gem 'figaro'
 gem 'geocoder'
