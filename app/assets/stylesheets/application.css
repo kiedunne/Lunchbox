@@ -19,11 +19,11 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 30px;
+
 }
 
 .user-buttons {
-  padding: 20px;
+  padding: 10px;
 }
 
 #form-group
