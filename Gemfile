@@ -61,6 +61,8 @@ group :development, :test do
   gem 'shoulda-matchers', '4.0.0.rc1'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
+  gem 'coveralls', require: false
+  gem 'codecov', require: false
 end
 
 group :development do
