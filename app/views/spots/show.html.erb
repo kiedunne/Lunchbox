@@ -51,7 +51,10 @@
       <h3>Comments</h3>
         <% @spot.comments.each do |comment| %>
         <div>
-          <p><small>commented by : <%= comment.username%></small></p>
+          <p><small>commented by :
+            <%= link_to profile_path(comment.user_id) do %>
+            <%= comment.username%></small></p>
+            <% end %>
           <p><%= comment.content%></p>
           <hr>
         </div>

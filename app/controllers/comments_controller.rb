@@ -9,10 +9,10 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:content, :username)
+    params.require(:comment).permit(:content)
   end
 
   def merge_params
-    comment_params.merge(username: current_user.username)
+    comment_params.merge(username: current_user.username, user_id: current_user.id)
   end
 end
