@@ -3,7 +3,7 @@ class SpotsController < ApplicationController
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def index
-    @spots = Spot.all.order('spots.created_at DESC')
+    @spots = Spot.all.order('spots.datestring ASC', 'spots.time_start ASC')
     @follows = Follow.all.order('follows.created_at DESC')
     @users = User.all
   end
@@ -52,7 +52,7 @@ class SpotsController < ApplicationController
 private
 
   def post_params
-    params.require(:spot).permit(:spot, :time, :location, :info, :user_id, :username, :avatar, :time_start, :time_end, :diet)
+    params.require(:spot).permit(:spot, :time, :location, :info, :user_id, :username, :avatar, :time_start, :time_end, :date, :datestring, :diet)
   end
 
   def merge_params
