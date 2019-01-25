@@ -48,6 +48,23 @@
               <% end %>
 
             </div>
+          <% if spot.user_id != current_user.id %>
+            <% if spot.followed_by?(current_user) %>
+            <div class="spot-user-options">
+              <div class="spot-user-option">
+                <%= form_tag unfollow_spot_path(id: spot.id), method: :post, data: {confirm: 'You monster.'}, remote: true do  %>
+                <%= button_tag 'Leave Spot', :class => 'btn btn-danger' %><% end %>
+              </div>
+            </div>
+            <% else %>
+            <div class="spot-user-options">
+              <div class="spot-user-option">
+                <%= form_tag follow_spot_path(id: spot.id), method: :post, data: {confirm: 'Joined a lunch spot!'}, remote: true do  %>
+                <%= button_tag 'Join Spot', :class => 'btn btn-success' %><% end %>
+              </div>
+            </div>
+            <% end %>
+          <% end %>
           </div>
       </div>
   <% end %>
@@ -102,5 +119,16 @@ p.spot-time {
   display: flex;
   flex-direction: row;
   padding-top: 10px;
+}
+
+.spot-user-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-top: 10px;
+}
+
+.spot-user-option {
+  padding: 5px;
 }
 </style>
