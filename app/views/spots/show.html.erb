@@ -80,6 +80,10 @@
                   <%= link_to profile_path(comment.user_id) do %>
                   <% @users.each do |user| %>
                     <% if user.id == comment.user_id %>
+                    <%= link_to '[X]', [comment.spot, comment],
+                method: :delete,
+                data: { confirm: 'Are you sure?'},
+                :class => 'red' %>
                       <%= link_to profile_path(user.id) do %>
                         <% if user.avatar.attached? %>
                           <%= image_tag user.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
