@@ -71,8 +71,11 @@
         </div>
         <% end %>
         <% end %>
+        <div id="comments">
+          <button type="button" class="btn btn-secondary" onclick="showComments()">Comments</button>
+        </div>
         <div class="card-body">
-        <h3>Comments</h3>
+          <div id="UserComments" style="display:none;">
               <% @spot.comments.each do |comment| %>
               <div>
 
@@ -122,12 +125,15 @@
               <% end %>
               </div>
         </div>
-  </div>
-
-
+      </div>
+    </div>
   </div>
 
     <style>
+      #comments
+      {
+        margin-top: 15px;
+      }
       .red
       {
         color: white;
@@ -188,11 +194,12 @@
       display: flex;
       flex-direction: row;
       padding-top: 10px;
+
     }
 
     .spot-user-options {
       display: flex;
-      flex-direction: row;
+      float:left;
       justify-content: flex-end;
       padding-top: 10px;
     }
