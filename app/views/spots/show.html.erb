@@ -5,6 +5,7 @@
   <% end %>
 
     <div class="card-body">
+      <h2><%= @spot.datestring %></h2>
       <iframe
       width="600"
       height="450"
@@ -20,27 +21,27 @@
       <p><%= @spot.location %></p>
       <p><%= @spot.info %></p>
 
-      <div class="spot-followers"
+    <div class="spot-avatars"
+        <img><%= link_to profile_path(@user.id) do %>
+          <% if @user.avatar.attached? %>
+            <%= image_tag @user.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
+          <% else %>
+            <%= image_tag gravatar_image_url(@user.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
+          <% end %>
+        <% end %>
+        </img>
 
-          <%= link_to profile_path(@user.id) do %>
-            <% if @user.avatar.attached? %>
-              <%= image_tag @user.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
+        <img><% @spot.followers.each do |follower| %>
+          <%= link_to profile_path(follower.id) do %>
+            <% if follower.avatar.attached? %>
+              <%= image_tag follower.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
             <% else %>
-              <%= image_tag gravatar_image_url(@user.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
+              <%= image_tag gravatar_image_url(follower.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
             <% end %>
           <% end %>
-
-          <% @spot.followers.each do |follower| %>
-              <%= link_to profile_path(follower.id) do %>
-                <% if follower.avatar.attached? %>
-                  <%= image_tag follower.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
-                <% else %>
-                  <%= image_tag gravatar_image_url(follower.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
-                <% end %>
-            <% end %>
-          <% end %>
-
-      </div><br>
+        <% end %>
+      </img>
+    </div><br>
 
       <% if current_user.id == @spot.user_id %>
         <div class="spot-user-options">
@@ -48,9 +49,8 @@
             <%= link_to "Edit", edit_spot_path(@spot), :class => 'btn btn-info' %>
           </div>
           <div class="spot-user-option">
-          <%= link_to "Delete", spot_path(@spot), method: :delete,data: {confirm: 'Delete your spot?'}, :class => 'btn btn-danger' %>
+            <%= link_to "Delete", spot_path(@spot), method: :delete,data: {confirm: 'Delete your spot?'}, :class => 'btn btn-danger' %>
           </div>
-
       </div>
 
         </div>
@@ -190,7 +190,7 @@
       border-top-right-radius: 20px;
     }
 
-    .spot-followers {
+    .spot-avatars {
       display: flex;
       flex-direction: row;
       padding-top: 10px;

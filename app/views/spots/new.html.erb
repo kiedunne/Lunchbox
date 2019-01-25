@@ -22,13 +22,20 @@
     <%= f.label :spot %><br>
     <%= f.text_field(:spot, {:class => 'form-control'}) %>
   </p>
-    <%= f.label :time_start %> (24h)<br>
-    <%= f.text_field(:time_start, {:class => 'form-control'}) %>
+
   <p>
+    <%= f.label :datestring %><br>
+    <%= f.text_field(:datestring, :autocomplete => :off, :id => "datepicker", :class => 'form-control') %>
+  </p>
+
+  <p>
+    <%= f.label :time_start %> (24h)<br>
+    <%= f.text_field(:time_start, autocomplete: 'off', :class => 'form-control') %>
+  </p>
+
   <p>
     <%= f.label :time_end %> (24h)<br>
-    <%= f.text_field(:time_end, {:class => 'form-control'}) %>
-
+    <%= f.text_field(:time_end, autocomplete: 'off', :class => 'form-control') %>
   </p>
 
   <p>
@@ -47,6 +54,9 @@
 
 <% end %>
 
+</div>
+</div>
 
-</div>
-</div>
+<script>
+  $('#datepicker').datepicker();
+  </script>
