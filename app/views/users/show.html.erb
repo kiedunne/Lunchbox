@@ -7,20 +7,20 @@
     <% end %>
     <h1><%= @user.username %></h1>
 
-    <h1><%= @user.diet %></h1>
+    <h2>Preference: <%= @user.diet %></h2><br>
 
     <% if @user.diet == "Vegetarian" || @user.diet == "vegetarian" %>
-      <img src="/images/vegetarian.jpg" style="width: 80px; height: 80px;"></img>
+      <img src="/images/vegetarian.jpg" style="100px; height: 100px;"></img>
     <% elsif @user.diet == "Vegan" || @user.diet == "vegan" %>
-      <img src="/images/plant.jpg" style="width: 50px; height: 50px;"></img>
+      <img src="/images/plant.jpg" style="100px; height: 100px;"></img>
     <% elsif @user.diet == "Pescetarian" || @user.diet == "pescetarian" %>
-      <img src="/images/pescetarian.jpg" style="width: 80px; height: 80px;"></img>
+      <img src="/images/pescetarian.jpg" style="100px; height: 100px;"></img>
     <% elsif @user.diet == "Standard" || @user.diet == "standard" || @user.diet == "Any" || @user.diet == "any" %>
-      <img src="/images/chicken.jpg" style="width: 50px; height: 50px;"></img>
+      <img src="/images/chicken.jpg" style="100px; height: 100px;"></img>
     <% elsif @user.diet == "Lacto-vegetarian" || @user.diet == "lacto-vegetarian" || @user.diet == "Lacto-Vegetarian" %>
-      <img src="/images/milk.jpg" style="width: 50px; height: 50px;"></img>
+      <img src="/images/milk.jpg" style="100px; height: 100px;"></img>
     <% elsif @user.diet == "Ovo-vegetarian" || @user.diet == "ovo-vegetarian" || @user.diet == "Ovo-Vegetarian" %>
-      <img src="/images/egg.jpg" style="width: 50px; height: 50px;"></img>
+      <img src="/images/egg.jpg" style="100px; height: 100px;"></img>
     <% else %>
       <p>You need to choose a different dietery preference</p>
     <% end %><br>
