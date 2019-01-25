@@ -8,8 +8,6 @@ function showDiv() {
     document.getElementById('UserFollowingPosts').style.display = "block";
  };
 
-$('#datepicker').datepicker();
-
 function showComments() {
   var x = document.getElementById("UserComments");
 if (x.style.display === "none") {
@@ -18,4 +16,3 @@ if (x.style.display === "none") {
   x.style.display = "none";
  }
 }
-
