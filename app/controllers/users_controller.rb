@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @spots = @user.spots.order(created_at: :desc)
     @users = User.all
+    @allspots = Spot.all
   end
 
 end
