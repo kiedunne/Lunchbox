@@ -6,6 +6,24 @@
       <%= image_tag gravatar_image_url(@user.email, size: 75), height: 100, width: 100, class: "tar rounded-circle" %>
     <% end %>
     <h1><%= @user.username %></h1>
+
+    <h1><%= @user.diet %></h1>
+
+    <% if @user.diet == "Vegetarian" || @user.diet == "vegetarian" %>
+      <img src="/images/vegetarian.jpg" style="width: 80px; height: 80px;"></img>
+    <% elsif @user.diet == "Vegan" || @user.diet == "vegan" %>
+      <img src="/images/plant.jpg" style="width: 50px; height: 50px;"></img>
+    <% elsif @user.diet == "Pescetarian" || @user.diet == "pescetarian" %>
+      <img src="/images/pescetarian.jpg" style="width: 80px; height: 80px;"></img>
+    <% elsif @user.diet == "Standard" || @user.diet == "standard" || @user.diet == "Any" || @user.diet == "any" %>
+      <img src="/images/chicken.jpg" style="width: 50px; height: 50px;"></img>
+    <% elsif @user.diet == "Lacto-vegetarian" || @user.diet == "lacto-vegetarian" || @user.diet == "Lacto-Vegetarian" %>
+      <img src="/images/milk.jpg" style="width: 50px; height: 50px;"></img>
+    <% elsif @user.diet == "Ovo-vegetarian" || @user.diet == "ovo-vegetarian" || @user.diet == "Ovo-Vegetarian" %>
+      <img src="/images/egg.jpg" style="width: 50px; height: 50px;"></img>
+    <% else %>
+      <p>You need to choose a different dietery preference</p>
+    <% end %><br>
   </div>
 
   <div class='user-buttons'>
