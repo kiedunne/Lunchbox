@@ -6,6 +6,13 @@ class CommentsController < ApplicationController
     redirect_to spot_path(@spot)
   end
 
+  def destroy
+    @post = Spot.find(params[:spot_id])
+    @comment = @post.comments.find(params[:id])
+    @comment.destroy
+    redirect_to spot_path(@post)
+  end
+
   private
 
   def comment_params

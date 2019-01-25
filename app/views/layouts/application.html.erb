@@ -4,8 +4,8 @@
     <title>MeetAndEat</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' %>
+    <%= stylesheet_link_tag    'https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'users', 'data-turbolinks-track': 'reload' %>
@@ -29,6 +29,7 @@
           <% else %>
           <li><a class="nav-link"<%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></a></li>
           <li><a class="nav-link"<%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></a></li>
+          <body background="https://food-guide.canada.ca/wp-content/uploads/2018/11/78_Food-Choices-Eating-Habits-Page-Image.jpg" style="no-repeat center center fixed;" class="html"></body>
           <% end %>
         </div>
       </div>
@@ -43,3 +44,11 @@
 
   </body>
 </html>
+<style>
+  .html {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+  </style>
