@@ -9,23 +9,6 @@
     <!-- Bootstrap core CSS -->
 <link href="/docs/4.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
-
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-      .textcolor {
-        color: white;
-        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-       }
-    </style>
     <!-- Custom styles for this template -->
     <link href="pricing.css" rel="stylesheet">
   <style type="text/css">
@@ -35,33 +18,105 @@
   <body>
 
 <div class="pricing-header mx-auto text-center">
-  <h1 class="display-4"><h1 class="textcolor">About Meet & Eat</h1></h1>
+  <h1 class="textcolor">Meet & Eat</h1>
   <h3 class="textcolor" >The perfect place to find food, friends and a whole lot of fun!</h3>
 </div>
+
 
 <div class="container">
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
-        <h2 class="card-title pricing-card-title">Join it! <small class="text-muted">/ Choose the perfect place and meet with cool people!</small></h2>
+        <h4 class="card-title pricing-card-title"><small class="text-muted"> It's pretty simple, just login then search a place near by to eat! and share it!, you'll surprise how many people are interested in the same food as you!</small></h4>
       </div>
-      <div class="card-body">
-        <p>It's pretty simple, just login then search a place near by to eat! and share it!, you'll surprise how many people are interested in the same food as you!</p>
-        <div class="row" >
-        <div class="col-6 col-md">
-        <h5 >Features</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="#">*Find Close Places</a></li>
-          <li><a class="text-muted" href="#">*Put your comments!</a></li>
-          <li><a class="text-muted" href="#">*Choose your own avatar</a></li>
-          <li><a class="text-muted" href="#">*Share!</a></li>
-        </ul>
-      </div>
-       <div class="col-6 col-md">
-        <h5>Meet&eat</h5>
-        <img src="images/logo.jpg" class="tar rounded-circle" style="width: 30%">
    	 </div>
-    </div>
+
+      <div class="square">
+        <div class="header textcolorbox">
+          <h4>Meet!</h4>
+        </div>
+
       </div>
+
+      <div id="second" class="square">
+        <h2>Eat!</h2>
+      </div>
+
+      <div class="square">
+        <div class="header textcolorbox">
+          <h4>Explore!</h4>
+        </div>
+
+      </div>
+
+      <div class="square">
+        <div class="header textcolorbox">
+          <h4>Have Fun!</h4>
+        </div>
+
+      </div>
+
     </div>
-  </div>
+
 </body></html>
+
+<style>
+  #first
+  {
+    background-image: url('https://www.elitesingles.co.uk/sites/www.elitesingles.co.uk/files/styles/elite_rectangle_article_arrow_left_frame/public/170412_el_ta_teaser_30.jpg');
+  }
+  #second
+  {
+    background-image: url('https://theresident.wpms.greatbritishlife.co.uk/wp-content/uploads/sites/10/2018/11/The-Meet-The-Forager-21-200x150.jpg');
+  }
+  #third
+  {
+
+  }
+  #fourth
+  {
+
+  }
+  .header
+    {
+
+    }
+  .square
+  {
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    margin-top: 60px;
+    margin-left: 60px;
+    float: left;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    -webkit-box-shadow: 5px 5px 15px 5px #000000;
+    box-shadow: 1px 1px 1px 2px #000000;
+  }
+
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+  .textcolor {
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+   }
+   .textcolorbox {
+     color: black;
+     text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+    }
+</style>
