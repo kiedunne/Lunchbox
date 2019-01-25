@@ -9,23 +9,6 @@
     <!-- Bootstrap core CSS -->
 <link href="/docs/4.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
-
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-      .textcolor {
-        color: white;
-        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-       }
-    </style>
     <!-- Custom styles for this template -->
     <link href="pricing.css" rel="stylesheet">
   <style type="text/css">
@@ -35,33 +18,122 @@
   <body>
 
 <div class="pricing-header mx-auto text-center">
-  <h1 class="display-4"><h1 class="textcolor">About Meet & Eat</h1></h1>
-  <h3 class="textcolor" >The perfect place to find food, friends and a whole lot of fun!</h3>
+  <h1 class="textcolor">Meet & Eat</h1>
+  <h3 class="textcolor" >The perfect place to find food, friends and a whole lot of fun!</h3><br>
 </div>
 
-<div class="container">
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-        <h2 class="card-title pricing-card-title">Join it! <small class="text-muted">/ Choose the perfect place and meet with cool people!</small></h2>
-      </div>
-      <div class="card-body">
-        <p>It's pretty simple, just login then search a place near by to eat! and share it!, you'll surprise how many people are interested in the same food as you!</p>
-        <div class="row" >
-        <div class="col-6 col-md">
-        <h5 >Features</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="#">*Find Close Places</a></li>
-          <li><a class="text-muted" href="#">*Put your comments!</a></li>
-          <li><a class="text-muted" href="#">*Choose your own avatar</a></li>
-          <li><a class="text-muted" href="#">*Share!</a></li>
-        </ul>
-      </div>
+  <div class="container">
+      <div class="card mb-4 shadow-sm">
+        <div class="card-header">
+          <h4 class="card-title pricing-card-title"><small class="text-muted"> It's pretty simple, just login then search a place near by to eat! and share it!, you'll surprise how many people are interested in the same food as you!</small></h4>
+        </div>
+     	 <div class="card-body">
+         <div class="row" >
        <div class="col-6 col-md">
-        <h5>Meet&eat</h5>
-        <img src="images/logo.jpg" class="tar rounded-circle" style="width: 30%">
-   	 </div>
-    </div>
+
+         <div class="textcenter">
+          <h2 class="words">Meet!</h2>
+          <div id="first" class="square">
+          </div>
+        </div>
+
+        <div class="textcenter">
+          <h2 class="words">Eat!</h2>
+          <div id="second" class="square">
+          </div>
+        </div>
+
+        <div class="textcenter">
+          <h2 class="words">Explore!</h2>
+          <div id="third" class="square">
+          </div>
+        </div>
       </div>
     </div>
   </div>
+</div>
+
+
 </body></html>
+
+<style>
+  .words
+  {
+    margin-left: 120px;
+  }
+
+  .textcenter
+  {
+    text-align: center;
+    float: left;
+  }
+
+  #first
+  {
+    background-image: url('https://image.flaticon.com/icons/svg/490/490357.svg');
+  }
+  #second
+  {
+    background-image: url('https://image.flaticon.com/icons/svg/433/433138.svg');
+  }
+  #third
+  {
+    background-image: url('https://image.flaticon.com/icons/svg/1253/1253719.svg');
+  }
+  .header
+    {
+
+    }
+  .square
+  {
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    margin-top: 40px;
+    margin-left: 120px;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    -webkit-box-shadow: 5px 5px 15px 5px white;
+    box-shadow: 2px 2px 2px 3px white;
+    border-radius: 12px;
+    transform: rotate(0deg);
+  }
+#first:hover {
+  transform: rotate(10deg);
+}
+#second:hover {
+  transform: rotate(10deg);
+}
+#third:hover {
+transform: rotate(10deg);
+}
+#fourth:hover {
+transform: rotate(10deg);
+}
+
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+  .textcolor {
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+   }
+   .textcolorbox {
+     color: black;
+     text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+    }
+</style>
