@@ -40,7 +40,7 @@
             <% end %>
           <% end %>
 
-      </div>
+      </div><br>
 
       <% if current_user.id == @spot.user_id %>
         <div class="spot-user-options">
@@ -71,8 +71,11 @@
         </div>
         <% end %>
         <% end %>
+        <div id="comments">
+          <button type="button" class="btn btn-secondary" onclick="showComments()">Comments</button>
+        </div>
         <div class="card-body">
-        <h3>Comments</h3>
+          <div id="UserComments" style="display:none;">
               <% @spot.comments.each do |comment| %>
               <div>
 
@@ -83,6 +86,12 @@
                       <%= link_to profile_path(user.id) do %>
                         <% if user.avatar.attached? %>
                           <%= image_tag user.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
+                            <% if current_user.id == comment.user_id %>
+                              <%= link_to 'X', [comment.spot, comment],
+                                method: :delete,
+                                data: { confirm: 'Are you sure?'},
+                                class: "red  btn-sm" %>
+                            <% end %>
                         <% else %>
                           <%= image_tag gravatar_image_url(user.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
                         <% end %>
@@ -116,12 +125,20 @@
               <% end %>
               </div>
         </div>
-  </div>
-
-
+      </div>
+    </div>
   </div>
 
     <style>
+      #comments
+      {
+        margin-top: 15px;
+      }
+      .red
+      {
+        color: white;
+        background-color: red;
+      }
     #created-at{
       padding:10px;
       float: right;
@@ -177,11 +194,12 @@
       display: flex;
       flex-direction: row;
       padding-top: 10px;
+
     }
 
     .spot-user-options {
       display: flex;
-      flex-direction: row;
+      float:left;
       justify-content: flex-end;
       padding-top: 10px;
     }
