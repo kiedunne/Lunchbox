@@ -1,29 +1,8 @@
 <div class='profile-container'>
   <div class='user-info'>
-    <% if @user.avatar.attached? %>
-      <%= image_tag @user.avatar, height: 100, width: 100, class: "tar rounded-circle" %>
-    <% else %>
-      <%= image_tag gravatar_image_url(@user.email, size: 75), height: 100, width: 100, class: "tar rounded-circle" %>
-    <% end %>
+    <%= render 'profile_avatar' %>
     <h1><%= @user.username %></h1>
-
-    <h2>Preference: <%= @user.diet %></h2><br>
-
-    <% if @user.diet == "Vegetarian" || @user.diet == "vegetarian" %>
-      <img src="/images/vegetarian.jpg" style="100px; height: 100px;"></img>
-    <% elsif @user.diet == "Vegan" || @user.diet == "vegan" %>
-      <img src="/images/plant.jpg" style="100px; height: 100px;"></img>
-    <% elsif @user.diet == "Pescetarian" || @user.diet == "pescetarian" %>
-      <img src="/images/pescetarian.jpg" style="100px; height: 100px;"></img>
-    <% elsif @user.diet == "Standard" || @user.diet == "standard" || @user.diet == "Any" || @user.diet == "any" %>
-      <img src="/images/chicken.jpg" style="100px; height: 100px;"></img>
-    <% elsif @user.diet == "Lacto-vegetarian" || @user.diet == "lacto-vegetarian" || @user.diet == "Lacto-Vegetarian" %>
-      <img src="/images/milk.jpg" style="100px; height: 100px;"></img>
-    <% elsif @user.diet == "Ovo-vegetarian" || @user.diet == "ovo-vegetarian" || @user.diet == "Ovo-Vegetarian" %>
-      <img src="/images/egg.jpg" style="100px; height: 100px;"></img>
-    <% else %>
-      <p>You need to choose a different dietery preference</p>
-    <% end %><br>
+    <%= render 'profile_diet_pref' %>
   </div>
 
   <div class='user-buttons'>
@@ -33,92 +12,12 @@
       <%= render 'other_user_profile_options' %>
     <% end %>
   </div>
-
 </div>
 
 <div id="UserPosts" style="display:none;">
-    <div class="container">
+  <%= render 'profile_user_spots' %>
+</div>
 
-      <% if @spots != nil %>
-        <% @spots.each do |spot| %>
-          <div class="card-total">
-            <%= link_to spot_path(spot) do %>
-            <% end %>
-              <div class="card-body">
-                <h2><%= spot.datestring %></h2>
-                <iframe
-                  width="600"
-                  height="450"
-                  frameborder="0" style="border:0"
-                  src="https://www.google.com/maps/embed/v1/place?key=<%=ENV['google_maps_api_key']%>
-                    &q=<%="#{spot.spot}"%>+<%="#{spot.location}"%>" allowfullscreen>
-                </iframe>
-                <div class="spot-title-time"
-                  <h1><a class="spot-title"<%= link_to spot.spot, spot_path(spot)%></a></h1>
-                  <p class="spot-time"><%= spot.time_start %> - <%= spot.time_end %></p>
-                </div>
-                <p><%= spot.location %></p>
-                <p><%= spot.info %></p>
-
-              <div class="spot-followers"
-                <img><% @users.each do |user| %>
-                  <% if user.id == spot.user_id %>
-                    <%= link_to profile_path(user.id) do %>
-                      <% if user.avatar.attached? %>
-                        <%= image_tag user.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
-                      <% else %>
-                        <%= image_tag gravatar_image_url(user.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
-                      <% end %>
-                    <% end %>
-                  <% end %>
-                <% end %>
-                </img>
-                <img><% spot.followers.each do |follower| %>
-                  <%= link_to profile_path(follower.id) do %>
-                    <% if follower.avatar.attached? %>
-                      <%= image_tag follower.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
-                    <% else %>
-                      <%= image_tag gravatar_image_url(follower.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
-                    <% end %>
-                  <% end %>
-                <% end %>
-                </img>
-              </div>
-              <% if spot.user_id != current_user.id %>
-                <% if spot.followed_by?(current_user) %>
-                <div class="spot-user-options">
-                  <div class="spot-user-option">
-                    <%= form_tag unfollow_spot_path(id: spot.id), method: :post, data: {confirm: 'You monster.'}, remote: true do  %>
-                    <%= button_tag 'Leave Spot', :class => 'btn btn-danger' %><% end %>
-                  </div>
-                </div>
-                <% else %>
-                <div class="spot-user-options">
-                  <div class="spot-user-option">
-                    <%= form_tag follow_spot_path(id: spot.id), method: :post, data: {confirm: 'Joined a lunch spot!'}, remote: true do  %>
-                    <%= button_tag 'Join Spot', :class => 'btn btn-success' %><% end %>
-                  </div>
-                </div>
-                <% end %>
-              <% end %>
-
-                <div class="spot-user-options">
-                  <% if current_user.id == @user.id %>
-                  <div class="spot-user-option">
-                    <%= link_to "Edit", edit_spot_path(spot.id), :class => 'btn btn-info' %>
-                  </div>
-                  <div class="spot-user-option">
-                    <%= link_to "Delete", spot_path(spot.id), method: :delete,data: {confirm: 'Delete your spot?'}, :class => 'btn btn-danger' %>
-                  </div>
-                </div>
-                  <% end %>
-              </div>
-
-            </div>
-          <% end %>
-        </div>
-    <% end %>
-  </div>
 
   <div id="UserFollowingPosts" style="display:block;">
       <div class="container">
