@@ -2,7 +2,7 @@
 <h1 class ="text">Hi, <%= current_user.username %>!  Where do you feel like lunching today?</h1>
 
 <div class="container">
-  <% @spots.each do |spot| %>
+<% @spots.each do |spot| %>
 
       <div class="card-total">
         <%= link_to spot_path(spot) do %>
@@ -17,6 +17,7 @@
             src="https://www.google.com/maps/embed/v1/place?key=<%=ENV['google_maps_api_key']%>
               &q=<%="#{spot.spot}"%>+<%="#{spot.location}"%>" allowfullscreen>
             </iframe>
+            
             <div class="spot-title-time"
               <h1><a class="spot-title"<%= link_to spot.spot, spot_path(spot)%></a></h1>
               <p class="spot-time"><%= spot.time_start %> - <%= spot.time_end %></p>

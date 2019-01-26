@@ -1,26 +1,26 @@
 <div class="container">
+  <% @spots.each do |spot| %>
 
-  <% if @spots != nil %>
-    <% @spots.each do |spot| %>
+    <div class="card-total">
+      <%= link_to spot_path(spot) do %>
+      <% end %>
 
-      <div class="card-total">
-        <%= link_to spot_path(spot) do %> <% end %>
+    <div class="card-body">
+      <h2><%= spot.datestring %></h2>
+        <iframe
+          width="600"
+          height="450"
+          frameborder="0" style="border:0"
+          src="https://www.google.com/maps/embed/v1/place?key=<%=ENV['google_maps_api_key']%>
+          &q=<%="#{spot.spot}"%>+<%="#{spot.location}"%>" allowfullscreen>
+          </iframe>
 
-      <div class="card-body">
-            <h2><%= spot.datestring %></h2>
-            <iframe
-              width="600"
-              height="450"
-              frameborder="0" style="border:0"
-              src="https://www.google.com/maps/embed/v1/place?key=<%=ENV['google_maps_api_key']%>
-                &q=<%="#{spot.spot}"%>+<%="#{spot.location}"%>" allowfullscreen>
-            </iframe>
-            <div class="spot-title-time"
-              <h1><a class="spot-title"<%= link_to spot.spot, spot_path(spot)%></a></h1>
-              <p class="spot-time"><%= spot.time_start %> - <%= spot.time_end %></p>
-            </div>
-            <p><%= spot.location %></p>
-            <p><%= spot.info %></p>
+      <div class="spot-title-time"
+        <h1><a class="spot-title"<%= link_to spot.spot, spot_path(spot)%></a></h1>
+        <p class="spot-time"><%= spot.time_start %> - <%= spot.time_end %></p>
+      </div>
+      <p><%= spot.location %></p>
+      <p><%= spot.info %></p>
 
           <div class="spot-followers"
             <img><% @users.each do |user| %>
@@ -72,10 +72,9 @@
               <div class="spot-user-option">
                 <%= link_to "Delete", spot_path(spot.id), method: :delete,data: {confirm: 'Delete your spot?'}, :class => 'btn btn-danger' %>
               </div>
-              <% end %>
             </div>
-          </div>
-        <% end %>
-      <% end %>
+              <% end %>
+        </div>
       </div>
-    </div>
+    <% end %>
+  </div>
