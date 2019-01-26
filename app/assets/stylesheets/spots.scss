@@ -78,12 +78,17 @@ p.spot-time {
   color: white;
   background-color: red;
 }
-#created-at{
+#comment-created-at{
 padding:10px;
 float: right;
 }
-#comment-picture{
+#each-comment{
+padding: 10px;
+}
+#comments-content{
 float:left;
+display: flex;
+flex-direction: row;
 
 }
 #comment-body {
@@ -91,4 +96,12 @@ float:left;
   float:left;
   width: 80%;
   word-wrap:break-word;
+}
+.comments-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+#UserComments {
+  padding-top: 20px;
 }
