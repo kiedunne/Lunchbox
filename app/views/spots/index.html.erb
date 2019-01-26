@@ -1,3 +1,4 @@
+<%= stylesheet_link_tag 'spots', 'data-turbolinks-track': 'reload' %>
 
 <h1 class ="text">Hi, <%= current_user.username %>!  Where do you feel like lunching today?</h1>
 
@@ -17,7 +18,7 @@
             src="https://www.google.com/maps/embed/v1/place?key=<%=ENV['google_maps_api_key']%>
               &q=<%="#{spot.spot}"%>+<%="#{spot.location}"%>" allowfullscreen>
             </iframe>
-            
+
             <div class="spot-title-time"
               <h1><a class="spot-title"<%= link_to spot.spot, spot_path(spot)%></a></h1>
               <p class="spot-time"><%= spot.time_start %> - <%= spot.time_end %></p>
@@ -71,66 +72,3 @@
       </div>
   <% end %>
 </div>
-
-<style>
-.text {
-  text-align: center;
-}
-a.spot-title {
-  font-size: 30px;
-  text-decoration: none;
-  color: inherit;
-  font-weight: bold;
-  font-size: 40px;
-}
-
-.spot-title-time {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: space-between;
-  font-size: 20px;
-}
-
-p.spot-time {
-  text-align: right;
-}
-.card-total {
-  border-style: solid;
-  border-color: grey;
-  border-radius: 25px;
-  width: 59%;
-  margin: 20px;
-}
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.card-body {
-  padding: 30px;
-}
-
-.card-img-top {
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-}
-
-.spot-followers {
-  display: flex;
-  flex-direction: row;
-  padding-top: 10px;
-}
-
-.spot-user-options {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  padding-top: 10px;
-}
-
-.spot-user-option {
-  padding: 5px;
-}
-</style>

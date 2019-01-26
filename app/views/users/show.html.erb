@@ -2,7 +2,6 @@
 <%= stylesheet_link_tag 'users', 'data-turbolinks-track': 'reload' %>
 
 <div class='profile-container'>
-
   <div class='user-info'>
     <%= render 'profile_avatar' %>
     <h1><%= @user.username %></h1>
@@ -16,15 +15,12 @@
       <%= render "other_user_profile_options" %>
     <% end %>
   </div>
-
 </div>
 
-<div>
 <div id="UserFollowingPosts" style="display:block;">
   <%= render 'profile_followed_spots' %>
 </div>
 
 <div id="UserPosts" style="display:block;">
   <%= render 'profile_user_spots' %>
-</div>
 </div>

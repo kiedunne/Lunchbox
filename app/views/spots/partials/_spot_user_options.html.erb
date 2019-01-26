@@ -1,0 +1,7 @@
+
+<div class="spot-user-option">
+  <%= link_to "Edit", edit_spot_path(@spot), :class => 'btn btn-info' %>
+</div>
+<div class="spot-user-option">
+  <%= link_to "Delete", spot_path(@spot), method: :delete,data: {confirm: 'Delete your spot?'}, :class => 'btn btn-danger' %>
+</div>

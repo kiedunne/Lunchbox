@@ -49,6 +49,9 @@ class SpotsController < ApplicationController
     redirect_to spots_path
   end
 
+  def find
+    @spot = Spot.find(params[:id])
+  end
 private
 
   def post_params

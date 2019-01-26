@@ -1,3 +1,94 @@
 // Place all the styles related to the spots controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.text {
+  text-align: center;
+}
+a.spot-title {
+  font-size: 30px;
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.spot-title-time {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  font-size: 20px;
+}
+
+p.spot-time {
+  text-align: right;
+}
+.card-total {
+  border-style: solid;
+  border-color: grey;
+  border-radius: 25px;
+  width: 59%;
+  margin: 20px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-body {
+  padding: 30px;
+}
+
+.card-img-top {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.spot-followers {
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+}
+
+.spot-user-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-top: 10px;
+}
+
+.spot-user-option {
+  padding: 5px;
+}
+
+.spot-follow-avatars {
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+}
+
+#comments
+{
+  margin-top: 15px;
+}
+.red
+{
+  color: white;
+  background-color: red;
+}
+#created-at{
+padding:10px;
+float: right;
+}
+#comment-picture{
+float:left;
+
+}
+#comment-body {
+  padding: 10px;
+  float:left;
+  width: 80%;
+  word-wrap:break-word;
+}
