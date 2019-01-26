@@ -1,26 +1,24 @@
 
-<%= stylesheet_link_tag 'users', 'data-turbolinks-track': 'reload' %>
-
 <div class='profile-container'>
   <div class='user-info'>
-    <%= render 'profile_avatar' %>
+    <%= render 'users/profile_images_partials/profile_avatar' %>
     <h1><%= @user.username %></h1>
-    <%= render 'profile_diet_pref' %>
+    <%= render 'users/profile_images_partials/profile_diet_pref' %>
   </div>
 
   <div class='user-buttons'>
     <% if current_user.id == @user.id %>
-      <%= render "current_user_profile_options" %>
+      <%= render "users/profile_options_partials/current_user_profile_options" %>
     <% else %>
-      <%= render "other_user_profile_options" %>
+      <%= render "users/profile_options_partials/other_user_profile_options" %>
     <% end %>
   </div>
 </div>
 
 <div id="UserFollowingPosts" style="display:block;">
-  <%= render 'profile_followed_spots' %>
+  <%= render 'users/profile_spots_partials/profile_followed_spots' %>
 </div>
 
 <div id="UserPosts" style="display:block;">
-  <%= render 'profile_user_spots' %>
+  <%= render 'users/profile_spots_partials/profile_user_spots' %>
 </div>

@@ -1,10 +1,29 @@
 // Place all the styles related to the spots controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-.text {
+.text
+{
   text-align: center;
 }
+#form-group
+{
+  -webkit-box-shadow: 5px 5px 15px 5px #000000;
+  box-shadow: 1px 1px 1px 2px #000000;
+  background-color: white;
+  width: 43%;
+  margin: auto;
+  border-radius: 10px;
+}
+.form{
+  padding: 10px;
+  text-align: center;
+  margin: auto;
+}
+#avatar
+{
+  margin-left: 30%;
+}
+
 a.spot-title {
   font-size: 30px;
   text-decoration: none;
@@ -67,41 +86,4 @@ p.spot-time {
   display: flex;
   flex-direction: row;
   padding-top: 10px;
-}
-
-#comments
-{
-  margin-top: 15px;
-}
-.red
-{
-  color: white;
-  background-color: red;
-}
-#comment-created-at{
-padding:10px;
-float: right;
-}
-#each-comment{
-padding: 10px;
-}
-#comments-content{
-float:left;
-display: flex;
-flex-direction: row;
-
-}
-#comment-body {
-  padding: 10px;
-  float:left;
-  width: 80%;
-  word-wrap:break-word;
-}
-.comments-flex {
-  display: flex;
-  flex-direction: column;
-}
-
-#UserComments {
-  padding-top: 20px;
 }
