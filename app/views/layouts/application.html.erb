@@ -7,9 +7,10 @@
     <%= stylesheet_link_tag    'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' %>
     <%= stylesheet_link_tag    'https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag    'users', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag    'spots', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'users', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'spots', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag    'comments', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'home', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag 'users' %>
@@ -18,9 +19,9 @@
     <div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light ">
       <% if user_signed_in? %>
-        <a><%= link_to "Meet & Eat", authenticated_root_path, class: "navbar-brand" %></a>
+        <a><%= link_to "M + E", authenticated_root_path, class: "navbar-brand" %></a>
       <% else %>
-        <a><%= link_to "Meet & Eat", unauthenticated_root_path, class: "navbar-brand" %></a>
+        <a><%= link_to "M + E", unauthenticated_root_path, class: "navbar-brand" %></a>
       <% end %>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -49,11 +50,3 @@
 
   </body>
 </html>
-<style>
-  .html {
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-  </style>
