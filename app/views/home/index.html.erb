@@ -6,8 +6,8 @@
     <div class="bkg-animated">
       <div class="home-logo">M + E</div><br>
       <div class="button-container">
-        <button class="home-buttons" onclick="openForm()" id="signup-button">SIGN UP</button>
-        <button class="home-buttons">LOGIN</button>
+        <button class="home-buttons-signup" onclick="openForm()" id="signup-button">SIGN UP</button>
+        <button class="home-buttons-login" id="signin-button">LOGIN</button>
       </div>
     </div>
 
@@ -48,12 +48,12 @@
       </div>
 
       <div class="diet-options">
-        <div class="icon-hover"><img src="/images/chicken.jpg" alt = "omnivore" id = "icon" onclick = "omniAdd()"></div>
-        <div class="icon-hover"><img src="/images/plant.jpg" alt = "vegan" id = "icon" onclick = "veganAdd()"></div>
-        <div class="icon-hover"><img src="/images/milk.jpg" alt = "lacto vegetarian" id = "icon" onclick = "lactoAdd()"></div>
-        <div class="icon-hover"><img src="/images/vegetarian.jpg" alt = "vegetarian" id = "icon" onclick = "veggieAdd()"></div>
-        <div class="icon-hover"><img src="/images/fish.jpg" alt = "pescetarian" id = "icon" onclick = "pesciAdd()"></div>
-        <div class="icon-hover"><img src="/images/egg.jpg" alt = "ovo-vegetarian" id = "icon" onclick = "ovoAdd()"></div>
+        <div class="icon-hover"><img src="/images/color_diet_icons/chicken.png" alt = "omnivore" id = "icon" onclick = "omniAdd()"></div>
+        <div class="icon-hover"><img src="/images/color_diet_icons/plant.png" alt = "vegan" id = "icon" onclick = "veganAdd()"></div>
+        <div class="icon-hover"><img src="/images/color_diet_icons/cow.png" alt = "lacto vegetarian" id = "icon" onclick = "lactoAdd()"></div>
+        <div class="icon-hover"><img src="/images/color_diet_icons/carrot.png" alt = "vegetarian" id = "icon" onclick = "veggieAdd()"></div>
+        <div class="icon-hover"><img src="/images/color_diet_icons/fish.png" alt = "pescetarian" id = "icon" onclick = "pesciAdd()"></div>
+        <div class="icon-hover"><img src="/images/color_diet_icons/egg.png" alt = "ovo-vegetarian" id = "icon" onclick = "ovoAdd()"></div>
       </div>
 
       <div class="actions">
@@ -64,5 +64,37 @@
     </div>
   </div>
 
-      </body>
+
+  <div id="formGroupSignIn">
+    <div class="popup-form">
+      <a id="close-signin-button" >X</a><br>
+      <h2>Log in</h2>
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "off", class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password %><br />
+      <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+    </div>
+
+    <% if devise_mapping.rememberable? -%>
+      <div class="field">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+      </div><br>
+    <% end -%>
+
+    <div class="actions">
+      <%= f.submit "Log in", class: "submit-button" %>
+    </div>
+  <% end %><br>
+
+  </div>
+</div>
+
+</body>
 </html>

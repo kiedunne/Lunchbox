@@ -9,6 +9,7 @@ h2 {
 body {
   background-image:url("superfoods_infinite.png");
   box-sizing: border-box;
+  background-size: cover;
   -webkit-animation: slide 20s linear infinite;
   background-size: contain;
   -webkit-background-size: cover;
@@ -20,8 +21,8 @@ body {
 }
 
 .bkg-animated{
-  display: flex;
-  flex-direction:column;
+  // display: flex;
+  // flex-direction:column;
 }
 .html {
   -webkit-background-size: cover;
@@ -32,45 +33,68 @@ body {
 
 .home-logo {
   background-color: white;
-  color: #ecd7d6;
-  font-size: 10vw;
+  color: #25988b;
+  font-size: 10vw; /* Responsive font size */
   font-weight: bold;
-  margin: 0 auto;
+  margin: 0 auto; /* Center the text container */
   padding: 10px;
   width: 50%;
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -90%);
-//     // mix-blend-mode: screen; /* This makes the cutout text possible */
+  text-align: center; /* Center text */
+  position: absolute; /* Position text */
+  top: 40%; /* Position text in the middle */
+  left: 50%; /* Position text in the middle */
+  transform: translate(-50%, -50%); /* Position text in the middle */
+  mix-blend-mode: screen; /* This makes the cutout text possible */
 }
 
-.home-buttons {
-  background-color: white;
+.home-buttons-login {
+  position: absolute;
   color: #ecd7d6;
   font-size: 3vw;
-  font-weight: bold;
-  text-align: center;
-  outline: none;
-  margin: 20px;
-
-  width: 130%;
+  margin: 0 auto; /* Center the text container */
+  padding: 10px;
+  width: 30%;
+  text-align: center; /* Center text */
+  position: absolute; /* Position text */
+  top: 65%; /* Position text in the middle */
+  left: 50%; /* Position text in the middle */
+  transform: translate(-50%, -50%);
+  border: none;
 }
-.home-buttons:hover {
-  color: #25988b;
-  outline: none;
-}
-.home-buttons:active {
-  color: #25988b;
-  outline: none;
-}
-.button-container {
+.home-buttons-signup {
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(5%, 50%);
-  display: inline-block;
+  color: #ecd7d6;
+  font-size: 3vw;
+  margin: 0 auto; /* Center the text container */
+  padding: 10px;
+  width: 30%;
+  text-align: center; /* Center text */
+  position: absolute; /* Position text */
+  top: 80%; /* Position text in the middle */
+  left: 50%; /* Position text in the middle */
+  transform: translate(-50%, -50%);
+  outline: none;
+  border: none;
+}
+.home-buttons-signup:hover {
+  color: #25988b;
+  outline: none;
+    border: none;
+}
+.home-buttons-signup:active {
+  color: #25988b;
+  outline: none;
+  border: none;
+}
+.home-buttons-login:hover {
+  color: #25988b;
+  outline: none;
+    border: none;
+}
+.home-buttons-login:active {
+  color: #25988b;
+  outline: none;
+  border: none;
 }
 
 #close-button {
@@ -78,7 +102,11 @@ body {
   font-style: bold;
   float: right;
 }
-
+#close-signin-button {
+  font-size: 60px;
+  font-style: bold;
+  float: right;
+}
 #formGroup {
   color: white;
   text-align: center;
@@ -99,6 +127,26 @@ body {
   animation:fadein .5s
   }
 
+  #formGroupSignIn {
+    color: white;
+    text-align: center;
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    padding: 20px;
+    padding-top: 50px; /* Location of the box */
+    left: 50%;
+    top: 50%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(#25988b, 1.0); /* Black w/ opacity */
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    animation:fadein .5s
+    }
+
 .popup-form {
   left: 50%;
   top: 50%;
@@ -110,6 +158,7 @@ body {
   background-color: transparent;
   border-style: none;
   outline: none;
+  margin: 5px;
 }
 
   @keyframes fadein {
@@ -122,53 +171,55 @@ body {
   }
 
   input.submit-button {
-  font-weight: bold;
-  background-color: #ecd7d6;
-  font-size: 30px;
-  color: #25988b;
-  border: 0px;
-  border-radius: 10px;
-  width: 30%;
+    font-weight: bold;
+    background-color: white;
+    font-size: 30px;
+    color: #25988b;
+    border: 0px;
+    border-radius: 10px;
+    width: 30%;
 }
-  input[type=submit]:hover:select {
+  input[type=submit]:hover {
     opacity: 0.5;
   }
   input[type=text],input[type=email],input[type=username],input[type=password],input[type=password_confirmation]  {
     background-color: transparent;
     font-size: 30px;
     color: #ecd7d6;
+    text-align: center;
+    padding: 30px;
     border-style: solid;
     border-radius: 20px;
     border-width: 5px;
     border-color: white;
-    outline: none;
-    text-align: left;
+
   }
-  input[type=text],input[type=email],input[type=username],input[type=password],input[type=password_confirmation]  {
+  input[type=text],input[type=email],input[type=username],input[type=password],input[type=password_confirmation]:active  {
     background-color: transparent;
     font-size: 30px;
     color: #ecd7d6;
+    text-align: center;
+    padding: 30px;
     border-style: solid;
     border-width: 5px;
     border-radius: 20px;
     border-color: white;
-    outline: none;
-    text-align: left;
+
   }
   input[type=text],input[type=email],input[type=username],input[type=password],input[type=password_confirmation]:focus  {
     background-color: transparent;
-    font-size: 30px;
-    color: #ecd7d6;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    margin: 10px;
     border-style: solid;
     border-width: 5px;
     border-radius: 20px;
-    border-color:  white;
-    outline: none;
-    text-align: left;
+    border-color: white;
+
   }
-label {
-    text-align: left;
-}
+
+
 .diet-options {
   padding: 20px;
   display: inline-block;
@@ -176,6 +227,7 @@ label {
 #icon {
   height: 40%;
   width: 40%;
+  padding-bottom: 20px;
 }
 div.icon-hover {
   display: inline-block;
@@ -183,9 +235,6 @@ div.icon-hover {
 }
 
 div.icon-hover:hover {
-  background-color: #ecd7d6;
-  border-radius: 50%;
-  width: 30%;
   display: inline-block;
   -webkit-animation-name: wiggle;
   -ms-animation-name: wiggle;
