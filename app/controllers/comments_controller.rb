@@ -20,6 +20,7 @@ class CommentsController < ApplicationController
   end
 
   def merge_params
-    comment_params.merge(username: current_user.username, user_id: current_user.id, useravatar: current_user.avatar)
+    comment_params.merge(username: current_user.username,
+      user_id: current_user.id, useravatar: current_user.avatar)
   end
 end

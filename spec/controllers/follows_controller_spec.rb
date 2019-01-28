@@ -23,7 +23,11 @@ RSpec.describe FollowsController, type: :controller do
 	 describe "Follow #unfollow" do
 		 	it "respond with 302 if unfollow" do
 				  post :unfollow, params: { id: test_spot.id }
-					 expect(response.status).to eq(302)	 
+					 expect(response.status).to eq(302)
 		 	end
+	 end
+
+	 after :each do
+		 	sign_out(user)
 	 end
 end
