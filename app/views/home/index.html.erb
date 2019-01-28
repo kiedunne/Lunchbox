@@ -13,7 +13,8 @@
 
   <div id="formGroup">
     <div class="popup-form">
-    <h2>Sign up</h2>
+      <a class="close-button" onclick="closeForm()">X</a><br>
+      <h2>Sign up</h2>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
@@ -29,11 +30,6 @@
       </div>
 
       <div class="field">
-        <%= f.label :dietery_preference %><br />
-        <%= f.text_field :diet, autofocus: true, autocomplete: "email", class: "form-control" %>
-      </div>
-
-      <div class="field">
         <%= f.label :password %>
         <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> characters minimum)</em>
@@ -46,11 +42,25 @@
         <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
       </div><br>
 
+      <div class="field">
+        <%= f.label :dietery_preference %><br />
+        <%= f.text_field :diet, autofocus: true, id: "diet-pref", class: "form-control" %>
+      </div>
+
+      <div class="diet-options">
+        <div class="icon-hover"><img src="/images/chicken.jpg" alt = "omnivore" id = "icon" onclick = "omniAdd()"></div>
+        <div class="icon-hover"><img src="/images/plant.jpg" alt = "vegan" id = "icon" onclick = "veganAdd()"></div>
+        <div class="icon-hover"><img src="/images/milk.jpg" alt = "lacto vegetarian" id = "icon" onclick = "lactoAdd()"></div>
+        <div class="icon-hover"><img src="/images/vegetarian.jpg" alt = "vegetarian" id = "icon" onclick = "veggieAdd()"></div>
+        <div class="icon-hover"><img src="/images/fish.jpg" alt = "pescetarian" id = "icon" onclick = "pesciAdd()"></div>
+        <div class="icon-hover"><img src="/images/egg.jpg" alt = "ovo-vegetarian" id = "icon" onclick = "ovoAdd()"></div>
+      </div>
+
       <div class="actions">
         <%= f.submit "Sign up", class: "btn btn-primary" %>
       </div><br>
     <% end %>
-    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+
     </div>
   </div>
 

@@ -1,6 +1,19 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+h2 {
+  font-size: 80px;
+  font-style: bold;
+  padding: 40px;
+  text-align: center;
+}
+
+.close-button {
+  font-size: 60px;
+  font-style: bold;
+  float: right;
+  padding:20px;
+}
 
 #formGroup {
   color: white;
@@ -8,13 +21,13 @@
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 2; /* Sit on top */
-  padding: 40px;
-  padding-top: 100px; /* Location of the box */
+  padding: 20px;
+  padding-top: 50px; /* Location of the box */
   left: 50%;
   top: 50%;
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(#25988b, 0.7); /* Black w/ opacity */
+  background-color: rgba(#25988b, 0.9); /* Black w/ opacity */
   transform: translate(-50%, -50%);
   border-radius: 10px;
   width: 100%;
@@ -24,10 +37,22 @@
 .popup-form {
   left: 50%;
   top: 50%;
+  margin: 500px;
+  margin-top: 100px;
 
 }
 .field {
-  width: 30%;
+  padding: 20px;
+  background-color: transparent;
+  border-style: none;
+  outline: none;
+}
+input {
+  font-weight: lighter;
+  font-size: 20px;
+  border-radius: 10px;
+  border-style: none;
+  outline: none;
 }
   @keyframes fadein {
   	from {
@@ -37,13 +62,14 @@
   		opacity:1;
   	}
   }
+
 .bkg-animated {
   background-image:url("superfoods_infinite.png");
   width: 100%;
   margin: 0;
   box-sizing: border-box;
-  -webkit-animation: slide 60s linear infinite;
-  height: 1200px;
+  -webkit-animation: slide 20s linear infinite;
+  height: 1300px;
   background-size: contain;
 }
 
@@ -99,11 +125,42 @@
   margin: 200px;
   padding: 20px;
   position: static;
-  // top: 120%;
-  // left: 50%;
-  transform: translate(19%, 250%);
+  transform: translate(18%, 330%);
 }
 
+.diet-options {
+  padding: 20px;
+  display: inline-block;
+}
+#icon {
+  height: 40%;
+  width: 40%;
+}
+div.icon-hover {
+  display: inline-block;
+  width: 30%;
+}
+
+div.icon-hover:hover {
+  background-color: #ecd7d6;
+  border-radius: 50%;
+  width: 30%;
+  display: inline-block;
+  -webkit-animation-name: wiggle;
+  -ms-animation-name: wiggle;
+  -ms-animation-duration: 1000ms;
+  -webkit-animation-duration: 1000ms;
+  -webkit-animation-iteration-count: 1;
+  -ms-animation-iteration-count: 1;
+}
+
+@-webkit-keyframes wiggle {
+  0% {-webkit-transform: rotate(10deg);}
+  25% {-webkit-transform: rotate(-10deg);}
+  50% {-webkit-transform: rotate(20deg);}
+  75% {-webkit-transform: rotate(-5deg);}
+  100% {-webkit-transform: rotate(0deg);}
+}
 // .notice {
 //   background-color: transparent;
 // }
