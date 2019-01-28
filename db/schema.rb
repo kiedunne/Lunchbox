@@ -62,12 +62,6 @@ ActiveRecord::Schema.define(version: 2019_01_25_134253) do
     t.index ["follower_type", "follower_id"], name: "index_follows_on_follower_type_and_follower_id"
   end
 
-  create_table "maps", force: :cascade do |t|
-    t.text "location"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "spots", force: :cascade do |t|
     t.string "spot"
     t.text "time"

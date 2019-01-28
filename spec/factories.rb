@@ -11,7 +11,12 @@ FactoryBot.define do
     password { "password" }
     username { "John" }
   end
-  
+
+  factory :follow do
+    user
+    test_spot
+  end
+
   sequence :email do |n|
     "email#{n}@gmail.com"
   end
