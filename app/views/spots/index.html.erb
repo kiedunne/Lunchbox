@@ -9,6 +9,7 @@
         <% end %>
 
           <div class="card-body">
+            <h2><%= spot.datestring %></h2>
             <iframe
             width="100%"
             height="100%"
@@ -25,6 +26,7 @@
             </div>
             <div class="fontsize">
               <p><b>Location : </b><%= spot.location %></p>
+
             </div>
             <div class="fontsize" id="redirect-to-spot">
               <p><%= link_to "Click here for more details", spot_path(spot)%></p>
