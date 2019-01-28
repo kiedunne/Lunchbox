@@ -1,0 +1,5 @@
+<h3>post a comment.</h3>
+<%= form_for ([@spot, @spot.comments.build]) do |f| %>
+  <p><%= f.text_field(:content, autocomplete: 'off', :class => 'form-control') %></p>
+  <p><%= f.submit({:class => 'btn btn-primary'}) %></p>
+<% end %>

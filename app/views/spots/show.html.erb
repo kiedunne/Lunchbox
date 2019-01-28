@@ -1,218 +1,30 @@
 
 <div class="container">
-<div class="card-total">
-  <%= link_to spot_path(@spot) do %>
-  <% end %>
 
+  <div class="card-total">
     <div class="card-body">
-      <h2><%= @spot.datestring %></h2>
-      <iframe
-      width="600"
-      height="450"
-      frameborder="0" style="border:0"
-      src="https://www.google.com/maps/embed/v1/place?key=<%=ENV['google_maps_api_key']%>
-        &q=<%="#{@spot.spot}"%>+<%="#{@spot.location}"%>" allowfullscreen>
-      </iframe>
-      <div class="spot-title-time"
-        <h1><a class="spot-title"<%= link_to @spot.spot, spot_path(@spot)%></a></h1>
-        <p class="spot-time"><%= @spot.time_start %> - <%= @spot.time_end %></p>
-      </div>
+      <%= render 'spots/partials/spot_content' %>
+      <div class="spot-follow-avatars"
+        <%= render 'follows/spot_follower_list' %>
+      </div><br>
+      <div class="spot-user-options">
+        <% if current_user.id == @spot.user_id %>
+          <%= render 'spots/partials/spot_user_options' %>
+        <% else if @spot.followed_by?(current_user) %>
+          <%= render 'follows/spot_unfollow_option' %>
 
-      <p><%= @spot.location %></p>
-      <p><%= @spot.info %></p>
-
-    <div class="spot-avatars"
-        <img><%= link_to profile_path(@user.id) do %>
-          <% if @user.avatar.attached? %>
-            <%= image_tag @user.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
-          <% else %>
-            <%= image_tag gravatar_image_url(@user.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
-          <% end %>
-        <% end %>
-        </img>
-
-        <img><% @spot.followers.each do |follower| %>
-          <%= link_to profile_path(follower.id) do %>
-            <% if follower.avatar.attached? %>
-              <%= image_tag follower.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
-            <% else %>
-              <%= image_tag gravatar_image_url(follower.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
-            <% end %>
-          <% end %>
-        <% end %>
-      </img>
-    </div><br>
-
-      <% if current_user.id == @spot.user_id %>
-        <div class="spot-user-options">
-          <div class="spot-user-option">
-            <%= link_to "Edit", edit_spot_path(@spot), :class => 'btn btn-info' %>
-          </div>
-          <div class="spot-user-option">
-            <%= link_to "Delete", spot_path(@spot), method: :delete,data: {confirm: 'Delete your spot?'}, :class => 'btn btn-danger' %>
-          </div>
-
-          <div id="comments">
-            <button type="button" class="btn btn-secondary" onclick="showComments()">Comments</button>
-          </div>
-      </div>
-
-        </div>
-    <% else %>
-        <% if @spot.followed_by?(current_user) %>
-        <div class="spot-user-options">
-          <div class="spot-user-option">
-            <%= form_tag unfollow_spot_path(id: @spot.id), method: :post, data: {confirm: 'You monster.'}, remote: true do  %>
-            <%= button_tag 'Leave Spot', :class => 'btn btn-danger' %><% end %>
-          </div>
-        </div>
         <% else %>
-        <div class="spot-user-options">
-          <div class="spot-user-option">
-            <%= form_tag follow_spot_path(id: @spot.id), method: :post, data: {confirm: 'Joined a lunch spot!'}, remote: true do  %>
-            <%= button_tag 'Join Spot', :class => 'btn btn-success' %><% end %>
-          </div>
-        </div>
+          <%= render 'follows/spot_follow_option' %>
         <% end %>
-        <% end %>
-        <% if current_user.id != @spot.user_id %>
-        <div id="comments2">
-          <button type="button" class="btn btn-secondary" onclick="showComments()">Comments</button>
-        </div>
-        <% end %>
-        <div class="card-body">
-          <div id="UserComments" style="display:none;">
-              <% @spot.comments.each do |comment| %>
-              <div>
+      <% end %>
+      </div>
+      <div id="UserComments" style="display:none;">
+        <div class="comments-flex"
+          <div id ="each-comment"><%= render 'spots/partials/spot_comments_content' %></div>
+          <div><%= render 'spots/partials/spot_comment_form' %></div>
 
-                <div id="comment-picture">
-                  <%= link_to profile_path(comment.user_id) do %>
-                  <% @users.each do |user| %>
-                    <% if user.id == comment.user_id %>
-                      <%= link_to profile_path(user.id) do %>
-                        <% if user.avatar.attached? %>
-                          <%= image_tag user.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
-                            <% if current_user.id == comment.user_id %>
-                              <%= link_to 'X', [comment.spot, comment],
-                                method: :delete,
-                                data: { confirm: 'Are you sure?'},
-                                class: "red  btn-sm" %>
-                            <% end %>
-                        <% else %>
-                          <%= image_tag gravatar_image_url(user.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
-                        <% end %>
-                      <% end %>
-                    <% end %>
-                  <% end %>
-                  <% end %>
-                </div>
-                <div id="comment-body">
-                  <p><%= comment.content%></p>
-                </div>
-                <div style="clear:both;"></div>
-                <div id="created-at">
-                  <small><%= comment.created_at %></small>
-                </div>
-                <div style="clear:both;"></div>
-                <hr>
-              </div>
-              <% end %>
-              <h3>Add comment</h3>
-            <hr>
-            <%= form_for ([@spot, @spot.comments.build]) do |f| %>
-
-              <p>
-                <%= f.label :comment %><br>
-                <%= f.text_field(:content, {:class => 'form-control'}) %>
-              </p>
-              <p>
-                <%= f.submit({:class => 'btn btn-primary'}) %>
-              </p>
-              <% end %>
-              </div>
         </div>
       </div>
-    </div>
   </div>
 
-    <style>
-      #comments2{
-        margin-top:15px;
-      }
-      #comments{
-        margin-top:5px;
-      }
-      .red
-      {
-        color: white;
-        background-color: red;
-      }
-    #created-at{
-      padding:10px;
-      float: right;
-    }
-    #comment-picture{
-      float:left;
-
-    }
-    #comment-body {
-        padding: 10px;
-        float:left;
-        width: 80%;
-        word-wrap:break-word;
-      }
-    a.spot-title {
-      font-size: 30px;
-      text-decoration: none;
-      color: inherit;
-      font-weight: bold;
-      font-size: 40px;
-    }
-
-    .spot-title-time {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-end;
-      justify-content: space-between;
-      font-size: 20px;
-    }
-    .card-total {
-      border-style: solid;
-      border-color: grey;
-      border-radius: 25px;
-      width: 59%;
-      margin: 20px;
-    }
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .card-body {
-      padding: 30px;
-    }
-
-    .card-img-top {
-      border-top-left-radius: 20px;
-      border-top-right-radius: 20px;
-    }
-
-    .spot-avatars {
-      display: flex;
-      flex-direction: row;
-      padding-top: 10px;
-
-    }
-
-    .spot-user-options {
-      display: flex;
-      float:left;
-      justify-content: flex-end;
-      padding-top: 10px;
-    }
-
-    .spot-user-option {
-      padding: 5px;
-    }
-    </style>
+</div>

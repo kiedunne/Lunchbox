@@ -2,7 +2,7 @@
 <h1 class ="text">Hi, <%= current_user.username %>!  Where do you feel like lunching today?</h1>
 
 <div class="container">
-  <% @spots.each do |spot| %>
+<% @spots.each do |spot| %>
 
       <div class="card-total">
         <%= link_to spot_path(spot) do %>
@@ -20,6 +20,7 @@
 
             <div class="spot-title-time">
               <p><small><b>Spot place : </b><%=spot.spot%></small></p>
+
             </div>
             <div class="fontsize">
               <p><b>Time : </b><%= spot.time_start %> - <%= spot.time_end %></p>
@@ -107,3 +108,4 @@ p.spot-time {
   padding: 5px;
 }
 </style>
+

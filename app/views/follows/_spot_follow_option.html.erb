@@ -1,0 +1,8 @@
+
+  <div class="spot-user-option">
+    <%= form_tag follow_spot_path(id: @spot.id), method: :post, data: {confirm: 'Joined a lunch spot!'}, remote: true do  %>
+    <%= button_tag 'Join Spot', :class => 'btn btn-success' %><% end %>
+  </div>
+  <div class="spot-user-option">
+    <button type="button" class="btn btn-secondary" onclick="showComments()">Comments</button>
+  </div>

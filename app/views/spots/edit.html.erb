@@ -1,8 +1,9 @@
+
+<%= javascript_include_tag 'spots' %>
+
 <div id="form-group">
 <div class="form text-color">
-
 <h1>Edit Spot</h1>
-
 <%= form_for :spot, url: spot_path(@spot), method: :patch do |f| %>
     <% if @spot.errors.any? %>
       <% @spot.errors.full_messages.each do |msg| %>
@@ -24,7 +25,7 @@
   </p>
 
   <p>
-    <%= f.label :datestring %><br>
+    <%= f.label :date %><br>
     <%= f.text_field(:datestring, :autocomplete => :off, :id => "datepicker", :class => 'form-control') %>
   </p>
 
@@ -55,12 +56,3 @@
 
 </div>
 </div>
-
-<script>
-  var date = new Date();
-  var today = new Date(date.getFullYear(), date.getMonth(), date.getDate());
-
-  $('#datepicker').datepicker({
-      minDate: today
-  });
-</script>
