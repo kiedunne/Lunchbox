@@ -47,16 +47,16 @@ Welcome to Meet&Eat, the best place to find friends, food and fun.
 - [Mateusz Stacel](https://github.com/mateuszstacel)
 - [Jackie Dunne](https://github.com/kiedunne)
 
-## Local installation instructions
+## Running the app locally
 
-```
-clone repo
-cd into Meet-and-Eat
-bundle install
-createdb pg_meetandeat_dev
-createdb pg_meetandeat_test
-rake db:schema:load
-```
+1. Git fork and clone the repository and cd into the Meet-and-Eat folder
+2. Run ```bundle install```
+3. Run ```rake db:setup```
+4. Run ```bundle exec figaro install``` which will create an application.yml file and this file will be automatically .gitignored.
+5. Add your own google maps api key or ask a member of the team to supply you with the dev version by pasting ```google_maps_api_key: xxx``` where the x’s will be replaced by an existing key
+6. Run ```rails s``` which will boot up the server on localhost:3000 which you will need to type into a browser address bar
+7. Sign up as a new user and add spots as necessary. Get your friends to join and test the app by going for lunch together! Have fun :)
+
 **Testing Instructions**
 
 ```
