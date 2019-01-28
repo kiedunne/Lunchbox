@@ -1,7 +1,7 @@
 
 <h1 class ="text">Hi, <%= current_user.username %>!  Where do you feel like lunching today?</h1>
 
-<div class="container">
+<div class="containerr">
 <% @spots.each do |spot| %>
 
       <div class="card-total">
@@ -39,10 +39,12 @@
 </div>
 
 <style>
+  .containerr{
+    margin: 0 auto;
+  }
   #redirect-to-spot
   {
     text-align:center
-
   }
   .fontsize
   {
@@ -64,48 +66,18 @@ a.spot-title {
   font-size: 16px;
 }
 
-p.spot-time {
-  text-align: right;
-  font-size: 15px;
-}
 .card-total {
   border-style: solid;
   border-color: grey;
   border-radius: 25px;
-  width: 20%;
+  width: 30%;
   margin: 10px;
-  float: left;
   background-color: white;
-}
-.container {
-  margin: auto;
-  display: center;
+  float: left;
 }
 
 .card-body {
   padding: 10px;
 }
 
-.card-img-top {
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-}
-
-.spot-followers {
-  display: flex;
-  flex-direction: row;
-  padding-top: 10px;
-}
-
-.spot-user-options {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  padding-top: 10px;
-}
-
-.spot-user-option {
-  padding: 5px;
-}
 </style>
-
