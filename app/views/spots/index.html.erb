@@ -29,8 +29,9 @@
             <div class="fontsize">
               <p><b>Location : </b><%= spot.location %></p>
 
-              <%= link_to spot_path(spot) do %>
+
               <% @users.each do |user| %>
+              <%= link_to profile_path(user.id) do %>
                 <% if user.id == spot.user_id %>
                   <% if user.avatar.attached? %>
                     <%= image_tag user.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
@@ -39,6 +40,7 @@
                   <% end %>
                 <% end %>
               <% end %>
+               <% end %>
 
             </div>
             <div class="fontsize" id="redirect-to-spot">
@@ -49,7 +51,6 @@
 
           </div>
       </div>
-  <% end %>
  <% end %>
 </div>
 
