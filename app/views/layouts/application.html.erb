@@ -16,33 +16,8 @@
     <%= javascript_include_tag 'users' %>
     <%= javascript_include_tag 'spots' %>
 
-    <div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
-      <% if user_signed_in? %>
-        <a><%= link_to "M + E", authenticated_root_path, class: "navbar-brand" %></a>
-      <% else %>
-        <a><%= link_to "M + E", unauthenticated_root_path, class: "navbar-brand" %></a>
-      <% end %>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <% if user_signed_in? %>
-          <a><%= link_to "Add new spot!", new_spot_path, class: "nav-item nav-link active" %></a>
-          <a><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-item nav-link active" %></a>
-          <a id ='user-profile' class="nav-link"<%= link_to current_user.username, profile_path(current_user.id), :class => 'navbar-link' %></a>
-          <% else %>
-          <li><a class="nav-link"<%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></a></li>
-          <li><a class="nav-link"<%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></a></li>
-        <body style="background-color: #1B998B;" class="html"></body>
-          <% end %>
-        </div>
-      </div>
-    </nav>
-    </div>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class="notice"><%= notice %></div>
+    <div class="alert"><%= alert %></div>
     <%= yield %>
   </head>
 

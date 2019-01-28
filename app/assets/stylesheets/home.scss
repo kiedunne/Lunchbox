@@ -2,6 +2,39 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+html, body {
+  margin: 0; padding: 0;
+}
+.hero-bkg-animated {
+  background-image:url("superfoods_green.png");
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  height: 300px;
+  padding-top: 120px;
+  box-sizing: border-box;
+  -webkit-animation: slide 20s linear infinite;
+  height: 900px;
+  background-size: contain;
+}
+
+.hero-bkg-animated h1 {
+  font-family: sans-serif;
+}
+
+@-webkit-keyframes slide {
+    from { background-position: 0 0; }
+    to { background-position: -400px 0; }
+}
+
+
+// .notice {
+//   background-color: transparent;
+// }
+// .alert {
+//   background-color: transparent;
+// }
   .html {
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -9,21 +42,21 @@
   background-size: cover;
   }
 
-  h1 {
-    color: white;
-    font-size: 70px;
-   }
+  // h1 {
+  //   color: #25988b;
+  //   font-size: 70px;
+  //  }
 
-  .image-container {
-    background-image:url("superfoods.png"); /* The image used - important! */
-    background-size: cover;
-    position: relative; /* Needed to position the cutout text in the middle of the image */
-    height: 700px; /* Some height */
-  }
+  // .image-container {
+  //   background-image:url("superfoods_green.png"); /* The image used - important! */
+  //   background-size: cover;
+  //   position: relative; /* Needed to position the cutout text in the middle of the image */
+  //   height: 900px; /* Some height */
+  // }
 
   .text {
     background-color: white;
-    color: black;
+    color: #ecd7d6;
     font-size: 10vw; /* Responsive font size */
     font-weight: bold;
     margin: 0 auto; /* Center the text container */
@@ -34,5 +67,5 @@
     top: 50%; /* Position text in the middle */
     left: 50%; /* Position text in the middle */
     transform: translate(-50%, -50%); /* Position text in the middle */
-    mix-blend-mode: screen; /* This makes the cutout text possible */
+//     // mix-blend-mode: screen; /* This makes the cutout text possible */
 }
