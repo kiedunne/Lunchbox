@@ -1,31 +1,43 @@
+
 <%=render 'shared/navigation'%>
 
 <div class="container">
 
   <div class="card-total">
+
     <div class="card-body">
       <%= render 'spots/partials/spot_content' %>
+
       <div class="spot-follow-avatars"
         <%= render 'follows/spot_follower_list' %>
       </div><br>
+
       <div class="spot-user-options">
         <% if current_user.id == @spot.user_id %>
           <%= render 'spots/partials/spot_user_options' %>
         <% else if @spot.followed_by?(current_user) %>
           <%= render 'follows/spot_unfollow_option' %>
-
         <% else %>
           <%= render 'follows/spot_follow_option' %>
         <% end %>
       <% end %>
       </div>
+
+      <div id="UserDiets" style="display:none;">
+        <div><%= render 'spots/partials/spot_dietery_preference' %></div>
+      </div>
+
       <div id="UserComments" style="display:none;">
+
         <div class="comments-flex"
+
           <div id ="each-comment"><%= render 'spots/partials/spot_comments_content' %></div>
           <div><%= render 'spots/partials/spot_comment_form' %></div>
 
         </div>
+
       </div>
+
   </div>
 
 </div>
