@@ -11,8 +11,8 @@
     <% end %>
 
   <iframe
-    width="600"
-    height="450"
+    width="500"
+    height="375"
     frameborder="0" style="border:0"
     src="https://www.google.com/maps/embed/v1/search?key=<%=ENV['google_maps_api_key']%>
     &q=restaurants+near+me" allowfullscreen>
@@ -22,18 +22,25 @@
     <%= f.label :spot %><br>
     <%= f.text_field(:spot, {:class => 'form-control'}) %>
   </p>
-    <%= f.label :time_start %> (24h)<br>
-    <%= f.text_field(:time_start, {:class => 'form-control'}) %>
+
   <p>
+    <%= f.label :datestring %><br>
+    <%= f.text_field(:datestring, :autocomplete => :off, :id => "datepicker", :class => 'form-control') %>
+  </p>
+
+  <p>
+    <%= f.label :time_start %> (24h)<br>
+    <%= f.text_field(:time_start, autocomplete: 'off', :class => 'form-control') %>
+  </p>
+
   <p>
     <%= f.label :time_end %> (24h)<br>
-    <%= f.text_field(:time_end, {:class => 'form-control'}) %>
-
+    <%= f.text_field(:time_end, autocomplete: 'off', :class => 'form-control') %>
   </p>
 
   <p>
     <%= f.label :location %><br>
-    <%= f.text_area(:location, {:class => 'form-control'}) %>
+    <%= f.text_field(:location, {:class => 'form-control'}) %>
   </p>
 
   <p>
@@ -47,6 +54,14 @@
 
 <% end %>
 
+</div>
+</div>
 
-</div>
-</div>
+<script>
+  var date = new Date();
+  var today = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+
+  $('#datepicker').datepicker({
+      minDate: today
+  });
+</script>

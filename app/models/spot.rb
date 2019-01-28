@@ -3,6 +3,7 @@ class Spot < ApplicationRecord
   validates :time_start, presence: true, length: { minimum: 5 }
   validates :time_end, presence: true, length: { minimum: 5 }
   validates :spot, presence: true, length: { minimum: 3 }
+  validates :datestring, presence: true
   acts_as_followable
   belongs_to :user
   geocoded_by :location
