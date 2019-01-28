@@ -12,8 +12,8 @@ h2 {
   font-size: 60px;
   font-style: bold;
   float: right;
-  padding:20px;
 }
+
 
 #formGroup {
   color: white;
@@ -34,12 +34,12 @@ h2 {
   height: 100%;
   animation:fadein .5s
   }
+
 .popup-form {
   left: 50%;
   top: 50%;
   margin: 500px;
   margin-top: 100px;
-
 }
 .field {
   padding: 20px;
@@ -47,13 +47,13 @@ h2 {
   border-style: none;
   outline: none;
 }
-input {
-  font-weight: lighter;
-  font-size: 20px;
-  border-radius: 10px;
-  border-style: none;
-  outline: none;
-}
+// input {
+//   font-weight: lighter;
+//   font-size: 20px;
+//   border-radius: 10px;
+//   border-style: none;
+//   outline: none;
+// }
   @keyframes fadein {
   	from {
   		opacity:0;
@@ -63,6 +63,38 @@ input {
   	}
   }
 
+  input[type=submit] {
+  font-weight: lighter;
+  background-color: #ecd7d6;
+  font-size: 30px;
+  color: #25988b;
+  border: 0px;
+  border-radius: 10px;
+  width: 30%;
+}
+  input[type=submit]:hover {
+    opacity: 0.5;
+  }
+  input[type=text],input[type=email],input[type=password],input[type=password_confirmation]  {
+  font-weight: lighter;
+  background-color: #ecd7d6;
+  font-size: 30px;
+  color: #25988b;
+  border: 0px;
+  border-radius: 10px;
+  border-style: none;
+  outline: none;
+  }
+  input[type=text],input[type=email],input[type=password],input[type=password_confirmation]:active  {
+  font-weight: lighter;
+  background-color: #ecd7d6;
+  font-size: 30px;
+  color: #25988b;
+  border: 0px;
+  border-radius: 10px;
+  border-style: none;
+  outline: none;
+  }
 .bkg-animated {
   background-image:url("superfoods_infinite.png");
   width: 100%;
