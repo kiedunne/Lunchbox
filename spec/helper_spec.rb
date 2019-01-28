@@ -32,8 +32,3 @@ def params
   datestring: Time.now
 	}
 end
-
-# def create_follow
-# 	 allow(controller).to receive(:current_user).and_return(user)
-# 	 user.follow(test_spot)
-# end
