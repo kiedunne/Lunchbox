@@ -29,7 +29,6 @@
           <% else %>
           <li><a class="nav-link"<%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></a></li>
           <li><a class="nav-link"<%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></a></li>
-        <body style="background-color: #1B998B;" class="html"></body>
           <% end %>
         </div>
       </div>
@@ -40,7 +39,7 @@
     <%= yield %>
   </head>
 
-  <body>
+  <body style="background-color: #1B998B;" class="html">
 
   </body>
 </html>

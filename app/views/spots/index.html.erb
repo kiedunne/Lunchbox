@@ -17,32 +17,6 @@
               &q=<%="#{spot.spot}"%>+<%="#{spot.location}"%>" allowfullscreen>
             </iframe>
 
-            <div class="spot-followers"
-
-            <% @users.each do |user| %>
-              <% if user.id == spot.user_id %>
-                <%= link_to profile_path(user.id) do %>
-                  <% if user.avatar.attached? %>
-                    <%= image_tag user.avatar.variant(resize: "20x20!"), class: "tar rounded-circle" %>
-                  <% else %>
-                    <%= image_tag gravatar_image_url(user.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
-                  <% end %>
-                <% end %>
-              <% end %>
-            <% end %>
-
-              <% spot.followers.each do |follower| %>
-                <%= link_to profile_path(follower.id) do %>
-                  <% if follower.avatar.attached? %>
-                    <%= image_tag follower.avatar.variant(resize: "20x20!"), class: "tar rounded-circle" %>
-                  <% else %>
-                    <%= image_tag gravatar_image_url(follower.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
-                  <% end %>
-                <% end %>
-              <% end %>
-
-            </div>
-
             <div class="spot-title-time">
               <p><small><b>Spot place : </b><%=spot.spot%></small></p>
             </div>
@@ -65,7 +39,7 @@
   #redirect-to-spot
   {
     text-align:center
-    
+
   }
   .fontsize
   {
@@ -95,13 +69,14 @@ p.spot-time {
   border-style: solid;
   border-color: grey;
   border-radius: 25px;
-  width: 25%;
+  width: 20%;
   margin: 10px;
+  float: left;
+  background-color: white;
 }
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin: auto;
+  display: center;
 }
 
 .card-body {
