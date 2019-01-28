@@ -5,8 +5,6 @@
 <% @spots.each do |spot| %>
 
       <div class="card-total">
-        <%= link_to spot_path(spot) do %>
-        <% end %>
 
           <div class="card-body">
             <iframe
@@ -20,7 +18,7 @@
             <div class="spot-title-time">
               <p><small><b>Spot place : </b><%=spot.spot%></small></p>
             </div>
-            
+
             <div class="fontsize">
               <p><b>Date : </b><%= spot.datestring %></p>
             </div>
@@ -31,14 +29,28 @@
             <div class="fontsize">
               <p><b>Location : </b><%= spot.location %></p>
 
+              <%= link_to spot_path(spot) do %>
+              <% @users.each do |user| %>
+                <% if user.id == spot.user_id %>
+                  <% if user.avatar.attached? %>
+                    <%= image_tag user.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
+                  <% else %>
+                    <%= image_tag gravatar_image_url(user.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
+                  <% end %>
+                <% end %>
+              <% end %>
+
             </div>
             <div class="fontsize" id="redirect-to-spot">
               <p><%= link_to "Click here for more details", spot_path(spot)%></p>
             </div>
 
+
+
           </div>
       </div>
   <% end %>
+ <% end %>
 </div>
 
 <style>
