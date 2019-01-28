@@ -2,16 +2,47 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#formGroup {
+  color: white;
+  text-align: center;
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 2; /* Sit on top */
+  padding: 40px;
+  padding-top: 100px; /* Location of the box */
+  left: 50%;
+  top: 50%;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(#25988b, 0.7); /* Black w/ opacity */
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  animation:fadein .5s
+  }
+.popup-form {
+  left: 50%;
+  top: 50%;
 
-// html, body {
-//   margin: 0; padding: 0;
-// }
+}
+.field {
+  width: 30%;
+}
+  @keyframes fadein {
+  	from {
+  		opacity:0;
+  	}
+  	to {
+  		opacity:1;
+  	}
+  }
 .bkg-animated {
   background-image:url("superfoods_infinite.png");
   width: 100%;
   margin: 0;
   box-sizing: border-box;
-  -webkit-animation: slide 30s linear infinite;
+  -webkit-animation: slide 60s linear infinite;
   height: 1200px;
   background-size: contain;
 }
@@ -40,11 +71,11 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -90%);
 //     // mix-blend-mode: screen; /* This makes the cutout text possible */
 }
 
-.button {
+.home-buttons {
   background-color: white;
   color: #ecd7d6;
   font-size: 3vw;
@@ -52,17 +83,25 @@
   width: 30%;
   margin: 10px;
   text-align: center;
+  outline: none;
 }
-
+.home-buttons:hover {
+  color: #25988b;
+  outline: none;
+}
+.home-buttons:active {
+  color: #25988b;
+  outline: none;
+}
 .button-container {
   display: flex;
   flex-direction: row;
   margin: 200px;
-  padding: 10px;
+  padding: 20px;
   position: static;
   // top: 120%;
   // left: 50%;
-  transform: translate(19%, 430%);
+  transform: translate(19%, 250%);
 }
 
 // .notice {
