@@ -2,7 +2,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <body>
+  <body class="home">
     <div class="bkg-animated">
       <div class="home-logo">M + E</div><br>
       <div class="button-container">
@@ -13,20 +13,20 @@
 
   <div id="formGroup">
     <div class="popup-form">
-      <a class="close-button" onclick="closeForm()">X</a><br>
+      <a id="close-button" >X</a><br>
       <h2>Sign up</h2>
 
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), autocomplete: "off") do |f| %>
       <%= devise_error_messages! %>
 
       <div class="field">
         <%= f.label :username %><br />
-        <%= f.text_field :username, autofocus: true, autocomplete: "email", class: "form-control" %>
+        <%= f.text_field :username, autofocus: true, autocomplete: "off", class: "form-control" %>
       </div>
 
       <div class="field">
         <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "off", class: "form-control" %>
       </div>
 
       <div class="field">
@@ -34,17 +34,17 @@
         <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %><br />
-        <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+        <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
       </div>
 
       <div class="field">
         <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+        <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
       </div><br>
 
       <div class="field">
         <%= f.label :dietery_preference %><br />
-        <%= f.text_field :diet, autofocus: true, id: "diet-pref", class: "form-control" %>
+        <%= f.text_field :diet, autofocus: true, id: "diet-pref", autocomplete: "off", class: "form-control" %>
       </div>
 
       <div class="diet-options">

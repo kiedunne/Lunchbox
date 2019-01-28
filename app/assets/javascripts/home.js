@@ -1,18 +1,32 @@
-function openForm() {
-  document.getElementById("formGroup").style.display = "block";
-}
+// function openForm() {
+//   document.getElementById("formGroup").style.display = "block";
+// }
+//
+// function closeForm() {
+//   document.getElementById("formGroup").style.display = "none";
+// }
+//
+// // The class you click to trigger the popup
+// $('#signup-button').on('click', function() {
+//   // The Overlay fades in
+//   $("#formGroup").fadeIn(200, function() {});
+//   });
 
-function closeForm() {
-  document.getElementById("formGroup").style.display = "none";
-}
+// $('#close-button').on('click', function() {
+//   // The Popup fades in just after
+//   $("#formGroup").fadeOut(600, function() {});
+//   });
 
-// The class you click to trigger the popup
-$('#signup-button').on('click', function() {
-  // The Overlay fades in
-  $("#formGroup").fadeIn(200, function() {});
-  // The Popup fades in just after
-  $(".bkg-animated").fadeIn(600, function() {});
-});
+  $(document).ready(function(){
+    $("#close-button").click(function(){
+      $("#formGroup").fadeOut();
+    });
+    $("#signup-button").click(function(){
+      $("#formGroup").fadeIn();
+    });
+  });
+
+
 
 function veggieAdd() {
   var Diet = document.getElementById("diet-pref").value = "vegetarian";

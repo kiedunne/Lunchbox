@@ -1,6 +1,4 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
 h2 {
   font-size: 80px;
   font-style: bold;
@@ -8,108 +6,23 @@ h2 {
   text-align: center;
 }
 
-.close-button {
-  font-size: 60px;
-  font-style: bold;
-  float: right;
-}
-
-
-#formGroup {
-  color: white;
-  text-align: center;
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 2; /* Sit on top */
-  padding: 20px;
-  padding-top: 50px; /* Location of the box */
-  left: 50%;
-  top: 50%;
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(#25988b, 0.9); /* Black w/ opacity */
-  transform: translate(-50%, -50%);
-  border-radius: 10px;
-  width: 100%;
-  height: 100%;
-  animation:fadein .5s
-  }
-
-.popup-form {
-  left: 50%;
-  top: 50%;
-  margin: 500px;
-  margin-top: 100px;
-}
-.field {
-  padding: 20px;
-  background-color: transparent;
-  border-style: none;
-  outline: none;
-}
-// input {
-//   font-weight: lighter;
-//   font-size: 20px;
-//   border-radius: 10px;
-//   border-style: none;
-//   outline: none;
-// }
-  @keyframes fadein {
-  	from {
-  		opacity:0;
-  	}
-  	to {
-  		opacity:1;
-  	}
-  }
-
-  input[type=submit] {
-  font-weight: lighter;
-  background-color: #ecd7d6;
-  font-size: 30px;
-  color: #25988b;
-  border: 0px;
-  border-radius: 10px;
-  width: 30%;
-}
-  input[type=submit]:hover {
-    opacity: 0.5;
-  }
-  input[type=text],input[type=email],input[type=password],input[type=password_confirmation]  {
-  font-weight: lighter;
-  background-color: #ecd7d6;
-  font-size: 30px;
-  color: #25988b;
-  border: 0px;
-  border-radius: 10px;
-  border-style: none;
-  outline: none;
-  }
-  input[type=text],input[type=email],input[type=password],input[type=password_confirmation]:active  {
-  font-weight: lighter;
-  background-color: #ecd7d6;
-  font-size: 30px;
-  color: #25988b;
-  border: 0px;
-  border-radius: 10px;
-  border-style: none;
-  outline: none;
-  }
-.bkg-animated {
+body {
   background-image:url("superfoods_infinite.png");
-  width: 100%;
-  margin: 0;
   box-sizing: border-box;
   -webkit-animation: slide 20s linear infinite;
-  height: 1300px;
   background-size: contain;
+  -webkit-background-size: cover;
 }
 
 @-webkit-keyframes slide {
-    from { background-position: 0 0; }
-    to { background-position: -400px 0; }
+  from { background-position: 0 0; }
+  to { background-position: -400px 0; }
 }
 
+.bkg-animated{
+  display: flex;
+  flex-direction:column;
+}
 .html {
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -138,10 +51,11 @@ h2 {
   color: #ecd7d6;
   font-size: 3vw;
   font-weight: bold;
-  width: 30%;
-  margin: 10px;
   text-align: center;
   outline: none;
+  margin: 20px;
+
+  width: 130%;
 }
 .home-buttons:hover {
   color: #25988b;
@@ -152,14 +66,109 @@ h2 {
   outline: none;
 }
 .button-container {
-  display: flex;
-  flex-direction: row;
-  margin: 200px;
-  padding: 20px;
-  position: static;
-  transform: translate(18%, 330%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(5%, 50%);
+  display: inline-block;
 }
 
+#close-button {
+  font-size: 60px;
+  font-style: bold;
+  float: right;
+}
+
+#formGroup {
+  color: white;
+  text-align: center;
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 2; /* Sit on top */
+  padding: 20px;
+  padding-top: 50px; /* Location of the box */
+  left: 50%;
+  top: 50%;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(#25988b, 1.0); /* Black w/ opacity */
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  animation:fadein .5s
+  }
+
+.popup-form {
+  left: 50%;
+  top: 50%;
+  margin: 500px;
+  margin-top: 100px;
+}
+.field {
+  padding: 20px;
+  background-color: transparent;
+  border-style: none;
+  outline: none;
+}
+
+  @keyframes fadein {
+  	from {
+  		opacity:0;
+  	}
+  	to {
+  		opacity:1;
+  	}
+  }
+
+  input.submit-button {
+  font-weight: bold;
+  background-color: #ecd7d6;
+  font-size: 30px;
+  color: #25988b;
+  border: 0px;
+  border-radius: 10px;
+  width: 30%;
+}
+  input[type=submit]:hover:select {
+    opacity: 0.5;
+  }
+  input[type=text],input[type=email],input[type=username],input[type=password],input[type=password_confirmation]  {
+    background-color: transparent;
+    font-size: 30px;
+    color: #ecd7d6;
+    border-style: solid;
+    border-radius: 20px;
+    border-width: 5px;
+    border-color: white;
+    outline: none;
+    text-align: left;
+  }
+  input[type=text],input[type=email],input[type=username],input[type=password],input[type=password_confirmation]  {
+    background-color: transparent;
+    font-size: 30px;
+    color: #ecd7d6;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 20px;
+    border-color: white;
+    outline: none;
+    text-align: left;
+  }
+  input[type=text],input[type=email],input[type=username],input[type=password],input[type=password_confirmation]:focus  {
+    background-color: transparent;
+    font-size: 30px;
+    color: #ecd7d6;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 20px;
+    border-color:  white;
+    outline: none;
+    text-align: left;
+  }
+label {
+    text-align: left;
+}
 .diet-options {
   padding: 20px;
   display: inline-block;
@@ -193,9 +202,3 @@ div.icon-hover:hover {
   75% {-webkit-transform: rotate(-5deg);}
   100% {-webkit-transform: rotate(0deg);}
 }
-// .notice {
-//   background-color: transparent;
-// }
-// .alert {
-//   background-color: transparent;
-// }
