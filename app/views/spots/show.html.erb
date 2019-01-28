@@ -50,11 +50,9 @@
           <div class="spot-user-option">
           <%= link_to "Delete", spot_path(@spot), method: :delete,data: {confirm: 'Delete your spot?'}, :class => 'btn btn-danger' %>
           </div>
-          <% if user_signed_in? %>
           <div id="comments">
             <button type="button" class="btn btn-secondary" onclick="showComments()">Comments</button>
           </div>
-          <% end %>
       </div>
 
         </div>
@@ -75,7 +73,7 @@
         </div>
         <% end %>
         <% end %>
-        <% if user_signed_in? %>
+        <% if current_user.id != @spot.user_id %>
         <div id="comments2">
           <button type="button" class="btn btn-secondary" onclick="showComments()">Comments</button>
         </div>
