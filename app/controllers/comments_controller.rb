@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
-
+  before_action :authenticate_user!
+  
   def create
     @spot = Spot.find(params[:spot_id])
     @comment = @spot.comments.create(merge_params)
@@ -20,6 +21,7 @@ class CommentsController < ApplicationController
   end
 
   def merge_params
-    comment_params.merge(username: current_user.username, user_id: current_user.id, useravatar: current_user.avatar)
+    comment_params.merge(username: current_user.username,
+      user_id: current_user.id, useravatar: current_user.avatar)
   end
 end

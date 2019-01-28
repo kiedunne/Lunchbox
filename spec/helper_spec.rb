@@ -19,6 +19,21 @@ def update_spot(spot_id)
 	  } }
 end
 
+def create_comment
+  Comment.create!({
+    content: "test",
+    user_id: user.id,
+    spot_id: test_spot.id,
+    username: user.username,
+    created_at: Time.now,
+    updated_at: Time.now,
+   })
+end
+
+def delete_comment(comment_id)
+  delete :destroy, params: { :id => comment_id }
+end
+
 def params
 	 {
 	spot: 'test',
