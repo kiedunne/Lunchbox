@@ -2,7 +2,6 @@
 <div class="container">
 
   <div class="card-total">
-
     <div class="card-body">
       <%= render 'spots/partials/spot_content' %>
       <div class="spot-follow-avatars"
@@ -13,6 +12,7 @@
           <%= render 'spots/partials/spot_user_options' %>
         <% else if @spot.followed_by?(current_user) %>
           <%= render 'follows/spot_unfollow_option' %>
+
         <% else %>
           <%= render 'follows/spot_follow_option' %>
         <% end %>
@@ -22,7 +22,9 @@
         <div class="comments-flex"
           <div id ="each-comment"><%= render 'spots/partials/spot_comments_content' %></div>
           <div><%= render 'spots/partials/spot_comment_form' %></div>
+
         </div>
       </div>
   </div>
+
 </div>
