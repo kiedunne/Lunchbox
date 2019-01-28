@@ -50,7 +50,11 @@
           <div class="spot-user-option">
           <%= link_to "Delete", spot_path(@spot), method: :delete,data: {confirm: 'Delete your spot?'}, :class => 'btn btn-danger' %>
           </div>
-
+          <% if user_signed_in? %>
+          <div id="comments">
+            <button type="button" class="btn btn-secondary" onclick="showComments()">Comments</button>
+          </div>
+          <% end %>
       </div>
 
         </div>
@@ -71,9 +75,11 @@
         </div>
         <% end %>
         <% end %>
-        <div id="comments">
+        <% if user_signed_in? %>
+        <div id="comments2">
           <button type="button" class="btn btn-secondary" onclick="showComments()">Comments</button>
         </div>
+        <% end %>
         <div class="card-body">
           <div id="UserComments" style="display:none;">
               <% @spot.comments.each do |comment| %>
@@ -130,9 +136,11 @@
   </div>
 
     <style>
-      #comments
-      {
-        margin-top: 15px;
+      #comments2{
+        margin-top:15px;
+      }
+      #comments{
+        margin-top:5px;
       }
       .red
       {
