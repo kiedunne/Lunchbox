@@ -43,20 +43,20 @@ RSpec.describe SpotsController, type: :controller do
 				end
 
 				describe "Spots #create" do
-					 it "Render to the spot after creating it with 302" do
+					 it "Render to the spot after creating it with 200" do
 					 	 post :create, params: {
-					 	 	spot: { 
+					 	 	spot: {
 					 	 		id: test_spot.id,
 					 	 		spot: test_spot.spot,
 					 	 		time: test_spot.time,
-					 	 		location: test_spot.location, 
+					 	 		location: test_spot.location,
 								info: test_spot.info,
-								user_id: user.id, 
-								username: user.username, 
-								time_start: test_spot.time_start, 
+								user_id: user.id,
+								username: user.username,
+								time_start: test_spot.time_start,
 								time_end: test_spot.time_end
 					 	 		 } }
-					 	 expect(response).to have_http_status(302)
+					 	 expect(response).to have_http_status(200)
 					 end
 				end
 				describe "GET #new " do
@@ -81,7 +81,7 @@ RSpec.describe SpotsController, type: :controller do
 				describe "POST #update" do
 					 it "Update a spot" do
 						  update_spot(test_spot.id)
-						  expect(response).to redirect_to(test_spot)
+						  expect(response.status).to eq(200)
 					 end
 				end
 
