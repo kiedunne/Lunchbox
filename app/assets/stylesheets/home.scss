@@ -3,24 +3,17 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-html, body {
-  margin: 0; padding: 0;
-}
-.hero-bkg-animated {
-  background-image:url("superfoods_green.png");
+// html, body {
+//   margin: 0; padding: 0;
+// }
+.bkg-animated {
+  background-image:url("superfoods_infinite.png");
   width: 100%;
   margin: 0;
-  text-align: center;
-  height: 300px;
-  padding-top: 120px;
   box-sizing: border-box;
   -webkit-animation: slide 20s linear infinite;
-  height: 900px;
+  height: 1000px;
   background-size: contain;
-}
-
-.hero-bkg-animated h1 {
-  font-family: sans-serif;
 }
 
 @-webkit-keyframes slide {
@@ -28,6 +21,49 @@ html, body {
     to { background-position: -400px 0; }
 }
 
+.html {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.home-logo {
+  background-color: white;
+  color: #ecd7d6;
+  font-size: 10vw;
+  font-weight: bold;
+  margin: 0 auto;
+  padding: 10px;
+  width: 50%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+//     // mix-blend-mode: screen; /* This makes the cutout text possible */
+}
+
+.button {
+  background-color: white;
+  color: #ecd7d6;
+  font-size: 3vw;
+  font-weight: bold;
+  width: 30%;
+  margin: 10px;
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  margin: 200px;
+  padding: 10px;
+  position: static;
+  // top: 120%;
+  // left: 50%;
+  transform: translate(19%, 430%);
+}
 
 // .notice {
 //   background-color: transparent;
@@ -35,37 +71,3 @@ html, body {
 // .alert {
 //   background-color: transparent;
 // }
-  .html {
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  }
-
-  // h1 {
-  //   color: #25988b;
-  //   font-size: 70px;
-  //  }
-
-  // .image-container {
-  //   background-image:url("superfoods_green.png"); /* The image used - important! */
-  //   background-size: cover;
-  //   position: relative; /* Needed to position the cutout text in the middle of the image */
-  //   height: 900px; /* Some height */
-  // }
-
-  .text {
-    background-color: white;
-    color: #ecd7d6;
-    font-size: 10vw; /* Responsive font size */
-    font-weight: bold;
-    margin: 0 auto; /* Center the text container */
-    padding: 10px;
-    width: 50%;
-    text-align: center; /* Center text */
-    position: absolute; /* Position text */
-    top: 50%; /* Position text in the middle */
-    left: 50%; /* Position text in the middle */
-    transform: translate(-50%, -50%); /* Position text in the middle */
-//     // mix-blend-mode: screen; /* This makes the cutout text possible */
-}

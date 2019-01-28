@@ -16,6 +16,10 @@
     <%= javascript_include_tag 'users' %>
     <%= javascript_include_tag 'spots' %>
 
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+
     <div class="notice"><%= notice %></div>
     <div class="alert"><%= alert %></div>
     <%= yield %>
