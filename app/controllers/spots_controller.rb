@@ -8,7 +8,7 @@ class SpotsController < ApplicationController
     @users = User.all
   end
 
-  def mateusz
+  def map
     @spots = Spot.all
   end
 

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :spots
 
-get 'mateusz', to: 'spots#mateusz'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :spots do
@@ -12,6 +12,7 @@ get 'mateusz', to: 'spots#mateusz'
   authenticated :user do
     root 'spots#index', as: :authenticated_root
     get 'users/:id', to: 'users#show', as: :profile
+    get 'map', to: 'spots#map'
 
     post 'spots/follow', to: 'follows#follow', as: :follow_spot
     post 'spots/unfollow', to: 'follows#unfollow', as: :unfollow_spot
