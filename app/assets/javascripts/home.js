@@ -1,10 +1,10 @@
 
   $(document).ready(function(){
     $("#signup-button").click(function(){
-      $("#formGroup").fadeIn();
+      $("#formGroupLogIn").fadeIn();
     });
     $("#close-button").click(function(){
-      $("#formGroup").fadeOut();
+      $("#formGroupLogIn").fadeOut();
     });
     $("#signin-button").click(function(){
       $("#formGroupSignIn").fadeIn();
