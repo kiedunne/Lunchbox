@@ -2,7 +2,8 @@
 
 <h1 class ="text">Hi, <%= current_user.username %>!  Where do you feel like lunching today?</h1>
 
-<div class="containerr">
+
+<div class="container-home">
 <% @spots.each do |spot| %>
 
       <div class="card-total">
@@ -17,19 +18,23 @@
             </iframe>
 
             <div class="spot-title-time">
-              <p><small><b>Spot place : </b><%=spot.spot%></small></p>
+              <%= link_to spot_path(spot) do %>
+                <h3 id="spot-title"><%=spot.spot%></h3>
+              <% end %>
+            </div>
+            <div class="fontsize">
+              <p><%= spot.datestring %></p>
             </div>
 
             <div class="fontsize">
-              <p><b>Date : </b><%= spot.datestring %></p>
-            </div>
-
-            <div class="fontsize">
-              <p><b>Time : </b><%= spot.time_start %> - <%= spot.time_end %></p>
+              <p><%= spot.time_start %> - <%= spot.time_end %></p>
             </div>
             <div class="fontsize">
               <p><b>Location : </b><%= spot.location %></p>
 
+              <div id="hidden-lat" style="display:none;">
+                <p><%= spot.latitude %></p>
+              </div>
 
               <% @users.each do |user| %>
               <%= link_to profile_path(user.id) do %>
@@ -48,28 +53,31 @@
               <p><%= link_to "Click here for more details", spot_path(spot)%></p>
             </div>
 
-
-
           </div>
       </div>
  <% end %>
 </div>
 
 <style>
-  .containerr{
-    margin: 0 auto;
+
+  #spot-title {
+    color: #25988b;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .container-home{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100%;
+    margin: 30px;
   }
   #redirect-to-spot
   {
     text-align:center
   }
-  .fontsize
-  {
-    font-size:12px;
-  }
-.text {
-  text-align: center;
-}
+
 a.spot-title {
   font-size: 16px;
   text-decoration: none;
@@ -78,23 +86,19 @@ a.spot-title {
   font-size: 20px;
 }
 
-.spot-title-time {
-  display: flex;
-  font-size: 16px;
-}
 
 .card-total {
   border-style: solid;
-  border-color: #28a745;
-  border-radius: 25px;
-  width: 30%;
-  margin: 10px;
-  background-color: #ecd7d6;
-  float: left;
+  border-color: #25988b;
+  border-radius: 30px;
+  width: 40%;
+  margin: 30px;px;
+    padding: 10px;
+    float: left;
+    display: block-inline;
 }
 
 .card-body {
   padding: 10px;
 }
-
 </style>

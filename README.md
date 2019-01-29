@@ -6,7 +6,7 @@
 
 Welcome to Meet&Eat, the best place to find friends, food and fun.
 
-![](assets/README-559a088e.png)
+![](assets/images/meet_screen.png)
 
 ## Iteration 1.0 Features
 :white_check_mark: Users can sign up and sign in to Meet&Eat<br />
@@ -20,16 +20,16 @@ Welcome to Meet&Eat, the best place to find friends, food and fun.
 :white_check_mark: Users can join a lunch spot they'd like to attend<br />
 
 ## Iteration 2.0 Features
-:negative_squared_cross_mark: Users can leave create, edit and delete comments on a lunch spot <br />
+:white_check_mark: Users can leave create, edit and delete comments on a lunch spot <br />
+:white_check_mark: Users can choose a dietary preference (ex. vegetarian, pescitarian)<br />
+:white_check_mark: Users can change their dietary preference<br />
 :negative_squared_cross_mark: Expired lunch spots are not listed<br />
 :negative_squared_cross_mark: Users can filter lunch spots by time and date<br />
 :negative_squared_cross_mark: Users can filter lunch spots by location<br />
 
-## Iteration 2.0 Features
+## Iteration 3.0 Features
 :negative_squared_cross_mark: All active lunch spots display on a map<br />
 :negative_squared_cross_mark: All active lunch spots display on a calendar<br />
-:negative_squared_cross_mark: Users can choose a dietary preference (ex. vegetarian, pescitarian)<br />
-:negative_squared_cross_mark: Users can change their dietary preference<br />
 :negative_squared_cross_mark: Users can assign themselves interest tags (ex. coding, illustration)<br />
 :negative_squared_cross_mark: Interest tags can be edited or deleted<br />
 :negative_squared_cross_mark: A User's interest tags are attached to any lunch spot they post or join<br />
