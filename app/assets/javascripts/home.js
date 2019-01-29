@@ -37,3 +37,34 @@ function ovoAdd() {
 function omniAdd() {
   var Diet = document.getElementById("diet-pref").value = "standard";
 }
+
+
+function openNav() {
+  document.getElementById("navbar-options").style.width = "250px";
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+  document.getElementById("navbar-options").style.width = "0";
+}
+
+
+$(document).ready(function() {
+
+  function toggleSidebar() {
+    $(".button").toggleClass("active");
+    $("main").toggleClass("move-to-left");
+    $(".sidebar-item").toggleClass("active");
+  }
+
+  $(".button").on("click tap", function() {
+    toggleSidebar();
+  });
+
+  $(document).keyup(function(e) {
+    if (e.keyCode === 27) {
+      toggleSidebar();
+    }
+  });
+
+});
