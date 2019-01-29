@@ -1,10 +1,10 @@
 
   $(document).ready(function(){
     $("#signup-button").click(function(){
-      $("#formGroupLogIn").fadeIn();
+      $("#formGroupSignUp").fadeIn();
     });
     $("#close-button").click(function(){
-      $("#formGroupLogIn").fadeOut();
+      $("#formGroupSignUp").fadeOut();
     });
     $("#signin-button").click(function(){
       $("#formGroupSignIn").fadeIn();
@@ -43,7 +43,6 @@ function openNav() {
   document.getElementById("navbar-options").style.width = "250px";
 }
 
-/* Set the width of the side navigation to 0 */
 function closeNav() {
   document.getElementById("navbar-options").style.width = "0";
 }

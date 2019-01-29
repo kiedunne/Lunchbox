@@ -1,0 +1,28 @@
+<div class="popup-form">
+  <a id="close-signin-button" >X</a><br>
+  <h2>Log in</h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<div class="field">
+  <!-- <h3>Enter your email</h3> -->
+  <%= f.email_field :email, id: "email_login", autofocus: true, autocomplete: "off", placeholder: "enter your email", class: "form-control" %>
+</div>
+
+<div class="field">
+  <!-- <h3>Enter your password</h3> -->
+  <%= f.password_field :password, id: "password_login", autocomplete: "off", placeholder: "enter your password", class: "form-control" %>
+</div>
+
+<% if devise_mapping.rememberable? -%>
+  <div class="field">
+    <%= f.check_box :remember_me %>
+    <%= f.label :remember_me %>
+  </div><br>
+<% end -%>
+
+<div class="actions">
+  <%= f.submit "Log in", class: "submit-button" %>
+</div>
+<% end %><br>
+
+</div>

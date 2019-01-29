@@ -20,10 +20,6 @@ body.home {
   to { background-position: -400px 0; }
 }
 
-.bkg-animated{
-  // display: flex;
-  // flex-direction:column;
-}
 .html {
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -68,7 +64,7 @@ body.home {
   position: absolute;
   color: #ecd7d6;
   font-size: 3vw;
-  margin: 0 auto; /* Center the text container */
+  margin: 0 auto;
   padding: 10px;
   width: 30%;
   text-align: center; /* Center text */
@@ -111,19 +107,19 @@ body.home {
   font-style: bold;
   float: right;
 }
-#formGroupLogIn {
+#formGroupSignUp {
   color: white;
   text-align: center;
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 2; /* Sit on top */
+  display: none;
+  position: fixed;
+  z-index: 2;
   padding: 20px;
-  padding-top: 50px; /* Location of the box */
+  padding-top: 50px;
   left: 50%;
   top: 50%;
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(#25988b, 1.0); /* Black w/ opacity */
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(#25988b, 1.0);
   transform: translate(-50%, -50%);
   border-radius: 10px;
   width: 100%;
@@ -134,16 +130,16 @@ body.home {
   #formGroupSignIn {
     color: white;
     text-align: center;
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 2; /* Sit on top */
+    display: none;
+    position: fixed;
+    z-index: 2;
     padding: 20px;
-    padding-top: 50px; /* Location of the box */
+    padding-top: 50px;
     left: 50%;
     top: 50%;
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(#25988b, 1.0); /* Black w/ opacity */
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(#25988b, 1.0);
     transform: translate(-50%, -50%);
     border-radius: 10px;
     width: 100%;
@@ -151,25 +147,12 @@ body.home {
     animation:fadein .5s
     }
 
+
 .popup-form {
   left: 50%;
   top: 50%;
   margin: 500px;
   margin-top: 100px;
-// }
-// .field {
-//   padding: 20px;
-//   border-style: none;
-//   margin: 5px;
-//   box-shadow:none !important;
-// }
-// .field:focus {
-//   padding: 20px;
-//   background-color: transparent;
-//   border-style: none;
-//   outline: none !important;;
-//   margin: 5px;
-//   box-shadow:none !important;
 }
   @keyframes fadein {
   	from {
@@ -242,8 +225,15 @@ body.home {
     box-shadow:none !important;
   }
 
+  input::-webkit-input-placeholder {
+  color: white!important;
+  font-size: 20px!important;
+  padding: 10px!important;
+  }
+
 .diet-options {
   padding: 20px;
+  margin-top: 30px;
   display: inline-block;
 }
 #icon {
