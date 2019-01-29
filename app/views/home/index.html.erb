@@ -41,7 +41,7 @@
 
       <div class="field">
         <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "off", class: "form-control" %>
+        <%= f.email_field :email, id: "email_signup", autofocus: true, autocomplete: "off", class: "form-control" %>
       </div>
 
       <div class="field">
@@ -49,7 +49,7 @@
         <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %><br />
-        <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+        <%= f.password_field :password, id: "password_signup", autocomplete: "off", class: "form-control" %>
       </div>
 
       <div class="field">
@@ -75,12 +75,12 @@
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
       <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "off", class: "form-control" %>
+      <%= f.email_field :email, id: "email_login", autofocus: true, autocomplete: "off", class: "form-control" %>
     </div>
 
     <div class="field">
       <%= f.label :password %><br />
-      <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+      <%= f.password_field :password, id: "password_login", autocomplete: "off", class: "form-control" %>
     </div>
 
     <% if devise_mapping.rememberable? -%>
