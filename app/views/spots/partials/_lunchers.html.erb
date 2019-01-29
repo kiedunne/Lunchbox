@@ -1,0 +1,38 @@
+<div id="Lunchers">
+  <h3>Lunchers :</h3><br>
+  <img><% @spot.followers.each do |follower| %>
+  <div id="eachLuncher">
+    <div id="usernameandphoto">
+      <%= link_to profile_path(follower.id) do %>
+        <% if follower.avatar.attached? %>
+          <%= image_tag follower.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
+        <% else %>
+          <%= image_tag gravatar_image_url(follower.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
+        <% end %>
+      <% end %>
+      <% @users.each do |user| %>
+        <% if user.id == follower.id %>
+          <i><b><%= user.username%></b></i>
+    </div>
+    <i>Preference: <%= user.diet %></i>
+          <% if user.diet == "Vegetarian" || user.diet == "vegetarian" %>
+            <img class="diet-spot" src="/images/carrot.png"></img>
+          <% elsif user.diet == "Vegan" || user.diet == "vegan" %>
+            <img class="diet-spot" src="/images/plant.png"></img>
+          <% elsif user.diet == "Pescetarian" || user.diet == "pescetarian" %>
+            <img class="diet-spot" src="/images/fish.png"></img>
+          <% elsif user.diet == "Standard" || user.diet == "standard" || user.diet == "Any" || user.diet == "any" %>
+            <img class="diet-spot" src="/images/chicken (1).png"></img>
+          <% elsif user.diet == "Lacto-vegetarian" || user.diet == "lacto-vegetarian" || user.diet == "Lacto-Vegetarian" %>
+            <img class="diet-spot" src="/images/cow.png"></img>
+          <% elsif user.diet == "Ovo-vegetarian" || user.diet == "ovo-vegetarian" || user.diet == "Ovo-Vegetarian" %>
+            <img class="diet-spot" src="/images/egg.png"></img>
+          <% else %>
+            <p>Love all food !</p>
+          <% end %>
+        <% end %>
+        <% end %>
+    </div>
+    <% end %>
+    <div style="clear:both;"></div><br><hr>
+</div>
