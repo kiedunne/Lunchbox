@@ -49,7 +49,11 @@ function closeNav() {
 }
 
 
-$(document).ready(function() {
+$(document).ready(ready);
+$(document).on('page:load', ready);
+
+var ready;
+ready = function() {
 
   function toggleSidebar() {
     $(".button").toggleClass("active");
@@ -66,5 +70,4 @@ $(document).ready(function() {
       toggleSidebar();
     }
   });
-
-});
+};
