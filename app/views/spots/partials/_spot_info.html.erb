@@ -1,0 +1,18 @@
+<div id="spotInfo">
+  <div id="userProfilePicture">
+    <% if @user.id == @spot.user_id %>
+        <%= link_to profile_path(@user.id) do %>
+          <% if @user.avatar.attached? %>
+            <%= image_tag @user.avatar.variant(resize: "75x75!"), class: "tar rounded-circle" %>
+          <% else %>
+            <%= image_tag gravatar_image_url(@user.email, size: 75), height: 75, width: 75, class: "tar rounded-circle" %>
+          <% end %>
+        <% end %>
+      <% end %>
+    Description:
+  </div>
+
+  <div id="userInfo">
+    <%= @spot.info %> "
+  </div>
+</div><hr>

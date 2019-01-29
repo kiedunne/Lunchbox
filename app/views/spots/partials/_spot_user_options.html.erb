@@ -1,13 +1,8 @@
-
+<% if current_user.id == @spot.user_id %>
 <div class="spot-user-option">
-  <%= link_to "Edit", edit_spot_path(@spot), :class => 'btn btn-info' %>
+  <div id="buttonesEditDelete">
+    <%= link_to "Edit", edit_spot_path(@spot), :class => 'btn btn-info' %>
+    <%= link_to "Delete", spot_path(@spot), method: :delete,data: {confirm: 'Delete your spot?'}, :class => 'btn btn-danger' %>
+  </div>
 </div>
-<div class="spot-user-option">
-  <%= link_to "Delete", spot_path(@spot), method: :delete,data: {confirm: 'Delete your spot?'}, :class => 'btn btn-danger' %>
-</div>
-<div class="spot-user-option">
-  <button type="button" class="btn btn-primary" onclick="showComments()">Comments</button>
-</div>
-<div class="spot-user-option">
-  <button type="button" class="btn btn-warning" onclick="showDiet()">Diet Prefs</button>
-</div>
+<% end %>

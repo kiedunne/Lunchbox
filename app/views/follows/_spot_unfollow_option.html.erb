@@ -3,6 +3,3 @@
     <%= form_tag unfollow_spot_path(id: @spot.id), method: :post, data: {confirm: 'You monster.'}, remote: true do  %>
     <%= button_tag 'Leave Spot', :class => 'btn btn-danger' %><% end %>
   </div>
-  <%# <div class="spot-user-option">
-    <button type="button" class="btn btn-secondary" onclick="showComments()">Comments</button>
-  </div> %>
