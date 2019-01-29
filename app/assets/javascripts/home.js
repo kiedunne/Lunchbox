@@ -1,18 +1,18 @@
-function openForm() {
-  document.getElementById("formGroup").style.display = "block";
-}
 
-function closeForm() {
-  document.getElementById("formGroup").style.display = "none";
-}
-
-// The class you click to trigger the popup
-$('#signup-button').on('click', function() {
-  // The Overlay fades in
-  $("#formGroup").fadeIn(200, function() {});
-  // The Popup fades in just after
-  $(".bkg-animated").fadeIn(600, function() {});
-});
+  $(document).ready(function(){
+    $("#signup-button").click(function(){
+      $("#formGroup").fadeIn();
+    });
+    $("#close-button").click(function(){
+      $("#formGroup").fadeOut();
+    });
+    $("#signin-button").click(function(){
+      $("#formGroupSignIn").fadeIn();
+    });
+    $("#close-signin-button").click(function(){
+      $("#formGroupSignIn").fadeOut();
+    });
+  });
 
 function veggieAdd() {
   var Diet = document.getElementById("diet-pref").value = "vegetarian";
@@ -37,3 +37,34 @@ function ovoAdd() {
 function omniAdd() {
   var Diet = document.getElementById("diet-pref").value = "standard";
 }
+
+
+function openNav() {
+  document.getElementById("navbar-options").style.width = "250px";
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+  document.getElementById("navbar-options").style.width = "0";
+}
+
+
+$(document).ready(function() {
+
+  function toggleSidebar() {
+    $(".button").toggleClass("active");
+    $("main").toggleClass("move-to-left");
+    $(".sidebar-item").toggleClass("active");
+  }
+
+  $(".button").on("click tap", function() {
+    toggleSidebar();
+  });
+
+  $(document).keyup(function(e) {
+    if (e.keyCode === 27) {
+      toggleSidebar();
+    }
+  });
+
+});

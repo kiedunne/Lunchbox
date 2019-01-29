@@ -2,31 +2,46 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <body>
+  <body class="home">
     <div class="bkg-animated">
       <div class="home-logo">M + E</div><br>
       <div class="button-container">
-        <button class="home-buttons" onclick="openForm()" id="signup-button">SIGN UP</button>
-        <button class="home-buttons">LOGIN</button>
+        <button class="home-buttons-signup" onclick="openForm()" id="signup-button">SIGN UP</button>
+        <button class="home-buttons-login" id="signin-button">LOGIN</button>
       </div>
     </div>
 
   <div id="formGroup">
     <div class="popup-form">
-      <a class="close-button" onclick="closeForm()">X</a><br>
+      <a id="close-button" >X</a><br>
       <h2>Sign up</h2>
 
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), autocomplete: "off") do |f| %>
       <%= devise_error_messages! %>
+
+      <h3>Pick what kinds of food you eat</h3>
+      <div class="diet-options">
+        <div class="icon-hover"><img src="/images/color_diet_icons/chicken.png" alt = "omnivore" id = "icon" onclick = "omniAdd()"></div>
+        <div class="icon-hover"><img src="/images/color_diet_icons/plant.png" alt = "vegan" id = "icon" onclick = "veganAdd()"></div>
+        <div class="icon-hover"><img src="/images/color_diet_icons/cow.png" alt = "lacto vegetarian" id = "icon" onclick = "lactoAdd()"></div>
+        <div class="icon-hover"><img src="/images/color_diet_icons/carrot.png" alt = "vegetarian" id = "icon" onclick = "veggieAdd()"></div>
+        <div class="icon-hover"><img src="/images/color_diet_icons/fish.png" alt = "pescetarian" id = "icon" onclick = "pesciAdd()"></div>
+        <div class="icon-hover"><img src="/images/color_diet_icons/egg.png" alt = "ovo-vegetarian" id = "icon" onclick = "ovoAdd()"></div>
+      </div>
+
+      <div class="field">
+        <%= f.label :dietery_preference %><br />
+        <%= f.text_field :diet, autofocus: true, id: "diet-pref", autocomplete: "off", class: "form-control" %>
+      </div>
 
       <div class="field">
         <%= f.label :username %><br />
-        <%= f.text_field :username, autofocus: true, autocomplete: "email", class: "form-control" %>
+        <%= f.text_field :username, autofocus: true, autocomplete: "off", class: "form-control" %>
       </div>
 
       <div class="field">
         <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "off", class: "form-control" %>
       </div>
 
       <div class="field">
@@ -34,27 +49,14 @@
         <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %><br />
-        <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+        <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
       </div>
 
       <div class="field">
         <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+        <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
       </div><br>
 
-      <div class="field">
-        <%= f.label :dietery_preference %><br />
-        <%= f.text_field :diet, autofocus: true, id: "diet-pref", class: "form-control" %>
-      </div>
-
-      <div class="diet-options">
-        <div class="icon-hover"><img src="/images/chicken.jpg" alt = "omnivore" id = "icon" onclick = "omniAdd()"></div>
-        <div class="icon-hover"><img src="/images/plant.jpg" alt = "vegan" id = "icon" onclick = "veganAdd()"></div>
-        <div class="icon-hover"><img src="/images/milk.jpg" alt = "lacto vegetarian" id = "icon" onclick = "lactoAdd()"></div>
-        <div class="icon-hover"><img src="/images/vegetarian.jpg" alt = "vegetarian" id = "icon" onclick = "veggieAdd()"></div>
-        <div class="icon-hover"><img src="/images/fish.jpg" alt = "pescetarian" id = "icon" onclick = "pesciAdd()"></div>
-        <div class="icon-hover"><img src="/images/egg.jpg" alt = "ovo-vegetarian" id = "icon" onclick = "ovoAdd()"></div>
-      </div>
 
       <div class="actions">
         <%= f.submit "Sign up", class: "submit-button" %>
@@ -64,5 +66,37 @@
     </div>
   </div>
 
-      </body>
+
+  <div id="formGroupSignIn">
+    <div class="popup-form">
+      <a id="close-signin-button" >X</a><br>
+      <h2>Log in</h2>
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "off", class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password %><br />
+      <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+    </div>
+
+    <% if devise_mapping.rememberable? -%>
+      <div class="field">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+      </div><br>
+    <% end -%>
+
+    <div class="actions">
+      <%= f.submit "Log in", class: "submit-button" %>
+    </div>
+  <% end %><br>
+
+  </div>
+</div>
+
+</body>
 </html>
