@@ -1,10 +1,10 @@
 
   $(document).ready(function(){
     $("#signup-button").click(function(){
-      $("#formGroup").fadeIn();
+      $("#formGroupLogIn").fadeIn();
     });
     $("#close-button").click(function(){
-      $("#formGroup").fadeOut();
+      $("#formGroupLogIn").fadeOut();
     });
     $("#signin-button").click(function(){
       $("#formGroupSignIn").fadeIn();
@@ -49,7 +49,11 @@ function closeNav() {
 }
 
 
-$(document).ready(function() {
+$(document).ready(ready);
+$(document).on('page:load', ready);
+
+var ready;
+ready = function() {
 
   function toggleSidebar() {
     $(".button").toggleClass("active");
@@ -66,5 +70,4 @@ $(document).ready(function() {
       toggleSidebar();
     }
   });
-
-});
+};
