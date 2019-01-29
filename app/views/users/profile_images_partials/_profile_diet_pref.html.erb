@@ -1,15 +1,15 @@
 <h2>Preference: <%= @user.diet %></h2><br>
 
 <% if @user.diet == "Vegetarian" || @user.diet == "vegetarian" %>
-  <img class="diet-profile" src="/images/carrot.png"></img>
+  <img class="diet-profile" src="/images/color_diet_icons/carrot.png"></img>
 <% elsif @user.diet == "Vegan" || @user.diet == "vegan" %>
-  <img class="diet-profile" src="/images/plant.png"></img>
+  <img class="diet-profile" src="/imagescolor_diet_icons//plant.png"></img>
 <% elsif @user.diet == "Pescetarian" || @user.diet == "pescetarian" %>
-  <img class="diet-profile" src="/images/fish.png"></img>
+  <img class="diet-profile" src="/imagescolor_diet_icons//fish.png"></img>
 <% elsif @user.diet == "Standard" || @user.diet == "standard" || @user.diet == "Any" || @user.diet == "any" %>
-  <img class="diet-profile" src="/images/chicken (1).png"></img>
+  <img class="diet-profile" src="/imagescolor_diet_icons//chicken.png"></img>
 <% elsif @user.diet == "Lacto-vegetarian" || @user.diet == "lacto-vegetarian" || @user.diet == "Lacto-Vegetarian" %>
-  <img class="diet-profile" src="/images/cow.png"></img>
+  <img class="diet-profile" src="/images/color_diet_icons/cow.png"></img>
 <% elsif @user.diet == "Ovo-vegetarian" || @user.diet == "ovo-vegetarian" || @user.diet == "Ovo-Vegetarian" %>
   <img class="diet-profile" src="/images/egg.png"></img>
 <% else %>

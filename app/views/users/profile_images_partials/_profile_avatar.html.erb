@@ -1,5 +1,5 @@
 <% if @user.avatar.attached? %>
-  <%= image_tag @user.avatar, height: 100, width: 100, class: "tar rounded-circle" %>
+  <%= image_tag @user.avatar, height: 400, width: 400 %>
 <% else %>
-  <%= image_tag gravatar_image_url(@user.email, size: 75), height: 100, width: 100, class: "tar rounded-circle" %>
+  <%= image_tag gravatar_image_url(@user.email, size: 75), height: 100, width: 100  %>
 <% end %>

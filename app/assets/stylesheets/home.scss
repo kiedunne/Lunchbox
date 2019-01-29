@@ -6,7 +6,7 @@ h2 {
   text-align: center;
 }
 
-body {
+body.home {
   background-image:url("superfoods_infinite.png");
   box-sizing: border-box;
   background-size: cover;
@@ -44,7 +44,8 @@ body {
   top: 40%; /* Position text in the middle */
   left: 50%; /* Position text in the middle */
   transform: translate(-50%, -50%); /* Position text in the middle */
-  mix-blend-mode: screen; /* This makes the cutout text possible */
+  // mix-blend-mode: screen; /* This makes the cutout text possible */
+  // text-decoration: none;
 }
 
 .home-buttons-login {
@@ -59,7 +60,9 @@ body {
   top: 65%; /* Position text in the middle */
   left: 50%; /* Position text in the middle */
   transform: translate(-50%, -50%);
+  outline: 0;
   border: none;
+  text-decoration: none;
 }
 .home-buttons-signup {
   position: absolute;
@@ -73,8 +76,9 @@ body {
   top: 80%; /* Position text in the middle */
   left: 50%; /* Position text in the middle */
   transform: translate(-50%, -50%);
-  outline: none;
+  outline: 0;
   border: none;
+
 }
 .home-buttons-signup:hover {
   color: #25988b;
@@ -125,7 +129,7 @@ body {
   width: 100%;
   height: 100%;
   animation:fadein .5s
-  }
+}
 
   #formGroupSignIn {
     color: white;
@@ -152,15 +156,21 @@ body {
   top: 50%;
   margin: 500px;
   margin-top: 100px;
+// }
+// .field {
+//   padding: 20px;
+//   border-style: none;
+//   margin: 5px;
+//   box-shadow:none !important;
+// }
+// .field:focus {
+//   padding: 20px;
+//   background-color: transparent;
+//   border-style: none;
+//   outline: none !important;;
+//   margin: 5px;
+//   box-shadow:none !important;
 }
-.field {
-  padding: 20px;
-  background-color: transparent;
-  border-style: none;
-  outline: none;
-  margin: 5px;
-}
-
   @keyframes fadein {
   	from {
   		opacity:0;
@@ -192,7 +202,8 @@ body {
     border-radius: 20px;
     border-width: 5px;
     border-color: white;
-
+    outline: none;
+    box-shadow:none !important;
   }
   input[type=text],input[type=email],input[type=username],input[type=password],input[type=password_confirmation]:active  {
     background-color: transparent;
@@ -204,7 +215,7 @@ body {
     border-width: 5px;
     border-radius: 20px;
     border-color: white;
-
+    box-shadow:none !important;
   }
   input[type=text],input[type=email],input[type=username],input[type=password],input[type=password_confirmation]:focus  {
     background-color: transparent;
@@ -216,9 +227,20 @@ body {
     border-width: 5px;
     border-radius: 20px;
     border-color: white;
-
+    box-shadow:none !important;
   }
-
+  input[type=text],input[type=email],input[type=username],input[type=password],input[type=password_confirmation]:visited  {
+    background-color: transparent;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    margin: 10px;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 20px;
+    border-color: white;
+    box-shadow:none !important;
+  }
 
 .diet-options {
   padding: 20px;

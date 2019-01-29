@@ -1,17 +1,19 @@
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+
   <div>
     <nav class="navbar">
-  <% if user_signed_in? %>
-    <a><%= link_to "M + E", authenticated_root_path, class: "navbar-brand" %></a>
-  <% else %>
-    <a><%= link_to "M + E", unauthenticated_root_path, class: "navbar-brand" %></a>
-  <% end %>
+      <a class="navbar-brand" href="/">
+        <img class="nav-logo" src="/images/logo.png" alt="Meet & Eat">
+      </a>
+      <div class="menu">
+        <h1 class="navbar-brand">-</h1>
+        <div class="navbar-brand">-</div>
+        <div class="navbar-brand">-</div>
+      </div>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="navbar-options">
-    <div class="navbar-nav">
+    <div class="navbar-nav" style="display:none;">
       <% if user_signed_in? %>
       <a><%= link_to "Add new spot!", new_spot_path, class: "nav-item nav-link active" %></a>
       <a><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-item nav-link active" %></a>
@@ -24,3 +26,5 @@
   </div>
 </nav>
 </div>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
