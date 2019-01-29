@@ -2,9 +2,8 @@
 <%=render 'shared/navigation'%>
 
 <div id="MainContainer">
-  <% if current_user.id == @spot.user_id %>
+
   <%= render 'spots/partials/spot_user_options' %>
-  <% end %>
   <%= render 'spots/partials/header' %>
   <%= render 'spots/partials/spot_maps' %>
   <%= render 'spots/partials/location_time' %>
