@@ -2,11 +2,3 @@
   <div id="SpotName">
     <h1> Spot place : <%= @spot.spot %></h1>
   </div>
-  <div id="JoinLocation">
-    <%if @spot.followed_by?(current_user) %>
-      <p><%= render 'follows/spot_unfollow_option' %></p>
-    <% else %>
-      <p><%= render 'follows/spot_follow_option' %></p>
-    <% end %>
-  </div>
-</div>

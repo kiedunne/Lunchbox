@@ -1,8 +1,16 @@
-<% if current_user.id == @spot.user_id %>
+
+
+
 <div class="spot-user-option">
+  <% if current_user.id == @spot.user_id %>
   <div id="buttonesEditDelete">
     <%= link_to "Edit", edit_spot_path(@spot), :class => 'btn btn-info' %>
     <%= link_to "Delete", spot_path(@spot), method: :delete,data: {confirm: 'Delete your spot?'}, :class => 'btn btn-danger' %>
+    <% end %>
+    <%if @spot.followed_by?(current_user) %>
+      <p><%= render 'follows/spot_unfollow_option' %></p>
+    <% else %>
+      <p><%= render 'follows/spot_follow_option' %></p>
+    <% end %>
   </div>
 </div>
-<% end %>
