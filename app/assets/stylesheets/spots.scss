@@ -6,6 +6,15 @@ $meet-pink: #ecd7d6;
 
 
 // SPOTS INDEX- HOME
+.text-welcome-msg
+{
+  text-align: center;
+  color: #25988b;
+  font-size: 4vw;
+  font-weight: lighter;
+  padding:70px;
+  margin: 0;
+}
 .spot-title-time{
   display: flex;
   flex-direction: row;
@@ -85,11 +94,16 @@ $meet-pink: #ecd7d6;
    .spot-title-time { background-color: $meet-green; }
 }
 
+img#index-avatar {
+  height: 0.3vw;
+  width: 0.3vw;
+}
 
 
 
 
 // SPOTS SHOW- INDIVIDUAL SPOTS
+
 #show-header-section {
   border-color: $meet-green;
   border-bottom-style: solid;
@@ -107,20 +121,21 @@ $meet-pink: #ecd7d6;
   margin-left: 20px;
   color:$meet-green;
 }
-#spot-show-title {
-  font-size: 70px;
-  color:#25988b;
+#spot-show-title
+{
+  font-size: 5vw;
+  color: $meet-green;
   font-weight: bold;
   margin: 0;
   padding-bottom: 10px;
   padding-top: 5px;
 }
 #spot-show-time {
-  font-size: 50px;
+  font-size: 3vw;
 }
 #spot-show-location, #spot-show-username, #spot-show-follower-username, #spot-show-lunchers-title
 {
-  font-size: 30px;
+  font-size: 2vw;
   padding: 0;
   margin-left: 40px;
   color:$meet-green;
@@ -130,18 +145,20 @@ $meet-pink: #ecd7d6;
 #spot-show-lunchers-title
 {
   margin-left: 3%;
+  font-size: 2.5vw;
   padding: 15px;
   margin-bottom: 0;
 }
 #spot-show-username
 {
-  font-size: 60px;
+  font-size: 3vw;
   margin: 0;
   text-align: center;
   padding: 20px;
 }
 #spot-show-follower-username
 {
+  font-size: 1.5vw;
   color: white;
   margin: 0;
 }
@@ -150,7 +167,7 @@ $meet-pink: #ecd7d6;
     background-color: white;
     margin: auto;
     border-radius: 10px;
-    height: 500px;
+    height: 25vw;
     padding: 0;
   }
 #spotMap
@@ -167,14 +184,11 @@ $meet-pink: #ecd7d6;
 }
     #show-edit-button,#show-delete-button {
       background-color: $meet-green;
-      padding: 15px;
-      font-size: 20px;
+      font-size: 1vw;
       border-radius: 10px;
       border-color: transparent;
-      width: 150px;
-      margin: 10px;
-      margin-right: 0;
-      margin-top: 20px;
+      width: 9vw;
+      height: 3vw;
       border: none;
       opacity: 1.0;
       transition: 0.3s;
@@ -185,7 +199,11 @@ $meet-pink: #ecd7d6;
     #show-delete-button:hover {
       opacity: 0.5;
     }
-    #show-edit-button,#show-delete-button a {
+    #show-edit-button a {
+      text-decoration: none !important;
+      color: white;
+    }
+    #show-delete-button a {
       text-decoration: none !important;
       color: white;
     }
@@ -209,10 +227,10 @@ $meet-pink: #ecd7d6;
       border-color: $meet-green;
       border-style: solid;
       border-radius: 20px;
-      height: 100%;
+      height: 18vw;
       padding: 40px;
-      color:$meet-green;
-      font-size: 30px;
+      color: $meet-green;
+      font-size: 2vw;
       font-weight: lighter;
       font-style: italic;
       margin-right: 2%;
@@ -222,7 +240,7 @@ $meet-pink: #ecd7d6;
     {
       display: flex;
       align-items: center;
-      font-size: 30px;
+      font-size: 0.3vw;
       float: left;
     }
     #Lunchers{
@@ -238,8 +256,9 @@ $meet-pink: #ecd7d6;
       border-radius: 10px;
       margin: 1%;
       margin-top: 0;
-      width: 20%;
-      height: 60%;
+      width: 12vw;
+      padding: 10px;
+      height: 3.2vw;
       text-align: center;
     }
 
@@ -315,15 +334,7 @@ $meet-pink: #ecd7d6;
 {
 
 }
-.text-welcome-msg
-{
-  text-align: center;
-  color: #25988b;
-  font-size: 70px;
-  font-weight: lighter;
-  padding:70px;
-  margin: 0;
-}
+
 #form-group
 {
   -webkit-box-shadow: 5px 5px 15px 5px #000000;

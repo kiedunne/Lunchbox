@@ -1,6 +1,6 @@
 <%=render 'shared/navigation'%>
 <%= javascript_include_tag 'home' %>
-<meta name="viewport" content="width=device-width; initial-scale=1.0">
+
 
 <h1 class ="text-welcome-msg">Hi, <%= current_user.username %>!  Where do you feel like lunching today?</h1>
 <!-- <img src="/images/pic_map.png" alt="" class="mapsss" id="mapper" onclick="changeImage()"> -->
@@ -36,7 +36,7 @@
                   <% if user.avatar.attached? %>
                     <%= image_tag user.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
                   <% else %>
-                    <%= image_tag gravatar_image_url(user.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
+                    <%= image_tag gravatar_image_url(user.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %></img>
                   <% end %>
                 <% end %>
               <% end %>
