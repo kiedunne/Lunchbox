@@ -1,7 +1,7 @@
 <%=render 'shared/navigation'%>
 
 <h1 class ="text">Hi, <%= current_user.username %>!  Where do you feel like lunching today?</h1>
-<button type="button" class="btn btn-secondary" onclick="DisplayMap()">Spots</button>
+<button id="mapsbutton" type="button" class="btn btn-secondary" onclick="DisplayMap()">Show Full Map</button>
 <div class="containerr" id="containerr" >
 
 
@@ -60,10 +60,16 @@
 </div>
 
 <style>
+  #mapsbutton
+  {
+    margin:auto;
+    width:100%;
+    height: 3%;
+  }
   /* Always set the map height explicitly to define the size of the div
    * element that contains the map. */
   #mapsrender {
-    height: 90%;
+    height: 70%;
   }
   }
   .containerr{
