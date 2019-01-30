@@ -1,65 +1,160 @@
-
 <%=render 'shared/navigation'%>
-
+<%= javascript_include_tag 'spots' %>
 <h1 class ="text">Hi, <%= current_user.username %>!  Where do you feel like lunching today?</h1>
-
 <div class="containerr">
+<div class="" style="text-align: center">
+  <p>
+    <button id="today" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#today-sposts" aria-expanded="false" aria-controls="collapseExample">
+      Today's sposts
+    </button>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#further-sposts" aria-expanded="false" aria-controls="collapseExample">
+    Furthers sposts
+  </button>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#past-posts" aria-expanded="false" aria-controls="collapseExample">
+    Pasts sposts
+  </button>
+</p>
+
 <% @spots.each do |spot| %>
 <% date_spot = Date.strptime(spot.datestring, "%m/%d/%Y") %>
+
   <% if Date.today > date_spot.to_date %>
-    <h1>Yesterday</h1>
+  <div class="card-total collapse" id="past-posts">
+
+      <div class="card-body">
+        <iframe
+        width="100%"
+        height="100%"
+        frameborder="0" style="border:0"
+        src="https://www.google.com/maps/embed/v1/place?key=<%=ENV['google_maps_api_key']%>
+          &q=<%="#{spot.spot}"%>+<%="#{spot.location}"%>" allowfullscreen>
+        </iframe>
+
+        <div class="spot-title-time">
+          <p><small><b>Spot place : </b><%=spot.spot%></small></p>
+        </div>
+
+        <div class="fontsize">
+          <p><b>Date : </b><%= spot.datestring %></p>
+        </div>
+
+        <div class="fontsize">
+          <p><b>Time : </b><%= spot.time_start %> - <%= spot.time_end %></p>
+        </div>
+        <div class="fontsize">
+          <p><b>Location : </b><%= spot.location %></p>
+
+
+          <% @users.each do |user| %>
+          <%= link_to profile_path(user.id) do %>
+            <% if user.id == spot.user_id %>
+              <% if user.avatar.attached? %>
+                <%= image_tag user.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
+              <% else %>
+                <%= image_tag gravatar_image_url(user.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
+              <% end %>
+            <% end %>
+          <% end %>
+           <% end %>
+
+        </div>
+        <div class="fontsize" id="redirect-to-spot">
+          <p><%= link_to "Click here for more details", spot_path(spot)%></p>
+        </div>
+      </div>
+  </div>
     <% elsif Date.today < date_spot.to_date %>
-    <h1>Nexts Days</h1>
-    <% else %>
-    <h1>Today</h1>
-  <% end %>
-      <div class="card-total">
+    <div class="card-total collapse" id= "further-sposts">
 
-          <div class="card-body">
-            <iframe
-            width="100%"
-            height="100%"
-            frameborder="0" style="border:0"
-            src="https://www.google.com/maps/embed/v1/place?key=<%=ENV['google_maps_api_key']%>
-              &q=<%="#{spot.spot}"%>+<%="#{spot.location}"%>" allowfullscreen>
-            </iframe>
+        <div class="card-body">
+          <iframe
+          width="100%"
+          height="100%"
+          frameborder="0" style="border:0"
+          src="https://www.google.com/maps/embed/v1/place?key=<%=ENV['google_maps_api_key']%>
+            &q=<%="#{spot.spot}"%>+<%="#{spot.location}"%>" allowfullscreen>
+          </iframe>
 
-            <div class="spot-title-time">
-              <p><small><b>Spot place : </b><%=spot.spot%></small></p>
-            </div>
+          <div class="spot-title-time">
+            <p><small><b>Spot place : </b><%=spot.spot%></small></p>
+          </div>
 
-            <div class="fontsize">
-              <p><b>Date : </b><%= spot.datestring %></p>
-            </div>
+          <div class="fontsize">
+            <p><b>Date : </b><%= spot.datestring %></p>
+          </div>
 
-            <div class="fontsize">
-              <p><b>Time : </b><%= spot.time_start %> - <%= spot.time_end %></p>
-            </div>
-            <div class="fontsize">
-              <p><b>Location : </b><%= spot.location %></p>
+          <div class="fontsize">
+            <p><b>Time : </b><%= spot.time_start %> - <%= spot.time_end %></p>
+          </div>
+          <div class="fontsize">
+            <p><b>Location : </b><%= spot.location %></p>
 
 
-              <% @users.each do |user| %>
-              <%= link_to profile_path(user.id) do %>
-                <% if user.id == spot.user_id %>
-                  <% if user.avatar.attached? %>
-                    <%= image_tag user.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
-                  <% else %>
-                    <%= image_tag gravatar_image_url(user.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
-                  <% end %>
+            <% @users.each do |user| %>
+            <%= link_to profile_path(user.id) do %>
+              <% if user.id == spot.user_id %>
+                <% if user.avatar.attached? %>
+                  <%= image_tag user.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
+                <% else %>
+                  <%= image_tag gravatar_image_url(user.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
                 <% end %>
               <% end %>
-               <% end %>
-
-            </div>
-            <div class="fontsize" id="redirect-to-spot">
-              <p><%= link_to "Click here for more details", spot_path(spot)%></p>
-            </div>
-
-
+            <% end %>
+             <% end %>
 
           </div>
-      </div>
+          <div class="fontsize" id="redirect-to-spot">
+            <p><%= link_to "Click here for more details", spot_path(spot)%></p>
+          </div>
+        </div>
+    </div>
+    <% else %>
+
+    <div class="card-total collapse" id="today-sposts">
+
+        <div class="card-body">
+          <iframe
+          width="100%"
+          height="100%"
+          frameborder="0" style="border:0"
+          src="https://www.google.com/maps/embed/v1/place?key=<%=ENV['google_maps_api_key']%>
+            &q=<%="#{spot.spot}"%>+<%="#{spot.location}"%>" allowfullscreen>
+          </iframe>
+
+          <div class="spot-title-time">
+            <p><small><b>Spot place : </b><%=spot.spot%></small></p>
+          </div>
+
+          <div class="fontsize">
+            <p><b>Date : </b><%= spot.datestring %></p>
+          </div>
+
+          <div class="fontsize">
+            <p><b>Time : </b><%= spot.time_start %> - <%= spot.time_end %></p>
+          </div>
+          <div class="fontsize">
+            <p><b>Location : </b><%= spot.location %></p>
+
+
+            <% @users.each do |user| %>
+            <%= link_to profile_path(user.id) do %>
+              <% if user.id == spot.user_id %>
+                <% if user.avatar.attached? %>
+                  <%= image_tag user.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
+                <% else %>
+                  <%= image_tag gravatar_image_url(user.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
+                <% end %>
+              <% end %>
+            <% end %>
+             <% end %>
+
+          </div>
+          <div class="fontsize" id="redirect-to-spot">
+            <p><%= link_to "Click here for more details", spot_path(spot)%></p>
+          </div>
+        </div>
+    </div>
+  <% end %>
  <% end %>
 </div>
 
