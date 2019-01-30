@@ -394,7 +394,19 @@ p.spot-time {
 .mapsss {
   height: 100px;
   width: 100px;
+}
+
+#mapsrender {
+  height: 70%;
+}
+
+.map-picture {
+  float: left;
+  padding-right: 50px;
+}
+
+.all-picture {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 42.3%;
+  padding-bottom: 25px;
 }

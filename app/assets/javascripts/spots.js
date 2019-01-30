@@ -28,27 +28,19 @@ ready = function() {
    google.maps.event.addDomListener(window, 'load', init);
   });
 
-
 };
+
+function DisplayList() {
+  var x = document.getElementById("allspots");
+  var y = document.getElementById("mapsrender");
+    x.style.display = "block";
+    y.style.display = "none";
+
+}
 
 function DisplayMap() {
   var x = document.getElementById("allspots");
   var y = document.getElementById("mapsrender");
-  if (x.style.display === "none") {
-  y.style.display = "none";
-  x.style.display = "block";
-} else {
-  x.style.display = "none";
-  y.style.display = "block";
-}
-}
-
-function changeImage() {
-  var image = document.getElementById("mapper");
-  if (image.src.match("map")) {
-    image.src = "/images/pic_list.png";
-  } else {
-    image.src = "/images/pic_map.png"
-  }
-  DisplayMap();
+    y.style.display = "block";
+    x.style.display = "none";
 }
