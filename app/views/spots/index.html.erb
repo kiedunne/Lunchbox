@@ -1,8 +1,21 @@
 <%=render 'shared/navigation'%>
 <%= javascript_include_tag 'home' %>
 
-<h1 class ="text-welcome-msg">Hi, <%= current_user.username %>!  Where do you feel like lunching today?</h1>
-<img src="/images/pic_map.png" alt="" class="mapsss" id="mapper" onclick="changeImage()">
+<div class="containerz">
+  <h1 class ="text-welcome-msg">Hi, <%= current_user.username %>!  Where do you feel like lunching today?</h1>
+
+  <div class="all-picture">
+    <div class="map-picture">
+      <img src="/images/pic_map.png" alt="" class="mapsss" id="mapper" onclick="DisplayMap()">
+    </div>
+
+    <div class="list-picture">
+      <img src="/images/pic_list.png" alt="" class="mapsss" id="lister" onclick="DisplayList()">
+    </div>
+  </div>
+</div>
+
+
 
 <div class="index-container" id="allspots">
 <% @spots.each do |spot| %>
@@ -50,9 +63,3 @@
 <div id="mapsrender" style="display: none">
   <%= render 'spots/partials/map_view' %>
 </div>
-<style>
-  #mapsrender
-  {
-    height: 70%;
-  }
-  </style>
