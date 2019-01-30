@@ -1,11 +1,14 @@
 <%=render 'shared/navigation'%>
 
 <h1 class ="text">Hi, <%= current_user.username %>!  Where do you feel like lunching today?</h1>
+<button type="button" class="btn btn-secondary" onclick="DisplayMap()">Spots</button>
+<div class="containerr" id="containerr" >
 
-<div class="containerr">
+
+  <div id="allspots">
 <% @spots.each do |spot| %>
 
-      <div class="card-total">
+      <div id="card-total" class="card-total">
 
           <div class="card-body">
             <iframe
@@ -47,17 +50,26 @@
             <div class="fontsize" id="redirect-to-spot">
               <p><%= link_to "Click here for more details", spot_path(spot)%></p>
             </div>
-
-
-
           </div>
       </div>
  <% end %>
+ </div>
+</div>
+<div id="mapsrender" style="display: none">
+  <%= render 'spots/partials/map_view' %>
 </div>
 
 <style>
+  /* Always set the map height explicitly to define the size of the div
+   * element that contains the map. */
+  #mapsrender {
+    height: 90%;
+  }
+  }
   .containerr{
     margin: 0 auto;
+    width:100%;
+    height: 100;
   }
   #redirect-to-spot
   {
