@@ -1,0 +1,77 @@
+
+    <% @places = [] %>
+
+    <% @spots.each do |spot| %>
+      <%  @places.push([spot.info, spot.latitude, spot.longitude, spot_path(spot)]) %>
+    <% end %>
+    <%= @places%>
+
+
+    <div id="map"></div>
+
+    <script>
+
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 7,
+          center: {lat: 0.524775396e2, lng: -0.1894053e1}
+        });
+        drop(map);
+      }
+
+      var beaches = <%= @places.inspect.html_safe %>
+      var markers = [];
+
+      function drop(map) {
+   clearMarkers();
+   for (var i = 0; i < beaches.length; i++) {
+     var beach = beaches[i];
+     addMarkerWithTimeout( i * 300, beach[0], beach[3], beach[1], beach[2], map);
+   }
+ }
+
+      function addMarkerWithTimeout(timeout, title, url, lat, lng, map) {
+        window.setTimeout(function() {
+            var marker = new google.maps.Marker({
+            position: {lat: lat, lng: lng},
+            animation: google.maps.Animation.DROP,
+            map: map,
+            title: title,
+            url: url
+          });
+          markers.push(marker)
+          google.maps.event.addListener(marker, 'click', loadURL(marker));
+        }, timeout);
+      }
+
+      function clearMarkers() {
+      for (var i = 0; i < markers.length; i++) {
+        markers[i].setMap(null);
+      }
+      markers = [];
+    }
+
+    function loadURL(marker) {
+      return function () {
+        window.location.href = marker.url;
+        }
+      }
+
+    </script>
+
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['google_maps_api_key']%>&callback=initMap">
+    </script>
+
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 90%;
+      }
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>

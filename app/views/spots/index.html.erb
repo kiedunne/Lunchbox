@@ -2,12 +2,14 @@
 <%= javascript_include_tag 'home' %>
 
 <h1 class ="text-welcome-msg">Hi, <%= current_user.username %>!  Where do you feel like lunching today?</h1>
+<img src="/images/pic_map.png" alt="" class="mapsss" id="mapper" onclick="changeImage()">
 
-<div class="index-container">
+<div class="index-container" id="allspots">
 <% @spots.each do |spot| %>
 
-      <div class="card-total">
+      <div class="card-total" id="card-total">
         <%= link_to spot_path(spot) do %>
+
           <div class="card-body">
             <div class="spot-title-time">
               <h3 id="index-spot-title"><%=spot.spot%></h3>
@@ -38,8 +40,13 @@
                 <% end %>
               <% end %>
             <% end %>
+
           </div>
       </div>
     <% end %>
  <% end %>
+ </div>
+</div>
+<div id="mapsrender" style="display: none">
+  <%= render 'spots/partials/map_view' %>
 </div>

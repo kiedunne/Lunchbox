@@ -11,12 +11,11 @@
     <%= stylesheet_link_tag    'spots', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag    'comments', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag    'home', media: 'all', 'data-turbolinks-track': 'reload' %>
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['google_maps_api_key']%>&libraries=places"></script>
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag 'users' %>
     <%= javascript_include_tag 'spots' %>
     <%= javascript_include_tag 'home' %>
-
     <%= yield %>
   </head>
 
