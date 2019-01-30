@@ -1,21 +1,11 @@
 <div id="spotInfo">
   <div id="spot-show-right-container">
-    <div id="userProfilePicture">
-      <% if @user.id == @spot.user_id %>
-          <%= link_to profile_path(@user.id) do %>
-            <% if @user.avatar.attached? %>
-              <%= image_tag @user.avatar.variant(resize: "170x170!"), class: "tar rounded-circle" %>
-            <% else %>
-              <%= image_tag gravatar_image_url(@user.email, size: 75), height: 170, width: 170, class: "tar rounded-circle" %>
-            <% end %>
-          <% end %>
-        <% end %>
-    </div>
   <div id="spotDetails">
     <%= @spot.info %> "
   </div>
 </div>
-<div id="spot-show-left-container">
+
+
+
+</div>
   <%= render '/spots/partials/lunchers' %>
-</div>
-</div>

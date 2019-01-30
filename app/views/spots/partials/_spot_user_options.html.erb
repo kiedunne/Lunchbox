@@ -3,6 +3,21 @@
 
   <% if current_user.id == @spot.user_id %>
   <div id="show-user-buttons">
+    <div id="spotInfo">
+        <div id="userProfilePicture">
+          <% if @user.id == @spot.user_id %>
+              <%= link_to profile_path(@user.id) do %>
+                <% if @user.avatar.attached? %>
+                  <%= image_tag @user.avatar.variant(resize: "100x100!"), class: "tar rounded-circle" %>
+                <% else %>
+                  <%= image_tag gravatar_image_url(@user.email, size: 75), height: 100, width: 100, class: "tar rounded-circle" %>
+                <% end %>
+              <% end %>
+            <% end %>
+            <h3 id="spot-show-username"><%= @spot.username %></h3>
+        </div>
+    </div>
+
     <button id="show-edit-button"><%= link_to "Edit", edit_spot_path(@spot) %></button>
     <button id="show-delete-button"><%= link_to "Delete", spot_path(@spot), method: :delete,data: {confirm: 'Delete your spot?'}%></button>
     <% end %>
