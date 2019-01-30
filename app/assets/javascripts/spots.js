@@ -19,7 +19,7 @@ ready = function() {
   $( function init() {
    var input = document.getElementById('location1');
    var autocomplete = new google.maps.places.Autocomplete(input);
-   var map = new google.maps.Map(document.getElementById('map'), {
+   var map = new google.maps.Map(document.getElementById('okay'), {
      center: {lat: 50.869754630095834, lng: 4.353812903165801},
      zoom: 12
      });
