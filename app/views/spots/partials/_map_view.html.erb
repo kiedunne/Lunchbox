@@ -4,7 +4,6 @@
     <% @spots.each do |spot| %>
       <%  @places.push([spot.info, spot.latitude, spot.longitude, spot_path(spot)]) %>
     <% end %>
-    <%= @places%>
 
 
     <div id="map"></div>
