@@ -1,18 +1,13 @@
+<h3 id="spot-show-lunchers-title">Lunchers going to <%= @spot.spot %>:</h3>
 <div id="Lunchers">
   <img><% @spot.followers.each do |follower| %>
   <div id="eachLuncher">
-    <div id="luncher-info">
+      <div id="luncher-info">
       <%= link_to profile_path(follower.id) do %>
-        <% if follower.avatar.attached? %>
-          <%= image_tag follower.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
-        <% else %>
-          <%= image_tag gravatar_image_url(follower.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
-        <% end %>
+            <h3 id="spot-show-follower-username"><%= follower.username%></h3>
       <% end %>
       <% @users.each do |user| %>
         <% if user.id == follower.id %>
-          <h3><%= user.username%></h3>
-
           <% if user.diet == "Vegetarian" || user.diet == "vegetarian" %>
             <img class="diet-spot" src="/images/color_diet_icons/carrot.png"></img>
           <% elsif user.diet == "Vegan" || user.diet == "vegan" %>
@@ -28,10 +23,10 @@
           <% else %>
             <p>Love all food !</p>
           <% end %>
-            </div>
-        <% end %>
-        <% end %>
-    </div>
+      <% end %>
     <% end %>
-    <div style="clear:both;"></div><br><hr>
+    </div>
+
+  </div>
+<% end %>
 </div>

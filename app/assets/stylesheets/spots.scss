@@ -107,7 +107,7 @@ a.spot-title {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-right: 20px;
+  margin-right: 3%;
   margin-left: 20px;
   color:$meet-green;
 }
@@ -121,9 +121,8 @@ a.spot-title {
 }
 #spot-show-time {
   font-size: 50px;
-  margin-right:20px;
 }
-#spot-show-location, #spot-show-username
+#spot-show-location, #spot-show-username, #spot-show-follower-username, #spot-show-lunchers-title
 {
   font-size: 30px;
   padding: 0;
@@ -132,12 +131,23 @@ a.spot-title {
   font-weight: bold;
   margin-bottom: 10px;
 }
+#spot-show-lunchers-title
+{
+  margin-left: 3%;
+  padding: 15px;
+  margin-bottom: 0;
+}
 #spot-show-username
 {
   font-size: 60px;
   margin: 0;
   text-align: center;
   padding: 20px;
+}
+#spot-show-follower-username
+{
+  color: white;
+  margin: 0;
 }
 #map
   {
@@ -150,14 +160,14 @@ a.spot-title {
 #spotMap
 {
   padding: 10px;
-  width:100%;
+  width: 100%;
   height: 100%;
 }
 #show-user-buttons {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-right: 20px;
+  margin-right: 3%;
 }
     #show-edit-button,#show-delete-button {
       background-color: $meet-green;
@@ -176,9 +186,7 @@ a.spot-title {
       background-color: $meet-pink;
     }
 
-#spot-show-right-container {
-  width: 100%;
-}
+
 
     #spotInfo
     {
@@ -187,6 +195,7 @@ a.spot-title {
       width: 100%;
       padding: 30px;
       padding-top:10px;
+
     }
     #spotDetails
     {
@@ -195,13 +204,13 @@ a.spot-title {
       border-style: solid;
       border-radius: 20px;
       height: 100%;
-      padding: 30px;
-      margin-right: 2%;
-      margin-left: 2%;
+      padding: 40px;
       color:$meet-green;
-      font-size: 20px;
+      font-size: 30px;
       font-weight: lighter;
       font-style: italic;
+      margin-right: 2%;
+      margin-left: 2%;
     }
 
     #userProfilePicture
@@ -211,38 +220,39 @@ a.spot-title {
       font-size: 30px;
       float: left;
     }
-
-    #Lunchers
-    {
-      padding: 10px;
-      text-align: center;
-      width: 100%;
-      height: auto;
-    }
+    #Lunchers{
+    display: flex;
+    flex-direction: row;
+    margin-left: 3%;
+  }
     #eachLuncher
     {
-      width: 100%;
-      background-color: white;
-      height: 150px;
-      padding: 10px;
-      color: $meet-pink;
+      background-color: $meet-pink;
+      padding: 15px;
+      color: $meet-green;
       border-radius: 10px;
-      margin: 2%;
+      margin: 1%;
       margin-top: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      width: 20%;
+      height: 60%;
+      text-align: center;
     }
 
     #luncher-info
     {
       display: flex;
-      justify-content: space;
+      flex-direction: row;
+      justify-content: space-between;
       align-items: center;
-      width: 100%
+
     }
-
-
+  #spot-show-follower-info {
+    display: flex;
+  }
+  img.diet-spot{
+    width: 15%;
+    height: 15%;;
+  }
 
 
 
