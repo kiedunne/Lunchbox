@@ -1,5 +1,6 @@
 <%=render 'shared/navigation'%>
 <%= javascript_include_tag 'home' %>
+<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
 <h1 class ="text-welcome-msg">Hi, <%= current_user.username %>!  Where do you feel like lunching today?</h1>
 <!-- <img src="/images/pic_map.png" alt="" class="mapsss" id="mapper" onclick="changeImage()"> -->
@@ -12,7 +13,7 @@
 
           <div class="card-body">
             <div class="spot-title-time">
-              <h3 id="index-spot-title"><%=spot.spot%></h3>
+              <h3 id="index-spot-title"><%=truncate(spot.spot, length:11)%></h3>
               <h3 id="index-spot-time"><%= spot.time_start %> - <%= spot.time_end %></h3>
             </div>
 
@@ -24,9 +25,9 @@
               &q=<%="#{spot.spot}"%>+<%="#{spot.location}"%>" allowfullscreen>
             </iframe>
 
-            <h3 id='index-spot-location'><%= spot.location %></h3>
+            <h3 id='index-spot-location'><%= truncate(spot.location) %></h3>
             <div class="index-spot-text">
-              <p><%= spot.datestring %></p>
+              <p id='index-spot-date'><%= spot.datestring %></p>
             </div>
 
             <% @users.each do |user| %>

@@ -6,87 +6,83 @@ $meet-pink: #ecd7d6;
 
 
 // SPOTS INDEX- HOME
-a, a:hover:focus, button, button:hover:focus  {
-  text-decoration: none;
-}
-div {
-  text-decoration: none;
-
-}
 .spot-title-time{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: flex-end;
   background-color: $meet-pink;
   border-radius: 10px;
   margin-bottom: 15px;
+  transition: 0.4s;
 }
     #index-spot-title {
       color: $meet-green;
       text-decoration: none;
       font-weight: bold;
-      font-size: 2em;
+      font-size: 2.5vw;
       padding:10px;
+      margin-bottom: 0;
     }
     #index-spot-time {
       color: $meet-green;
-      padding:10px;
+      padding: 10px;
+      font-size: 1vw;
     }
     #index-spot-location {
       color: $meet-green;
-      padding:15px;
+      padding: 2%;
       font-weight: bold;
       padding-left: 0;
+      font-size: 1.5vw;
+    }
+    #index-spot-date {
+      color: $meet-green;
+      font-weight: lighter;
+      font-size: 1vw;
     }
 
   .index-spot-text {
-    color: #25988b;
+    color: $meet-green;
     font-size: 20px;
   }
   .index-container{
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
+    align-items: flex-end;
+    justify-content: flex-start;
     flex-wrap: wrap;
     height: 100%;
-    margin: 30px;
+    margin: 2%;
     margin-top: 0;
   }
   #redirect-to-spot
   {
     text-align:center
   }
-a.spot-title {
-  font-size: 16px;
-  text-decoration: none;
-  color: inherit;
-  font-weight: bold;
-  font-size: 20px;
-}
+
 .card-total {
   border-style: solid;
   border-width: thin;
   border-color: $meet-green;
   border-radius: 30px;
-  width: 30%;
-  margin: 30px;
+  width: 30vw;
+  margin: 1%;
   padding: 10px;
   float: left;
-  display: block-inline;
+  display: inline-block;
+  transition: 0.4s;
 }
 .card-body {
   padding: 10px;
 }
-.card-body:hover {
-  background-color: $meet-green;
-  #index-spot-title { color: white; text-decoration: none; }
-  #index-spot-time { color: white; text-decoration: none; }
-  #index-spot-location { color: white; text-decoration: none; }
-  .index-spot-text { color: white; text-decoration: none; }
-}
-
 .card-total:hover {
    background-color: $meet-green;
+   #index-spot-title { color: white; text-decoration: none; }
+   #index-spot-time { color: white; text-decoration: none; }
+   #index-spot-location { color: white; text-decoration: none; }
+   .index-spot-text { color: white; text-decoration: none; }
+   #index-spot-date { color: white; text-decoration: none; }
+   .spot-title-time { background-color: $meet-green; }
 }
 
 
@@ -154,7 +150,7 @@ a.spot-title {
     background-color: white;
     margin: auto;
     border-radius: 10px;
-    height: 600px;
+    height: 500px;
     padding: 0;
   }
 #spotMap
@@ -171,7 +167,6 @@ a.spot-title {
 }
     #show-edit-button,#show-delete-button {
       background-color: $meet-green;
-      text-decoration: none;
       padding: 15px;
       font-size: 20px;
       border-radius: 10px;
@@ -180,14 +175,25 @@ a.spot-title {
       margin: 10px;
       margin-right: 0;
       margin-top: 20px;
-      outline: none;
+      border: none;
+      opacity: 1.0;
+      transition: 0.3s;
+    }
+    #show-edit-button:hover {
+      opacity: 0.5;
+    }
+    #show-delete-button:hover {
+      opacity: 0.5;
+    }
+    #show-edit-button,#show-delete-button a {
+      text-decoration: none !important;
+      color: white;
     }
     #show-delete-button {
       background-color: $meet-pink;
+      text-decoration: none !important;
+      right: 0;
     }
-
-
-
     #spotInfo
     {
       display: flex;
@@ -212,7 +218,6 @@ a.spot-title {
       margin-right: 2%;
       margin-left: 2%;
     }
-
     #userProfilePicture
     {
       display: flex;
@@ -244,6 +249,9 @@ a.spot-title {
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
+      padding: 2%;
+      padding-top: 1%;
+      padding-bottom: 1%;
 
     }
   #spot-show-follower-info {

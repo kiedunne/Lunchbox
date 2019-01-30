@@ -293,3 +293,7 @@ h1 {
   width: 40%;
   padding-left: 20px;
 }
+a:-webkit-any-link {
+    text-decoration: none;
+    cursor: auto;
+}

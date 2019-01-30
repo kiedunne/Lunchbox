@@ -1,7 +1,6 @@
 
 <div class="spot-user-option">
 
-  <% if current_user.id == @spot.user_id %>
   <div id="show-user-buttons">
     <div id="spotInfo">
         <div id="userProfilePicture">
@@ -17,16 +16,16 @@
             <h3 id="spot-show-username"><%= @spot.username %></h3>
         </div>
     </div>
-
-    <button id="show-edit-button"><%= link_to "Edit", edit_spot_path(@spot) %></button>
-    <button id="show-delete-button"><%= link_to "Delete", spot_path(@spot), method: :delete,data: {confirm: 'Delete your spot?'}%></button>
-    <% end %>
-  <% if current_user.id != @spot.user_id %>
-    <%if @spot.followed_by?(current_user)%>
-      <p><%= render 'follows/spot_unfollow_option' %></p>
+      <% if current_user.id == @spot.user_id %>
+        <button id="show-edit-button"><%= link_to "Edit", edit_spot_path(@spot) %></button>
+        <button id="show-delete-button"><%= link_to "Delete", spot_path(@spot), method: :delete,data: {confirm: 'Delete your spot?'}%></button>
     <% else %>
-      <p><%= render 'follows/spot_follow_option' %></p>
-    <% end %>
-    <% end %>
+        <%if @spot.followed_by?(current_user)%>
+          <%= render 'follows/spot_unfollow_option' %>
+        <% else %>
+          <%= render 'follows/spot_follow_option' %>
+        <% end %>
+      <% end %>
+
   </div>
 </div>
