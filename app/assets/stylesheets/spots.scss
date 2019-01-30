@@ -10,17 +10,15 @@
     font-weight: bold;
     font-size: 2em;
     padding:10px;
-
   }
-  #spot-title:hover {
+  #spot-title:focus {
     color: white;
     padding:10px;
     text-decoration:none;
   }
   #index-spot-time {
     color: #25988b;
-    padding:15px;
-    padding-right: 0;
+    padding:10px;
   }
   #index-spot-location {
     color: #25988b;
@@ -60,17 +58,15 @@ a.spot-title {
   font-weight: bold;
   font-size: 20px;
 }
-
-
 .card-total {
   border-style: solid;
   border-color: #25988b;
   border-radius: 30px;
   width: 30%;
   margin: 30px;
-    padding: 10px;
-    float: left;
-    display: block-inline;
+  padding: 10px;
+  float: left;
+  display: block-inline;
 }
 
 .card-body {
@@ -81,6 +77,10 @@ a.spot-title {
   text-decoration: none;
 }
 
+.card-body:focus {
+  padding: 10px;
+  text-decoration: none;
+}
 
 
 
