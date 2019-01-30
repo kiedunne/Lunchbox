@@ -28,19 +28,6 @@ ready = function() {
    google.maps.event.addDomListener(window, 'load', init);
   });
 
-  $(function(){
-    $("#mapper").click(function(){
-      var a = document.getElementById("allspots");
-      var b = document.getElementById("mapsrender")
-      if (a.style.display === "none") {
-        a.style.display = "block";
-        b.style.display = "none";
-      } else {
-        a.style.display = "none";
-        b.style.display = "block";
-      }
-    });
-  });
 
 };
 
@@ -63,4 +50,5 @@ function changeImage() {
   } else {
     image.src = "/images/pic_map.png"
   }
+  DisplayMap();
 }
