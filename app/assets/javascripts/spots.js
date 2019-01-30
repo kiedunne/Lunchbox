@@ -13,7 +13,8 @@ ready = function() {
   var today = new Date(date.getFullYear(), date.getMonth(), date.getDate());
 
   $('#datepicker').datepicker({
-      minDate: today
+      minDate: today,
+      dateFormat: 'dd/mm/yy'
   });
 
   $( function init() {

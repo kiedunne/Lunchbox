@@ -1,14 +1,12 @@
 
 <%=render 'shared/navigation'%>
+<%= javascript_include_tag 'home' %>
 
 <div id="MainContainer">
-
-  <%= render 'spots/partials/spot_user_options' %>
-  <%= render 'spots/partials/header' %>
   <%= render 'spots/partials/spot_maps' %>
-  <%= render 'spots/partials/location_time' %>
+  <%= render 'spots/partials/header' %>
+  <%= render 'spots/partials/spot_user_options' %>
   <%= render 'spots/partials/spot_info' %>
-  <%= render 'spots/partials/lunchers' %>
 <h3 class="textalign">Comments</h3>
 <div id="each-comment"><%= render 'spots/partials/spot_comments_content' %></div>
 <div class="textalign"><%= render 'spots/partials/spot_comment_form' %></div>

@@ -1,6 +1,256 @@
 // Place all the styles related to the spots controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$meet-green: #25988b;
+$meet-pink: #ecd7d6;
+
+
+// SPOTS INDEX- HOME
+a, a:hover:focus, button, button:hover:focus  {
+  text-decoration: none;
+}
+div {
+  text-decoration: none;
+
+}
+.spot-title-time{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: $meet-pink;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+    #index-spot-title {
+      color: $meet-green;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 2em;
+      padding:10px;
+    }
+    #index-spot-time {
+      color: $meet-green;
+      padding:10px;
+    }
+    #index-spot-location {
+      color: $meet-green;
+      padding:15px;
+      font-weight: bold;
+      padding-left: 0;
+    }
+
+  .index-spot-text {
+    color: #25988b;
+    font-size: 20px;
+  }
+  .index-container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100%;
+    margin: 30px;
+    margin-top: 0;
+  }
+  #redirect-to-spot
+  {
+    text-align:center
+  }
+a.spot-title {
+  font-size: 16px;
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+  font-size: 20px;
+}
+.card-total {
+  border-style: solid;
+  border-width: thin;
+  border-color: $meet-green;
+  border-radius: 30px;
+  width: 30%;
+  margin: 30px;
+  padding: 10px;
+  float: left;
+  display: block-inline;
+}
+.card-body {
+  padding: 10px;
+}
+.card-body:hover {
+  background-color: $meet-green;
+  #index-spot-title { color: white; text-decoration: none; }
+  #index-spot-time { color: white; text-decoration: none; }
+  #index-spot-location { color: white; text-decoration: none; }
+  .index-spot-text { color: white; text-decoration: none; }
+}
+
+.card-total:hover {
+   background-color: $meet-green;
+}
+
+
+
+
+
+// SPOTS SHOW- INDIVIDUAL SPOTS
+#show-header-section {
+  border-color: $meet-green;
+  border-bottom-style: solid;
+  border-width: 5px;
+}
+.spot-user-option {
+  margin-top: 2%;
+}
+#spot-show-title-time
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 20px;
+  margin-left: 20px;
+  color:$meet-green;
+}
+#spot-show-title {
+  font-size: 70px;
+  color:#25988b;
+  font-weight: bold;
+  margin: 0;
+  padding-bottom: 10px;
+  padding-top: 5px;
+}
+#spot-show-time {
+  font-size: 50px;
+  margin-right:20px;
+}
+#spot-show-location, #spot-show-username
+{
+  font-size: 30px;
+  padding: 0;
+  margin-left: 40px;
+  color:$meet-green;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+#spot-show-username
+{
+  font-size: 60px;
+  margin: 0;
+  text-align: center;
+  padding: 20px;
+}
+#map
+  {
+    background-color: white;
+    margin: auto;
+    border-radius: 10px;
+    height: 600px;
+    padding: 0;
+  }
+#spotMap
+{
+  padding: 10px;
+  width:100%;
+  height: 100%;
+}
+#show-user-buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 20px;
+}
+    #show-edit-button,#show-delete-button {
+      background-color: $meet-green;
+      text-decoration: none;
+      padding: 15px;
+      font-size: 20px;
+      border-radius: 10px;
+      border-color: transparent;
+      width: 150px;
+      margin: 10px;
+      margin-right: 0;
+      margin-top: 20px;
+      outline: none;
+    }
+    #show-delete-button {
+      background-color: $meet-pink;
+    }
+
+#spot-show-right-container {
+  width: 100%;
+}
+
+    #spotInfo
+    {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding: 30px;
+      padding-top:10px;
+    }
+    #spotDetails
+    {
+      width:100%;
+      border-color: $meet-green;
+      border-style: solid;
+      border-radius: 20px;
+      height: 100%;
+      padding: 30px;
+      margin-right: 2%;
+      margin-left: 2%;
+      color:$meet-green;
+      font-size: 20px;
+      font-weight: lighter;
+      font-style: italic;
+    }
+
+    #userProfilePicture
+    {
+      display: flex;
+      align-items: center;
+      font-size: 30px;
+      float: left;
+    }
+
+    #Lunchers
+    {
+      padding: 10px;
+      text-align: center;
+      width: 100%;
+      height: auto;
+    }
+    #eachLuncher
+    {
+      width: 100%;
+      background-color: white;
+      height: 150px;
+      padding: 10px;
+      color: $meet-pink;
+      border-radius: 10px;
+      margin: 2%;
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #luncher-info
+    {
+      display: flex;
+      justify-content: space;
+      align-items: center;
+      width: 100%
+    }
+
+
+
+
+
+
+
+
+
+// USERS SHOW- PROFILE PAGE
 .textalign
 {
   text-align: center;
@@ -10,62 +260,11 @@
   width: 60%;
   margin: auto;
 }
-#usernameandphoto
-{
-  text-align: left;
-}
-#Lunchers
-{
-  padding: 10px;
-  text-align: center;
-  width: auto;
-  height: auto;
 
-}
-#eachLuncher
-{
-  width:40%;
-  background-color: gray;
-  margin-left: 6%;
-  margin-top: 2%;
-  height: 150px;
-  padding: 10px;
-  color: white;
-  -webkit-box-shadow: 5px 5px 15px 5px #000000;
-  box-shadow: 1px 1px 1px 2px #000000;
-  border-radius: 10px;
-  float: left;
-}
-#userInfo
-{
-  width:55%;
-  background-color: gray;
-  margin-left: 2%;
-  float: left;
-  margin-top: 2%;
-  height: 150px;
-  padding: 5px;
-  color: white;
-  -webkit-box-shadow: 5px 5px 15px 5px #000000;
-  box-shadow: 1px 1px 1px 2px #000000;
-  border-radius: 10px;
-   word-break: break-all;
-   word-wrap: break-word;
 
-}
-#userProfilePicture
-{
-  margin-left: 2%;
-  font-size: 30px;
-  float: left;
-}
 
-#spotInfo
-{
-  width: 100%;
-  padding: 30px;
-  height: 230px;
-}
+
+
 #locationTimeContainer
 {
   width: 100%;
@@ -80,30 +279,14 @@
   margin-left: 3%;
   float: left;
 }
-#map
-  {
-    -webkit-box-shadow: 5px 5px 15px 5px #000000;
-    box-shadow: 1px 1px 1px 2px #000000;
-    background-color: white;
-    margin: auto;
-    border-radius: 10px;
-  }
-#spotMap
-{
-  padding: 10px;
-  width:100%;
-  height: 40%;
-}
+
 #header
 {
   width: 100%;
   float: left;
 }
-#SpotName
-{
-  margin-left: 2%;
-  float:left;
-}
+
+
 #JoinLocation
 {
   float:left;
@@ -114,13 +297,14 @@
 {
 
 }
-.text
+.text-welcome-msg
 {
   text-align: center;
   color: #25988b;
   font-size: 70px;
   font-weight: lighter;
   padding:70px;
+  margin: 0;
 }
 #form-group
 {
@@ -159,22 +343,6 @@ a.spot-title {
 
 p.spot-time {
   text-align: right;
-}
-.card-total {
-  border-style: solid;
-  border-color: grey;
-  border-radius: 25px;
-  width: 59%;
-  margin: 20px;
-}
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.card-body {
-  padding: 30px;
 }
 
 .card-img-top {

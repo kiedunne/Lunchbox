@@ -1,4 +1,4 @@
-
+  <%= javascript_include_tag 'home' %>
   <nav class="navbar">
     <a class="navbar-brand" href="/"><img class="nav-logo" src="/images/logo.png" alt="Meet & Eat"></a>
   </nav>
@@ -30,11 +30,11 @@
 
 <div class="sidebar">
   <ul class="sidebar-list">
-    <li class="sidebar-item"><a id="nav-link"<%= link_to current_user.username, profile_path(current_user.id) %></a></li>
+    <li class="sidebar-item"><a id="nav-link" class="profile-link"<%= link_to current_user.username, profile_path(current_user.id) %></a></li>
     <li class="sidebar-item"><a id="nav-link"<%= link_to "New spot", new_spot_path %></a</li>
     <li class="sidebar-item"><a id="nav-link"<%= link_to "Sign out", destroy_user_session_path, method: :delete %></a></li>
   </ul>
 </div>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<p class="notice" style="display:none;"><%= notice %></p>
+<p class="alert" style="display:none;"><%= alert %></p>
