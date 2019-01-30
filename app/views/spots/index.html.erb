@@ -1,14 +1,18 @@
 <%=render 'shared/navigation'%>
+<%= javascript_include_tag 'home' %>
 
 <h1 class ="text">Hi, <%= current_user.username %>!  Where do you feel like lunching today?</h1>
 
-
 <div class="container-home">
 <% @spots.each do |spot| %>
-
       <div class="card-total">
-
+        <%= link_to spot_path(spot) do %>
           <div class="card-body">
+            <div class="spot-title-time">
+                <h3 id="spot-title"><%=spot.spot%></h3>
+                <h3 id="index-spot-time"><%= spot.time_start %> - <%= spot.time_end %></h3>
+            </div>
+
             <iframe
             width="100%"
             height="100%"
@@ -17,24 +21,10 @@
               &q=<%="#{spot.spot}"%>+<%="#{spot.location}"%>" allowfullscreen>
             </iframe>
 
-            <div class="spot-title-time">
-              <%= link_to spot_path(spot) do %>
-                <h3 id="spot-title"><%=spot.spot%></h3>
-              <% end %>
-            </div>
-            <div class="fontsize">
+            <h3 id='index-spot-location'><%= spot.location %></h3>
+            <div class="index-spot-text">
               <p><%= spot.datestring %></p>
             </div>
-
-            <div class="fontsize">
-              <p><%= spot.time_start %> - <%= spot.time_end %></p>
-            </div>
-            <div class="fontsize">
-              <p><b>Location : </b><%= spot.location %></p>
-
-              <div id="hidden-lat" style="display:none;">
-                <p><%= spot.latitude %></p>
-              </div>
 
               <% @users.each do |user| %>
               <%= link_to profile_path(user.id) do %>
@@ -46,59 +36,9 @@
                   <% end %>
                 <% end %>
               <% end %>
-               <% end %>
-
-            </div>
-            <div class="fontsize" id="redirect-to-spot">
-              <p><%= link_to "Click here for more details", spot_path(spot)%></p>
-            </div>
-
+            <% end %>
           </div>
       </div>
+    <% end %>
  <% end %>
 </div>
-
-<style>
-
-  #spot-title {
-    color: #25988b;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  .container-home{
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-wrap: wrap;
-    height: 100%;
-    margin: 30px;
-  }
-  #redirect-to-spot
-  {
-    text-align:center
-  }
-
-a.spot-title {
-  font-size: 16px;
-  text-decoration: none;
-  color: inherit;
-  font-weight: bold;
-  font-size: 20px;
-}
-
-
-.card-total {
-  border-style: solid;
-  border-color: #25988b;
-  border-radius: 30px;
-  width: 40%;
-  margin: 30px;px;
-    padding: 10px;
-    float: left;
-    display: block-inline;
-}
-
-.card-body {
-  padding: 10px;
-}
-</style>
