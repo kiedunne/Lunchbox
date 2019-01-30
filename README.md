@@ -6,7 +6,7 @@
 
 Welcome to Meet&Eat, the best place to find friends, food and fun.
 
-![](meet_screen.png | width=200)
+![Screenshot](meet_screen.png)
 
 ## Iteration 1.0 Features
 :white_check_mark: Users can sign up and sign in to Meet&Eat<br />
