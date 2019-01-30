@@ -1,15 +1,16 @@
 <%=render 'shared/navigation'%>
 <%= javascript_include_tag 'home' %>
 
-<h1 class ="text">Hi, <%= current_user.username %>!  Where do you feel like lunching today?</h1>
+<h1 class ="text-welcome-msg">Hi, <%= current_user.username %>!  Where do you feel like lunching today?</h1>
 
-<div class="container-home">
+<div class="index-container">
 <% @spots.each do |spot| %>
+
       <div class="card-total">
         <%= link_to spot_path(spot) do %>
           <div class="card-body">
             <div class="spot-title-time">
-              <h3 id="spot-title"><%=spot.spot%></h3>
+              <h3 id="index-spot-title"><%=spot.spot%></h3>
               <h3 id="index-spot-time"><%= spot.time_start %> - <%= spot.time_end %></h3>
             </div>
 
