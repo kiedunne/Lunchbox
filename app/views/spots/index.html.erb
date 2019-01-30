@@ -1,10 +1,18 @@
+
 <%=render 'shared/navigation'%>
 
 <h1 class ="text">Hi, <%= current_user.username %>!  Where do you feel like lunching today?</h1>
 
 <div class="containerr">
 <% @spots.each do |spot| %>
-
+<% date_spot = Date.strptime(spot.datestring, "%m/%d/%Y") %>
+  <% if Date.today > date_spot.to_date %>
+    <h1>Yesterday</h1>
+    <% elsif Date.today < date_spot.to_date %>
+    <h1>Nexts Days</h1>
+    <% else %>
+    <h1>Today</h1>
+  <% end %>
       <div class="card-total">
 
           <div class="card-body">

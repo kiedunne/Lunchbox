@@ -3,9 +3,10 @@ class SpotsController < ApplicationController
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def index
-    @spots = Spot.all.order('spots.datestring ASC', 'spots.time_start ASC')
+    @spots = Spot.all.order('spots.datestring DESC', 'spots.time_start ASC')
     @follows = Follow.all.order('follows.created_at DESC')
     @users = User.all
+    # @date_now = Time.now.strftime("%m/%d/%Y")
   end
 
   def map
