@@ -30,6 +30,7 @@
 </div>
 
 <div class="index-container" id="allspots">
+  <!-- <h1>list star here</h1> -->
 <% @spots.each do |spot| %>
 <% date_spot = Date.strptime(spot.datestring, "%d/%m/%Y") %>
 <% if Date.today > date_spot.to_date %>
