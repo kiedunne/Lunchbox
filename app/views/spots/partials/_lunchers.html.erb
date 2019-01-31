@@ -1,3 +1,4 @@
+<div id="spot-show-followers-container">
 <h3 id="spot-show-lunchers-title">Lunchers going to <%= @spot.spot %>:</h3>
 <div id="Lunchers">
   <img><% @spot.followers.each do |follower| %>
@@ -28,4 +29,7 @@
     </div>
   </div>
 <% end %>
+</div>
+  <%=render '/spots/partials/spot_comments_content'%>
+  <%=render '/spots/partials/spot_comment_form'%>
 </div>

@@ -1,5 +1,5 @@
-<h3>Post a comment</h3>
-<%= form_for ([@spot, @spot.comments.build]) do |f| %>
-  <p><%= f.text_field(:content, autocomplete: 'off', :class => 'form-control formsizing') %></p>
-  <p><%= f.submit({:class => 'btn btn-primary'}) %></p>
-<% end %>
+<h3 id="spot-show-lunchers-title" style="font-size=1.8vw">Post a comment</h3>
+  <%= form_for ([@spot, @spot.comments.build]) do |f| %>
+    <%= f.text_field(:content, autocomplete: 'off', id: 'show-comment-enter', :class => 'form-control') %>
+    <%= f.submit({:id => 'show-edit-button'}) %>
+  <% end %>
