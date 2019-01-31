@@ -1,12 +1,12 @@
+<%= javascript_include_tag 'home' %>
+<%= javascript_include_tag 'spots' %>
 <div class="LunchSpotsContainer">
 
 <%=render 'shared/navigation'%>
-<%= javascript_include_tag 'spots' %>
-<%= javascript_include_tag 'home' %>
 
 <div id="formAddLuchSpot">
   <div class="form text-color">
-    <h1>Add a Lunch spot!</h1>
+    <h3 class='text-welcome-msg'>Add a Lunch spot!</h3>
 
   <%= form_for :spot, url: spots_path do |f| %>
       <% if @spot.errors.any? %>
@@ -31,7 +31,7 @@
 
     <p>
       <%= f.label :date %><br>
-      <%= f.text_field(:datestring, :autocomplete => :off, :id => "datepicker", :class => 'form-control formwidth show-form-enter') %>
+      <%= f.text_field(:datestring, :autocomplete => :off, :id => "datepicker", :class => 'form-control formwidth') %>
     </p>
 
     <p>
@@ -46,16 +46,16 @@
 
     <p>
       <%= f.label :location %><br>
-      <%= f.text_field(:location, id: "location1", :class => 'form-control formwidth', :placeholder => "", id: 'show-form-enter') %>
+      <%= f.text_field(:location, id: "location1", :class => 'form-control formwidth', :placeholder => "") %>
     </p>
 
     <p>
       <%= f.label :info %><br>
-      <%= f.text_field(:info, :class => 'form-control formwidth', id: 'show-form-enter') %>
+      <%= f.text_area(:info, :class => 'form-control formwidth', id: 'show-form-enter') %>
     </p>
 
     <p>
-      <%= f.submit(:class => 'btn btn-primary') %>
+      <%= f.submit(:class => 'btn btn-primary', id: 'show-form-enter') %>
     </p>
   <% end %>
 

@@ -1,3 +1,10 @@
+$(document).ready(ready);
+$(document).on('turbolinks:load', ready);
+
+var ready;
+ready = function() {
+  $("#show-delete-button").click();
+}
 function showDiv() {
    document.getElementById('UserPosts').style.display = "block";
    document.getElementById('UserFollowingPosts').style.display = "none";

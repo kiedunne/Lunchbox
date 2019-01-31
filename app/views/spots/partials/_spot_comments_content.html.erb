@@ -1,5 +1,8 @@
   <div id="spot-comments-container">
     <h3 id="spot-show-lunchers-title">Comments:</h3>
+<% if @spot.comments.length == 0 %>
+    <h4 class="text-welcome-msg" style="font-size: 1vw; text-align: left; padding: 0;">No comments yet :/</h4>
+<% else %>
     <% @spot.comments.each do |comment| %>
       <div id="comments-content">
           <% @users.each do |user| %>
@@ -8,28 +11,25 @@
                 <% if user.avatar.attached? %>
                   <%= image_tag user.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
                     <% else %>
-                      <%= image_tag gravatar_image_url(user.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
+                      <img src="/images/placeholder_img.jpg"style="height:3vw; width:3vw; border-radius: 10px;"></img>
                   <% end %>
                 <% end %>
               <% end %>
             <% end %>
-
-
         <div id="comment-body">
           <%= comment.content%>
         </div>
-
         <div id="comment-created-at">
           <% if current_user.id == comment.user_id %>
             <%= link_to 'X', [comment.spot, comment],
                                                     method: :delete,
                                                     data: { confirm: 'Are you sure?'},
                                                     class: "red  btn-sm" %>
-            <% else %>
-          <small><%= comment.created_at %></small>
+          <% else %>
+            <h4 style="color: white;"><%= comment.created_at %></h4>
           <% end %>
         </div>
-
-      </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
+<% end %>
+</div>

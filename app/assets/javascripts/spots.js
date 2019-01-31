@@ -1,10 +1,10 @@
 
 $(document).ready(ready);
-$(document).on('page:load', ready);
+$(document).on('turbolinks:load', ready);
 
 var ready;
 ready = function() {
-  $( "#today" ).click()
+  $( "#today" ).click();
   $( function() {
      $( "#datepicker" ).datepicker();
    } );

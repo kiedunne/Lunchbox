@@ -1,35 +1,42 @@
 <div id="spot-show-followers-container">
-<h3 id="spot-show-lunchers-title">Lunchers going to <%= @spot.spot %>:</h3>
-<div id="Lunchers">
-  <img><% @spot.followers.each do |follower| %>
-  <div id="eachLuncher">
-      <div id="luncher-info">
-      <%= link_to profile_path(follower.id) do %>
-            <h3 id="spot-show-follower-username"><%= follower.username%></h3>
-      <% end %>
-      <% @users.each do |user| %>
-        <% if user.id == follower.id %>
-          <% if user.diet == "Vegetarian" || user.diet == "vegetarian" %>
-            <img class="diet-spot" src="/images/color_diet_icons/carrot.png"></img>
-          <% elsif user.diet == "Vegan" || user.diet == "vegan" %>
-            <img class="diet-spot" src="/images/color_diet_icons/plant.png"></img>
-          <% elsif user.diet == "Pescetarian" || user.diet == "pescetarian" %>
-            <img class="diet-spot" src="/images/color_diet_icons/fish.png"></img>
-          <% elsif user.diet == "Standard" || user.diet == "standard" || user.diet == "Any" || user.diet == "any" %>
-            <img class="diet-spot" src="/images/color_diet_icons/chicken (1).png"></img>
-          <% elsif user.diet == "Lacto-vegetarian" || user.diet == "lacto-vegetarian" || user.diet == "Lacto-Vegetarian" %>
-            <img class="diet-spot" src="/images/color_diet_icons/cow.png"></img>
-          <% elsif user.diet == "Ovo-vegetarian" || user.diet == "ovo-vegetarian" || user.diet == "Ovo-Vegetarian" %>
-            <img class="diet-spot" src="/images/color_diet_icons/egg.png"></img>
-          <% else %>
-            <p>Love all food !</p>
+  <div id="spot-show-lunchers-container">
+    <h3 id="spot-show-lunchers-title">Lunchers going to <%= @spot.spot %>:</h3>
+    <div id="Lunchers">
+      <% if @spot.followers.length == 0 %>
+          <h4 class="text-welcome-msg" style="font-size: 1vw; text-align: left; padding: 0; padding-bottom: 2vw;">No lunchers for this spot yet :/</h4>
+      <% else %>
+      <img><% @spot.followers.each do |follower| %>
+      <div id="eachLuncher">
+          <div id="luncher-info">
+          <%= link_to profile_path(follower.id) do %>
+                <h3 id="spot-show-follower-username"><%= follower.username%></h3>
           <% end %>
-      <% end %>
+          <% @users.each do |user| %>
+            <% if user.id == follower.id %>
+              <% if user.diet == "Vegetarian" || user.diet == "vegetarian" %>
+                <img class="diet-spot" src="/images/color_diet_icons/carrot.png"></img>
+              <% elsif user.diet == "Vegan" || user.diet == "vegan" %>
+                <img class="diet-spot" src="/images/color_diet_icons/plant.png"></img>
+              <% elsif user.diet == "Pescetarian" || user.diet == "pescetarian" %>
+                <img class="diet-spot" src="/images/color_diet_icons/fish.png"></img>
+              <% elsif user.diet == "Standard" || user.diet == "standard" || user.diet == "Any" || user.diet == "any" %>
+                <img class="diet-spot" src="/images/color_diet_icons/chicken (1).png"></img>
+              <% elsif user.diet == "Lacto-vegetarian" || user.diet == "lacto-vegetarian" || user.diet == "Lacto-Vegetarian" %>
+                <img class="diet-spot" src="/images/color_diet_icons/cow.png"></img>
+              <% elsif user.diet == "Ovo-vegetarian" || user.diet == "ovo-vegetarian" || user.diet == "Ovo-Vegetarian" %>
+                <img class="diet-spot" src="/images/color_diet_icons/egg.png"></img>
+              <% else %>
+                <p>Love all food !</p>
+              <% end %>
+                  </div>
+          <% end %>
+
+        <% end %>
+        </div>
+      </div>
     <% end %>
-    </div>
-  </div>
-<% end %>
+  <% end %>
 </div>
-  <%=render '/spots/partials/spot_comments_content'%>
-  <%=render '/spots/partials/spot_comment_form'%>
+      <%=render '/spots/partials/spot_comments_content'%>
+      <%=render '/spots/partials/spot_comment_form'%>
 </div>
