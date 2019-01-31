@@ -239,6 +239,7 @@ img#index-avatar {
       font-style: italic;
       margin-right: 2%;
       margin-left: 2%;
+      word-wrap: break-word; 
     }
     #userProfilePicture
     {
@@ -542,6 +543,15 @@ width: 60%;
   margin: auto;
 }
 #show-form-enter
+{
+  border-color: $meet-green;
+  border-style: solid;
+  border-radius: 10px;
+  width: 59vw;
+  margin-left: 0;
+  margin-top: 0;
+}
+#datepicker
 {
   border-color: $meet-green;
   border-style: solid;

@@ -1,4 +1,4 @@
-form<div class="LunchSpotsContainer">
+<div class="LunchSpotsContainer">
 
 <%=render 'shared/navigation'%>
 <%= javascript_include_tag 'spots' %>
@@ -31,7 +31,7 @@ form<div class="LunchSpotsContainer">
 
     <p>
       <%= f.label :date %><br>
-      <%= f.text_field(:datestring, :autocomplete => :off, :id => "datepicker", :class => 'form-control formwidth', id: 'show-form-enter') %>
+      <%= f.text_field(:datestring, :autocomplete => :off, :id => "datepicker", :class => 'form-control formwidth show-form-enter') %>
     </p>
 
     <p>
@@ -51,11 +51,11 @@ form<div class="LunchSpotsContainer">
 
     <p>
       <%= f.label :info %><br>
-      <%= f.text_area(:info, :class => 'form-control formwidth', id: 'show-form-enter') %>
+      <%= f.text_field(:info, :class => 'form-control formwidth', id: 'show-form-enter') %>
     </p>
 
     <p>
-      <%= f.submit(:class => 'btn btn-primary', id: 'show-form-enter') %>
+      <%= f.submit(:class => 'btn btn-primary') %>
     </p>
   <% end %>
 
