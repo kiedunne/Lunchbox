@@ -1,9 +1,15 @@
+
+</style>
+
 <div class="popup-form">
-  <a id="close-button" >X</a><br>
+
   <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), autocomplete: "off") do |f| %>
-  <%= devise_error_messages! %>
+<div id="error">
+    <%= devise_error_messages! %>
+    </div>
+
 
   <h3>What kind of food do you eat?</h3>
   <div class="diet-options">

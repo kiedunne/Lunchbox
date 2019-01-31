@@ -2,12 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#comments
-{
+#comments {
   margin-top: 15px;
 }
-.red
-{
+
+.red {
   color: white;
   background-color: red;
   width: 25px;
@@ -15,24 +14,29 @@
   text-align: center;
   margin-top: 5px;
 }
-#comment-created-at{
-padding:10px;
-float: right;
-}
-#each-comment{
-padding: 10px;
-}
-#comments-content{
-display: flex;
-flex-direction: row;
 
+#comment-created-at {
+  padding:10px;
+  float: right;
 }
+
+#each-comment {
+  padding: 10px;
+}
+
+#comments-content {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 20px;
+}
+
 #comment-body {
   padding: 10px;
   float:left;
   width: 80%;
   word-wrap:break-word;
 }
+
 .comments-flex {
   display: flex;
   flex-direction: column;

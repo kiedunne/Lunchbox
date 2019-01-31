@@ -4,7 +4,7 @@ $(document).on('page:load', ready);
 
 var ready;
 ready = function() {
-
+  $( "#today" ).click()
   $( function() {
      $( "#datepicker" ).datepicker();
    } );
@@ -35,6 +35,7 @@ function DisplayList() {
   var y = document.getElementById("mapsrender");
     x.style.display = "block";
     y.style.display = "none";
+    $("#list-spot").show();
 
 }
 
@@ -43,4 +44,5 @@ function DisplayMap() {
   var y = document.getElementById("mapsrender");
     y.style.display = "block";
     x.style.display = "none";
+    $("#list-spot").hide();
 }

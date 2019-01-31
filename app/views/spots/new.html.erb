@@ -1,8 +1,10 @@
+<div class="LunchSpotsContainer">
+
 <%=render 'shared/navigation'%>
 <%= javascript_include_tag 'spots' %>
 <%= javascript_include_tag 'home' %>
 
-<div id="form-group">
+<div id="formAddLuchSpot">
   <div class="form text-color">
     <h1>Add a Lunch spot!</h1>
 
@@ -24,17 +26,17 @@
 
     <p>
       <%= f.label :spot %><br>
-      <%= f.text_field(:spot, {:class => 'form-control'}) %>
+      <%= f.text_field(:spot, :class => 'form-control formwidth', id: 'show-form-enter') %>
     </p>
 
     <p>
       <%= f.label :date %><br>
-      <%= f.text_field(:datestring, :autocomplete => :off, :id => "datepicker", :class => 'form-control') %>
+      <%= f.text_field(:datestring, :autocomplete => :off, :id => "datepicker", :class => 'form-control formwidth show-form-enter') %>
     </p>
 
     <p>
       <%= f.label :time_start %><br>
-      <%= f.time_select(:time_start, autocomplete: 'off', class: "form-control" ) %>
+      <%= f.time_select(:time_start, autocomplete: 'off', class: "form-control") %>
     </p>
 
     <p>
@@ -44,18 +46,20 @@
 
     <p>
       <%= f.label :location %><br>
-      <%= f.text_field(:location, id: "location1", :class => 'form-control', :placeholder => "") %>
+      <%= f.text_field(:location, id: "location1", :class => 'form-control formwidth', :placeholder => "", id: 'show-form-enter') %>
     </p>
 
     <p>
       <%= f.label :info %><br>
-      <%= f.text_area(:info, {:class => 'form-control'}) %>
+      <%= f.text_field(:info, :class => 'form-control formwidth', id: 'show-form-enter') %>
     </p>
 
     <p>
-      <%= f.submit({:class => 'btn btn-primary'}) %>
+      <%= f.submit(:class => 'btn btn-primary') %>
     </p>
   <% end %>
 
-  </div>
+
+</div>
+</div>
 </div>

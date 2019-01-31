@@ -1,32 +1,57 @@
-<div id="form-group" style="margin-top: 100px;">
-<div class="form text-color">
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<div id="logindevise"style="text-align: center">
+    <div class="popup-form">
+      <h3 style="color: #ecd7d6;">Oops! Something went wrong, please try again</h3>
+      <h2>Log in</h2>
 
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div><br>
-  <% end -%>
+      <!-- <h3>Enter your email</h3> -->
+      <%= f.email_field :email, id: "email_login", autofocus: true, autocomplete: "off", placeholder: "enter your email", class: "form-control" %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Log in", class: "btn btn-primary" %>
-  </div>
-<% end %><br>
+    <div class="field">
+      <!-- <h3>Enter your password</h3> -->
+      <%= f.password_field :password, id: "password_login", autocomplete: "off", placeholder: "enter your password", class: "form-control" %>
+    </div>
 
-<%= render "devise/shared/links" %>
+    <% if devise_mapping.rememberable? -%>
+      <div class="field">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+      </div><br>
+    <% end -%>
 
+    <div class="actions">
+      <%= f.submit "Log in", class: "submit-button" %>
+    </div>
+    <% end %><br>
+
+    </div>
 </div>
-</div>
+<style>
+
+html{
+      background-color: #25988b;
+      width: 100%;
+      height: 100%;
+      text-align:center;
+}
+#logindevise{
+      background-color: #25988b;
+      width: 100%;
+      height: 100%;
+      text-align:center;
+}
+
+
+</style>
+
+  </body>
+</html>

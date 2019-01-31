@@ -250,6 +250,7 @@ img#index-avatar {
       font-style: italic;
       margin-right: 2%;
       margin-left: 2%;
+      word-wrap: break-word; 
     }
     #userProfilePicture
     {
@@ -415,6 +416,10 @@ img#index-avatar {
   margin-left: 30%;
 }
 
+.choose-file {
+  margin-left: 12%;
+}
+
 a.spot-title {
   font-size: 30px;
   text-decoration: none;
@@ -538,4 +543,33 @@ p.spot-time {
   50% {-webkit-transform: rotate(20deg);}
   75% {-webkit-transform: rotate(-5deg);}
   100% {-webkit-transform: rotate(0deg);}
+}
+.formwidth
+{
+width: 60%;
+}
+
+#formAddLuchSpot
+{
+  width: 60%;
+  text-align: center;
+  margin: auto;
+}
+#show-form-enter
+{
+  border-color: $meet-green;
+  border-style: solid;
+  border-radius: 10px;
+  width: 59vw;
+  margin-left: 0;
+  margin-top: 0;
+}
+#datepicker
+{
+  border-color: $meet-green;
+  border-style: solid;
+  border-radius: 10px;
+  width: 59vw;
+  margin-left: 0;
+  margin-top: 0;
 }
