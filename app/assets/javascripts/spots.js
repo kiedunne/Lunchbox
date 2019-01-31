@@ -14,6 +14,7 @@ ready = function() {
 
   $('#datepicker').datepicker({
       minDate: today,
+      dateFormat: 'dd/mm/yy'
   });
 
   $( function init() {
