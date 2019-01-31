@@ -1,10 +1,11 @@
 <%=render 'shared/navigation'%>
 <%= javascript_include_tag 'home' %>
 
+<div id='vertical-profile-container'>
 <div class='profile-container'>
-  <div class='user-info'>
-    <%= render 'users/profile_images_partials/profile_avatar' %>
-    <h1><%= @user.username %></h1>
+<%= render 'users/profile_images_partials/profile_avatar' %>
+  <div id='profile-user-info'>
+    <h3 id="spot-show-username" style="padding-left:0;"><%= @user.username %></h3>
     <%= render 'users/profile_images_partials/profile_diet_pref' %>
   </div>
 
@@ -17,10 +18,18 @@
   </div>
 </div>
 
-<div id="UserFollowingPosts" style="display:block;">
-  <%= render 'users/profile_spots_partials/profile_followed_spots' %>
-</div>
+  <div id="profile-spots-container">
+    <%= render 'users/profile_spots_partials/profile_welcome_ms' %>
+    <div class='user-buttons'>
+      <%= render 'users/profile_options_partials/profile_spot_view_buttons' %>
+    </div>
 
-<div id="UserPosts" style="display:block;">
-  <%= render 'users/profile_spots_partials/profile_user_spots' %>
+    <div id="UserFollowingPosts" style="display:block;">
+      <%= render 'users/profile_spots_partials/profile_followed_spots' %>
+    </div>
+
+    <div id="UserPosts" style="display:none;">
+      <%= render 'users/profile_spots_partials/profile_user_spots' %>
+    </div>
+  </div>
 </div>

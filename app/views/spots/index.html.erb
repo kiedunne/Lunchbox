@@ -41,11 +41,21 @@
                 <% end %>
               <% end %>
             <% end %>
+            <img><% spot.followers.each do |follower| %>
+              <%= link_to profile_path(follower.id) do %>
+                <% if follower.avatar.attached? %>
+                  <%= image_tag follower.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
+                <% else %>
+                  <%= image_tag gravatar_image_url(follower.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
+                <% end %>
+              <% end %>
+            <% end %>
+            </img>
 
-          </div>
+        <% end %>
       </div>
-    <% end %>
- <% end %>
+    </div>
+  <% end %>
  </div>
 </div>
 <div id="mapsrender" style="display: none">
