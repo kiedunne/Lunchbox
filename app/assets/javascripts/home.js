@@ -47,9 +47,8 @@ function closeNav() {
   document.getElementById("navbar-options").style.width = "0";
 }
 
-
 $(document).ready(ready);
-$(document).on('page:load', ready);
+$(document).on('load', ready);
 
 var ready;
 ready = function() {

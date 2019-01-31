@@ -1,4 +1,9 @@
 
+$meet-green: #25988b;
+$meet-pink: #ecd7d6;
+$meetdark-pink: #eab8b6;
+
+
 h2 {
   font-size: 80px;
   font-style: bold;
@@ -9,9 +14,7 @@ h2 {
 body.home {
   background-image:url("superfoods_infinite.png");
   box-sizing: border-box;
-  background-size: cover;
   -webkit-animation: slide 27s linear infinite;
-  background-size: contain;
   -webkit-background-size: cover;
 }
 
@@ -122,7 +125,7 @@ body.home {
   background-color: rgba(#25988b, 1.0);
   transform: translate(-50%, -50%);
   border-radius: 10px;
-  width: 100%;
+  width: 100vw;
   height: 100%;
   animation:fadein .5s
 }
@@ -162,7 +165,7 @@ body.home {
   		opacity:1;
   	}
   }
-
+//
   input.submit-button {
     font-weight: bold;
     background-color: white;
@@ -175,61 +178,38 @@ body.home {
   input[type=submit]:hover {
     opacity: 0.5;
   }
-  input[type=text],input[type=email],input[type=username],input[type=password],input[type=password_confirmation]  {
-    background-color: transparent;
-    font-size: 30px;
-    color: #ecd7d6;
-    text-align: center;
-    padding: 30px;
-    border-style: solid;
-    border-radius: 20px;
-    border-width: 5px;
-    border-color: white;
-    outline: none;
-    box-shadow:none !important;
-  }
-  input[type=text],input[type=email],input[type=username],input[type=password],input[type=password_confirmation]:active  {
-    background-color: transparent;
-    font-size: 30px;
-    color: #ecd7d6;
-    text-align: center;
-    padding: 30px;
-    border-style: solid;
-    border-width: 5px;
-    border-radius: 20px;
-    border-color: white;
-    box-shadow:none !important;
-  }
-  input[type=text],input[type=email],input[type=username],input[type=password],input[type=password_confirmation]:focus  {
-    background-color: transparent;
-    font-size: 20px;
-    color: white;
-    text-align: center;
-    margin: 10px;
-    border-style: solid;
-    border-width: 5px;
-    border-radius: 20px;
-    border-color: white;
-    box-shadow:none !important;
-  }
-  input[type=text],input[type=email],input[type=username],input[type=password],input[type=password_confirmation]:visited  {
-    background-color: transparent;
-    font-size: 20px;
-    color: white;
-    text-align: center;
-    margin: 10px;
-    border-style: solid;
-    border-width: 5px;
-    border-radius: 20px;
-    border-color: white;
-    box-shadow:none !important;
-  }
+  // input  {
+  //   background-color: transparent;
+  //   font-size: 30px;
+  //   color: #ecd7d6;
+  //   text-align: center;
+  //   padding: 30px;
+  //   border-style: solid;
+  //   border-radius: 20px;
+  //   border-width: 3px;
+  //   border-color: white;
+  //   outline: none;
+  //   box-shadow:none !important;
+  // }
+  // input[type=text],input[type=email],input[type=username],input[type=password],input[type=password_confirmation]:active  {
+  //   background-color: transparent;
+  //   font-size: 30px;
+  //   color: #ecd7d6;
+  //   text-align: center;
+  //   padding: 30px;
+  //   border-style: solid;
+  //   border-width: 3px;
+  //   border-radius: 20px;
+  //   border-color: white;
+  //   box-shadow:none !important;
+  // }
 
-  input::-webkit-input-placeholder {
-  color: white!important;
-  font-size: 20px!important;
-  padding: 10px!important;
-  }
+
+  // input::-webkit-input-placeholder {
+  // color: $meetdark-pink!important;
+  // font-size: 20px!important;
+  // padding: 10px!important;
+  // }
 
 .diet-options {
   padding: 20px;
@@ -237,8 +217,8 @@ body.home {
   display: inline-block;
 }
 #icon {
-  height: 40%;
-  width: 40%;
+  height: 60%;
+  width: 60%;
   padding-bottom: 20px;
 }
 div.icon-hover {

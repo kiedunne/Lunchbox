@@ -20,7 +20,7 @@
               <% elsif user.diet == "Pescetarian" || user.diet == "pescetarian" %>
                 <img class="diet-spot" src="/images/color_diet_icons/fish.png"></img>
               <% elsif user.diet == "Standard" || user.diet == "standard" || user.diet == "Any" || user.diet == "any" %>
-                <img class="diet-spot" src="/images/color_diet_icons/chicken (1).png"></img>
+                <img class="diet-spot" src="/images/color_diet_icons/chicken.png"></img>
               <% elsif user.diet == "Lacto-vegetarian" || user.diet == "lacto-vegetarian" || user.diet == "Lacto-Vegetarian" %>
                 <img class="diet-spot" src="/images/color_diet_icons/cow.png"></img>
               <% elsif user.diet == "Ovo-vegetarian" || user.diet == "ovo-vegetarian" || user.diet == "Ovo-Vegetarian" %>
@@ -30,11 +30,10 @@
               <% end %>
                   </div>
           <% end %>
-
         <% end %>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   <% end %>
 </div>
       <%=render '/spots/partials/spot_comments_content'%>

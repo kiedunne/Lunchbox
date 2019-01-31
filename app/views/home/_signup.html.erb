@@ -2,14 +2,13 @@
 </style>
 
 <div class="popup-form">
-
+  <a id="close-button" >X</a><br>
   <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), autocomplete: "off") do |f| %>
 <div id="error">
     <%= devise_error_messages! %>
     </div>
-
 
   <h3>What kind of food do you eat?</h3>
   <div class="diet-options">
@@ -36,7 +35,7 @@
   <div class="field">
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
+    <% end %>
     <%= f.password_field :password, id: "password_signup", autocomplete: "off", placeholder: "make a password", class: "form-control" %>
   </div>
 
@@ -50,3 +49,30 @@
 <% end %>
 
 </div>
+
+<style>
+  .field {
+    margin: 20px;
+  }
+  #signup-small-button {
+    color: white;
+    backround-color: white;
+    font-size: 2vw;
+  }
+input[type=text],input[type=email],input[type=username],input[type=password],input[type=password_confirmation]  {
+  background-color: transparent;
+  font-size: 1vw;
+  color: white;
+  text-align: center;
+  margin: 10px;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 20px;
+  border-color: white;
+  box-shadow:none !important;
+  padding: 30px;
+}
+input::-webkit-input-placeholder {
+  color: white!important;
+}
+</style>

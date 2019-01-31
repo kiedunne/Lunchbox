@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Meet&Eat</title>
-    <meta name="viewport" content="width=device-width; initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -17,9 +17,9 @@
     <%= stylesheet_link_tag    'home', media: 'all', 'data-turbolinks-track': 'reload' %>
     <script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['google_maps_api_key']%>&libraries=places"></script>
     <%= javascript_include_tag 'application' %>
-    <%= javascript_include_tag 'users' %>
-    <%= javascript_include_tag 'spots' %>
     <%= javascript_include_tag 'home' %>
+    <%= javascript_include_tag 'users' %>
+
     <%= yield %>
   </head>
 
