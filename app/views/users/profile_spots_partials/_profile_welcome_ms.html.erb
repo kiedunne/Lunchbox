@@ -1,4 +1,4 @@
-<div class="profile-greeting">
+<div class="profile-greeting" id='profile-msg'>
     <% if @user.id == current_user.id %>
       <h1 class ="text-welcome-msg">Hey, <%= current_user.username %>! Check out where you'll be lunching.</h1>
     <% else %>
