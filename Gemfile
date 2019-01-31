@@ -15,6 +15,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails', '5.0.5'
 gem 'mini_magick', '~> 4.9', '>= 4.9.2'
 gem 'pry'
+gem 'coveralls', require: false
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
