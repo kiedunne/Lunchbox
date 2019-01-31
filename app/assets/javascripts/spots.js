@@ -1,4 +1,9 @@
-var ready = function() {
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
+
+var ready;
+ready = function() {
   $( "#today" ).click()
   $( function() {
      $( "#datepicker" ).datepicker();
@@ -25,8 +30,6 @@ var ready = function() {
 
 };
 
-$(document).ready(ready);
-$(document).on('turbolinks:load', ready);
 function DisplayList() {
   var x = document.getElementById("allspots");
   var y = document.getElementById("mapsrender");
