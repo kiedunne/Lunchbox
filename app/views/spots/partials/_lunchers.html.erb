@@ -1,4 +1,5 @@
 <div id="spot-show-followers-container">
+  <div id="spot-show-lunchers-container">
 <h3 id="spot-show-lunchers-title">Lunchers going to <%= @spot.spot %>:</h3>
 <div id="Lunchers">
   <img><% @spot.followers.each do |follower| %>
@@ -24,7 +25,9 @@
           <% else %>
             <p>Love all food !</p>
           <% end %>
+              </div>
       <% end %>
+
     <% end %>
     </div>
   </div>

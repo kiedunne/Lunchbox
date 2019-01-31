@@ -9,7 +9,7 @@
                 <% if @user.avatar.attached? %>
                   <img id="index-avatar"><%= image_tag @user.avatar.variant(resize: "100x100!"), class: "tar rounded-circle" %></img>
                 <% else %>
-                  <img id="index-avatar"><%= image_tag gravatar_image_url(@user.email, size: 75), height: 100, width: 100, class: "tar rounded-circle" %></img>
+                <img src="/images/placeholder_img.jpg"style="height:6vw; width:6vw; border-radius: 10px;"></img>
                 <% end %>
               <% end %>
             <% end %>
