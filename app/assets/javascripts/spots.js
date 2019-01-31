@@ -4,7 +4,7 @@ $(document).on('page:load', ready);
 
 var ready;
 ready = function() {
-
+  $( "#today" ).click()
   $( function() {
      $( "#datepicker" ).datepicker();
    } );
