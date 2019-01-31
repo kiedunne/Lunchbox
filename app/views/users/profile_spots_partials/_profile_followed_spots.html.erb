@@ -29,7 +29,7 @@
                 <% if user.avatar.attached? %>
                   <%= image_tag user.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
                 <% else %>
-                  <%= image_tag gravatar_image_url(user.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %></img>
+                <img src="/images/placeholder_img.jpg"style="height:2.5vw; width:2.5vw; border-radius: 10px;"></img>
                 <% end %>
               <% end %>
             <% end %>

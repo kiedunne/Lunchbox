@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $meet-green: #25988b;
 $meet-pink: #ecd7d6;
+$meetdark-pink: #eab8b6;
 
 
 // SPOTS INDEX- HOME
@@ -57,7 +58,10 @@ $meet-pink: #ecd7d6;
   }
   .index-container{
     display: flex;
+    // align-items: flex-end;
+    // justify-content: flex-start;
     flex-wrap: wrap;
+    // height: 100%;
     margin: 2%;
     margin-top: 0;
   }
@@ -86,6 +90,7 @@ $meet-pink: #ecd7d6;
 }
 .card-total:hover {
    background-color: $meet-green;
+   border-color: transparent;
    #index-spot-title { color: white; text-decoration: none; }
    #index-spot-time { color: white; text-decoration: none; }
    #index-spot-location { color: white; text-decoration: none; }
@@ -119,8 +124,8 @@ img#index-avatar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-right: 5.5vw;
-  margin-left: 2vw;
+  width: 97vw;
+  margin: 0;
   color:$meet-green;
 }
 #spot-show-title
@@ -140,7 +145,7 @@ img#index-avatar {
 {
   font-size: 2vw;
   padding: 0;
-  margin-left: 40px;
+  margin-left: 1.5vw;
   color:$meet-green;
   font-weight: bold;
   margin-bottom: 10px;
@@ -182,8 +187,12 @@ img#index-avatar {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-right: 3%;
+  width: 100vw;
+  margin-left: 2%;
+  margin-right: 5.5%;
+
 }
+
     #show-edit-button,#show-delete-button {
       background-color: $meet-green;
       font-size: 0.8vw;
@@ -195,6 +204,7 @@ img#index-avatar {
       opacity: 1.0;
       transition: 0.3s;
       color: white;
+      margin: 0.3vw;
     }
     #show-edit-button:hover {
       opacity: 0.5;
@@ -211,7 +221,7 @@ img#index-avatar {
       color: white;
     }
     #show-delete-button {
-      background-color: $meet-pink;
+      background-color: $meetdark-pink;
       text-decoration: none !important;
       right: 0;
     }
@@ -232,6 +242,7 @@ img#index-avatar {
       border-style: solid;
       border-radius: 20px;
       height: 17vw;
+      width: 100vw;
       padding: 2.7vw;
       color: $meet-green;
       font-size: 1.5vw;
@@ -239,6 +250,7 @@ img#index-avatar {
       font-style: italic;
       margin-right: 2%;
       margin-left: 2%;
+      word-wrap: break-word; 
     }
     #userProfilePicture
     {
@@ -254,6 +266,9 @@ img#index-avatar {
       margin: 5.5vw;
       margin-top: 2vw;
       padding: 2vw;
+    }
+    #spot-show-lunchers-container {
+      padding-bottom: 2vw;
     }
     #Lunchers{
       display: flex;
@@ -294,26 +309,25 @@ img#index-avatar {
     border-color: $meet-green;
     border-style: solid;
     border-radius: 10px;
-    width: 85vw;
-    margin-left: 0;
-    margin-top: 0;
+    text-align: left;
+    padding: 1vw;
+    width: 83.5vw;
   }
 
 #spot-comments-container
 {
-  padding: 3vw;
-  padding-left: 0;
+    padding-bottom: 2vw;
 
 }
 #comments-content
 {
   background-color: $meet-green;
   border-radius: 10px;
-  width: 85vw;
   padding: 1.5vw;
-  padding-bottom: 0.5vw;
+  padding-bottom: 1vw;
   display: flex;
   justify-content: space-between;
+  margin: 0.9vw;
 }
   #comment-body
   {
@@ -559,6 +573,7 @@ width: 60%;
   margin-left: 0;
   margin-top: 0;
 }
+
 #location1
 {
   border-color: $meet-green;
@@ -568,3 +583,4 @@ width: 60%;
   margin-left: 0;
   margin-top: 0;
 }
+
