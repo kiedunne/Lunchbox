@@ -30,136 +30,154 @@
 <div class="index-container" id="allspots">
   <!-- <h1>list star here</h1> -->
 <% @spots.each do |spot| %>
-  <% date_spot = Date.strptime(spot.datestring, "%d/%m/%Y") %>
-    <% if Date.today > date_spot.to_date %>
-      <div class="card-total collapse" id="past-posts">
-          <%= link_to spot_path(spot) do %>
-            <div class="card-body">
-              <div class="spot-title-time">
-                <h3 id="index-spot-title"><%=truncate(spot.spot, length:11)%></h3>
-                <h3 id="index-spot-time"><%= spot.time_start %> - <%= spot.time_end %></h3>
-              </div>
-              <iframe
-              width="100%"
-              height="100%"
-              frameborder="0" style="border:0"
-              src="https://www.google.com/maps/embed/v1/place?key=<%=ENV['google_maps_api_key']%>
-                &q=<%="#{spot.spot}"%>+<%="#{spot.location}"%>" allowfullscreen>
-              </iframe>
-              <h3 id='index-spot-location'><%= truncate(spot.location) %></h3>
-              <div class="index-spot-text">
-                <p id='index-spot-date'><%= spot.datestring %></p>
-              </div>
+<% date_spot = Date.strptime(spot.datestring, "%d/%m/%Y") %>
+<% if Date.today > date_spot.to_date %>
+<div class="card-total collapse" id="past-posts">
+  <%= link_to spot_path(spot) do %>
 
-              <% @users.each do |user| %>
-                <%= link_to profile_path(user.id) do %>
-                  <% if user.id == spot.user_id %>
-                    <% if user.avatar.attached? %>
-                      <img style="border-radius: 10px;"<%= image_tag user.avatar.variant(resize: "50x50!") %></img>
-                    <% else %>
-                    <img src="/images/placeholder_img.jpg"style="height:2.5vw; width:2.5vw; border-radius: 10px;"></img>
-                    <% end %>
-                  <% end %>
-                <% end %>
-              <% end %>
-              <% spot.followers.each do |follower| %>
-                <%= link_to profile_path(follower.id) do %>
-                  <% if follower.avatar.attached? %>
-                    <img style="border-radius: 10px;"<%= image_tag follower.avatar.variant(resize: "50x50!") %></img>
-                  <% else %>
-                  <img src="/images/placeholder_img.jpg"style="height:2.5vw; width:2.5vw; border-radius: 10px;"></img>
-                  <% end %>
-                <% end %>
-              <% end %>
+    <div class="card-body">
+      <div class="spot-title-time">
+        <h3 id="index-spot-title"><%=truncate(spot.spot, length:11)%></h3>
+        <h3 id="index-spot-time"><%= spot.time_start %> - <%= spot.time_end %></h3>
+      </div>
+
+      <iframe
+      width="100%"
+      height="100%"
+      frameborder="0" style="border:0"
+      src="https://www.google.com/maps/embed/v1/place?key=<%=ENV['google_maps_api_key']%>
+        &q=<%="#{spot.spot}"%>+<%="#{spot.location}"%>" allowfullscreen>
+      </iframe>
+
+      <h3 id='index-spot-location'><%= truncate(spot.location) %></h3>
+      <div class="index-spot-text">
+        <p id='index-spot-date'><%= spot.datestring %></p>
+      </div>
+
+      <% @users.each do |user| %>
+        <%= link_to profile_path(user.id) do %>
+          <% if user.id == spot.user_id %>
+            <% if user.avatar.attached? %>
+              <%= image_tag user.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
+            <% else %>
+              <%= image_tag gravatar_image_url(user.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %></img>
             <% end %>
-            </div>
-          </div>
+          <% end %>
+        <% end %>
+      <% end %>
+      <img><% spot.followers.each do |follower| %>
+        <%= link_to profile_path(follower.id) do %>
+          <% if follower.avatar.attached? %>
+            <%= image_tag follower.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
+          <% else %>
+            <%= image_tag gravatar_image_url(follower.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
+          <% end %>
+        <% end %>
+      <% end %>
+      </img>
 
+  <% end %>
+</div>
+</div>
 <% elsif Date.today < date_spot.to_date %>
 <div class="card-total collapse" id="further-sposts">
   <%= link_to spot_path(spot) do %>
-      <div class="card-body">
-        <div class="spot-title-time">
-          <h3 id="index-spot-title"><%=truncate(spot.spot, length:11)%></h3>
-          <h3 id="index-spot-time"><%= spot.time_start %> - <%= spot.time_end %></h3>
-        </div>
-            <iframe
-            width="100%"
-            height="100%"
-            frameborder="0" style="border:0"
-            src="https://www.google.com/maps/embed/v1/place?key=<%=ENV['google_maps_api_key']%>
-              &q=<%="#{spot.spot}"%>+<%="#{spot.location}"%>" allowfullscreen>
-            </iframe>
-            <h3 id='index-spot-location'><%= truncate(spot.location) %></h3>
-            <div class="index-spot-text">
-              <p id='index-spot-date'><%= spot.datestring %></p>
-            </div>
-            <% @users.each do |user| %>
-              <%= link_to profile_path(user.id) do %>
-                <% if user.id == spot.user_id %>
-                  <% if user.avatar.attached? %>
-                    <img style="border-radius: 10px;"<%= image_tag user.avatar.variant(resize: "50x50!") %></img>
-                  <% else %>
-                  <img src="/images/placeholder_img.jpg"style="height:2.5vw; width:2.5vw; border-radius: 10px;"></img>
-                  <% end %>
-                <% end %>
-              <% end %>
-            <% end %>
-            <% spot.followers.each do |follower| %>
-              <%= link_to profile_path(follower.id) do %>
-                <% if follower.avatar.attached? %>
-                  <img style="border-radius: 10px;"<%= image_tag follower.avatar.variant(resize: "50x50!") %></img>
-                <% else %>
-                <img src="/images/placeholder_img.jpg"style="height:2.5vw; width:2.5vw; border-radius: 10px;"></img>
-                <% end %>
-              <% end %>
+
+    <div class="card-body">
+      <div class="spot-title-time">
+        <h3 id="index-spot-title"><%=truncate(spot.spot, length:11)%></h3>
+        <h3 id="index-spot-time"><%= spot.time_start %> - <%= spot.time_end %></h3>
+      </div>
+
+      <iframe
+      width="100%"
+      height="100%"
+      frameborder="0" style="border:0"
+      src="https://www.google.com/maps/embed/v1/place?key=<%=ENV['google_maps_api_key']%>
+        &q=<%="#{spot.spot}"%>+<%="#{spot.location}"%>" allowfullscreen>
+      </iframe>
+
+      <h3 id='index-spot-location'><%= truncate(spot.location) %></h3>
+      <div class="index-spot-text">
+        <p id='index-spot-date'><%= spot.datestring %></p>
+      </div>
+
+      <% @users.each do |user| %>
+        <%= link_to profile_path(user.id) do %>
+          <% if user.id == spot.user_id %>
+            <% if user.avatar.attached? %>
+              <%= image_tag user.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
+            <% else %>
+              <%= image_tag gravatar_image_url(user.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %></img>
             <% end %>
           <% end %>
-      </div>
-  </div>
+        <% end %>
+      <% end %>
+      <img><% spot.followers.each do |follower| %>
+        <%= link_to profile_path(follower.id) do %>
+          <% if follower.avatar.attached? %>
+            <%= image_tag follower.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
+          <% else %>
+            <%= image_tag gravatar_image_url(follower.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
+          <% end %>
+        <% end %>
+      <% end %>
+      </img>
+
+  <% end %>
+</div>
+</div>
 
 <% else %>
 <div class="card-total collapse" id="today-spots" style='display"block;'>
   <%= link_to spot_path(spot) do %>
-     <div class="card-body">
-            <div class="spot-title-time">
-              <h3 id="index-spot-title"><%=truncate(spot.spot, length:11)%></h3>
-              <h3 id="index-spot-time"><%= spot.time_start %> - <%= spot.time_end %></h3>
-            </div>
-            <iframe
-            width="100%"
-            height="100%"
-            frameborder="0" style="border:0"
-            src="https://www.google.com/maps/embed/v1/place?key=<%=ENV['google_maps_api_key']%>
-              &q=<%="#{spot.spot}"%>+<%="#{spot.location}"%>" allowfullscreen>
-            </iframe>
-            <h3 id='index-spot-location'><%= truncate(spot.location) %></h3>
-            <div class="index-spot-text">
-              <p id='index-spot-date'><%= spot.datestring %></p>
-            </div>
-            <% @users.each do |user| %>
-              <%= link_to profile_path(user.id) do %>
-                <% if user.id == spot.user_id %>
-                  <% if user.avatar.attached? %>
-                    <img style="border-radius: 10px;"<%= image_tag user.avatar.variant(resize: "50x50!") %></img>
-                  <% else %>
-                  <img src="/images/placeholder_img.jpg"style="height:2.5vw; width:2.5vw; border-radius: 10px;"></img>
-                  <% end %>
-                <% end %>
-              <% end %>
+    <div class="card-body">
+      <div class="spot-title-time">
+        <h3 id="index-spot-title"><%=truncate(spot.spot, length:11)%></h3>
+        <h3 id="index-spot-time"><%= spot.time_start %> - <%= spot.time_end %></h3>
+      </div>
+
+      <iframe
+      width="100%"
+      height="100%"
+      frameborder="0" style="border:0"
+      src="https://www.google.com/maps/embed/v1/place?key=<%=ENV['google_maps_api_key']%>
+        &q=<%="#{spot.spot}"%>+<%="#{spot.location}"%>" allowfullscreen>
+      </iframe>
+
+      <h3 id='index-spot-location'><%= truncate(spot.location) %></h3>
+      <div class="index-spot-text">
+        <p id='index-spot-date'><%= spot.datestring %></p>
+      </div>
+
+      <% @users.each do |user| %>
+        <%= link_to profile_path(user.id) do %>
+          <% if user.id == spot.user_id %>
+            <% if user.avatar.attached? %>
+              <%= image_tag user.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
+            <% else %>
+              <%= image_tag gravatar_image_url(user.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %></img>
+
             <% end %>
-            <% spot.followers.each do |follower| %>
-              <%= link_to profile_path(follower.id) do %>
-                <% if follower.avatar.attached? %>
-                  <img style="border-radius: 10px;"<%= image_tag follower.avatar.variant(resize: "50x50!") %></img>
-                <% else %>
-                <img src="/images/placeholder_img.jpg"style="height:2.5vw; width:2.5vw; border-radius: 10px;"></img>
-                <% end %>
-              <% end %>
-            <% end %>
+          <% end %>
         <% end %>
-    </div>
-  </div>
+
+      <% end %>
+      <img><% spot.followers.each do |follower| %>
+        <%= link_to profile_path(follower.id) do %>
+          <% if follower.avatar.attached? %>
+            <%= image_tag follower.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
+          <% else %>
+            <%= image_tag gravatar_image_url(follower.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
+          <% end %>
+        <% end %>
+      <% end %>
+      </img>
+
+  <% end %>
+</div>
+</div>
+
   <% end %>
 <% end %>
  </div>

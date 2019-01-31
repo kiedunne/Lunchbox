@@ -30,7 +30,8 @@
 
 <div class="sidebar">
   <ul class="sidebar-list">
-    <li class="sidebar-item"><a id="nav-link" class="profile-link" <%= link_to current_user.username, profile_path(current_user.id) %></a></li>
+    <li class="sidebar-item"><a id="nav-link" class="profile-link"
+    <%= link_to current_user.username, profile_path(current_user.id) %></a></li>
     <li class="sidebar-item"><a id="nav-link"<%= link_to "New spot", new_spot_path %></a</li>
     <li class="sidebar-item"><a id="nav-link"<%= link_to "Sign out", destroy_user_session_path, method: :delete %></a></li>
   </ul>
