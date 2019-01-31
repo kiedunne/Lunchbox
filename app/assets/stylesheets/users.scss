@@ -1,30 +1,56 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#vertical-profile-container
+{
+  display: flex;
+  margin: 3vw;
+}
+
 .profile-container {
   display: flex;
   flex-direction: column;
+}
+#profile-spots-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 3vw;
+
+}
+#profile-user-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 25vw;
+}
+
+#card-total-profile {
+  width: 30vw;
+}
+#UserPosts, #UserFollowingPosts {
+  width: 68vw;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
-.user-info {
+#UserFollowingPosts {
+
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
+
+}
+.diet-profile {
+  width: 4vw;
+  height: 4vw;
 }
 
 .user-buttons {
   padding: 10px;
 }
 
-.card-total {
-  border-style: solid;
-  border-color: grey;
-  border-radius: 25px;
-  width: 59%;
-  margin: 20px;
-}
 
 a.spot-title {
   font-size: 30px;

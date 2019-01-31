@@ -15,8 +15,6 @@
   </div>
 </div>
 
-
-
 <div class="index-container" id="allspots">
 <% @spots.each do |spot| %>
 
@@ -25,7 +23,7 @@
 
           <div class="card-body">
             <div class="spot-title-time">
-              <h3 id="index-spot-title"><%=spot.spot%></h3>
+              <h3 id="index-spot-title"><%=truncate(spot.spot, length:11)%></h3>
               <h3 id="index-spot-time"><%= spot.time_start %> - <%= spot.time_end %></h3>
             </div>
 
@@ -37,9 +35,9 @@
               &q=<%="#{spot.spot}"%>+<%="#{spot.location}"%>" allowfullscreen>
             </iframe>
 
-            <h3 id='index-spot-location'><%= spot.location %></h3>
+            <h3 id='index-spot-location'><%= truncate(spot.location) %></h3>
             <div class="index-spot-text">
-              <p><%= spot.datestring %></p>
+              <p id='index-spot-date'><%= spot.datestring %></p>
             </div>
 
             <% @users.each do |user| %>
@@ -48,16 +46,26 @@
                   <% if user.avatar.attached? %>
                     <%= image_tag user.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
                   <% else %>
-                    <%= image_tag gravatar_image_url(user.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
+                    <%= image_tag gravatar_image_url(user.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %></img>
                   <% end %>
                 <% end %>
               <% end %>
             <% end %>
+            <img><% spot.followers.each do |follower| %>
+              <%= link_to profile_path(follower.id) do %>
+                <% if follower.avatar.attached? %>
+                  <%= image_tag follower.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
+                <% else %>
+                  <%= image_tag gravatar_image_url(follower.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
+                <% end %>
+              <% end %>
+            <% end %>
+            </img>
 
-          </div>
+        <% end %>
       </div>
-    <% end %>
- <% end %>
+    </div>
+  <% end %>
  </div>
 </div>
 <div id="mapsrender" style="display: none">

@@ -3,8 +3,8 @@ class SpotsController < ApplicationController
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def index
-    @spots = Spot.all.order('spots.datestring ASC', 'spots.time_start ASC')
-    @follows = Follow.all.order('follows.created_at DESC')
+    @spots = Spot.all.order('spots.datestring ASC', 'spots.time_start DESC')
+    @follows = Follow.all.order('follows.created_at ASC')
     @users = User.all
   end
 

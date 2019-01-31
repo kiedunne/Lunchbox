@@ -1,15 +1,5 @@
 
-<img><% if @user.id == @spot.user_id %>
-    <%= link_to profile_path(@user.id) do %>
-      <% if @user.avatar.attached? %>
-        <%= image_tag @user.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
-      <% else %>
-        <%= image_tag gravatar_image_url(@user.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
-      <% end %>
-    <% end %>
-  <% end %>
-</img>
-<img><% @spot.followers.each do |follower| %>
+<img><% spot.followers.each do |follower| %>
   <%= link_to profile_path(follower.id) do %>
     <% if follower.avatar.attached? %>
       <%= image_tag follower.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>

@@ -1,20 +1,13 @@
-<div class="containerr">
-  <div class="profile-greeting">
-    <% if @user.id == current_user.id %>
-      <h1 class ="text">Hey, <%= current_user.username %>! Check out where you'll be lunching.</h1>
-    <% else %>
-      <h1 class ="text">Check out where <%= @user.username %> is lunching!</h1>
-    <% end %>
-  </div>
 
     <% @allspots.each do |spot| %>
       <% if spot.followed_by?(@user) %>
-
-      <div class="card-total">
         <%= link_to spot_path(spot) do %>
-        <% end %>
-
+        <div class="card-total" id="card-total-profile">
           <div class="card-body">
+            <div class="spot-title-time">
+              <h3 id="index-spot-title"><%=truncate(spot.spot, length:11)%></h3>
+              <h3 id="index-spot-time"><%= spot.time_start %> - <%= spot.time_end %></h3>
+            </div>
 
             <iframe
             width="100%"
@@ -24,28 +17,24 @@
               &q=<%="#{spot.spot}"%>+<%="#{spot.location}"%>" allowfullscreen>
             </iframe>
 
-            <div class="spot-title-time">
-              <p><small><b>Spot place : </b><%=spot.spot%></small></p>
+            <h3 id='index-spot-location'><%= truncate(spot.location) %></h3>
+            <div class="index-spot-text">
+            <p id='index-spot-date'><%= spot.datestring %></p>
             </div>
+          <% end %>
 
-            <div class="fontsize">
-              <p><b>Date : </b><%= spot.datestring %></p>
-            </div>
-
-            <div class="fontsize">
-              <p><b>Time : </b><%= spot.time_start %> - <%= spot.time_end %></p>
-            </div>
-            
-            <div class="fontsize">
-              <p><b>Location : </b><%= spot.location %></p>
-
-            </div>
-            <div class="fontsize" id="redirect-to-spot">
-              <p><%= link_to "Click here for more details", spot_path(spot)%></p>
-            </div>
-
-          </div>
+          <% @users.each do |user| %>
+            <%= link_to profile_path(user.id) do %>
+              <% if user.id == spot.user_id %>
+                <% if user.avatar.attached? %>
+                  <%= image_tag user.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
+                <% else %>
+                  <%= image_tag gravatar_image_url(user.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %></img>
+                <% end %>
+              <% end %>
+            <% end %>
+          <% end %>
+      </div>
       </div>
   <% end %>
-  <% end %>
-</div>
+<% end %>
