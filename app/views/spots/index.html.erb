@@ -17,6 +17,7 @@
 </div>
 
 <div id="list-spot" style="text-align: center">
+<<<<<<< HEAD
 <p>
 <button class="btn btn-outline-primary" type="button" data-toggle="collapse" data-target="#further-sposts" aria-expanded="false" aria-controls="collapseExample">
   Furthers spots
@@ -28,6 +29,17 @@
   Pasts spots
 </button>
 </p>
+=======
+  <button class="btn btn-outline-primary" type="button" data-toggle="collapse" data-target="#further-sposts" aria-expanded="false" aria-controls="collapseExample">
+    All spots
+  </button>
+  <button id="today" class="btn btn-outline-success" type="button" data-toggle="collapse" data-target="#today-spots" aria-expanded="false" aria-controls="collapseExample">
+    Today's spots
+  </button>
+  <button class="btn btn-outline-secondary" type="button" data-toggle="collapse" data-target="#past-posts" aria-expanded="false" aria-controls="collapseExample">
+    Past spots
+  </button>
+>>>>>>> 2c24b9368347c2a54082ebf35d1913647ade3e66
 </div>
 
 <div class="index-container" id="allspots">
@@ -130,10 +142,10 @@
   <% end %>
 </div>
 </div>
-<% else %>
-<div class="card-total collapse" id="today-spots">
-  <%= link_to spot_path(spot) do %>
 
+<% else %>
+<div class="card-total collapse" id="today-spots" style='display"block;'>
+  <%= link_to spot_path(spot) do %>
     <div class="card-body">
       <div class="spot-title-time">
         <h3 id="index-spot-title"><%=truncate(spot.spot, length:11)%></h3>
@@ -160,9 +172,11 @@
               <%= image_tag user.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
             <% else %>
               <%= image_tag gravatar_image_url(user.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %></img>
+
             <% end %>
           <% end %>
         <% end %>
+
       <% end %>
       <img><% spot.followers.each do |follower| %>
         <%= link_to profile_path(follower.id) do %>
@@ -178,8 +192,9 @@
   <% end %>
 </div>
 </div>
-<% end %>
+
   <% end %>
+<% end %>
  </div>
 </div>
 <div id="mapsrender" style="display: none">
