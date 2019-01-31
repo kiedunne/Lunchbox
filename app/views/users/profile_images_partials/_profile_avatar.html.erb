@@ -1,5 +1,6 @@
 <img id="profile-avater"<% if @user.avatar.attached? %>
-  <%= image_tag @user.avatar, height: 350, width: 350 %>
+  <img style="border-radius: 10px;"<%= image_tag @user.avatar, height: 350, width: 350 %></img>
 <% else %>
-  <%= image_tag gravatar_image_url(@user.email, size: 75), height: 100, width: 100  %>
+  <img src="/images/placeholder_img.jpg"style="height:19vw; width:20vw; border-radius: 10px;"></img>
+
 <% end %></img>
