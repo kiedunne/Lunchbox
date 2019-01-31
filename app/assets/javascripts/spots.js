@@ -4,7 +4,7 @@ $(document).on('page:load', ready);
 
 var ready;
 ready = function() {
-  $( "#today" ).click()
+  $( "#today" ).click();
   $( function() {
      $( "#datepicker" ).datepicker();
    } );
@@ -14,7 +14,6 @@ ready = function() {
 
   $('#datepicker').datepicker({
       minDate: today,
-      dateFormat: 'dd/mm/yy'
   });
 
   $( function init() {
