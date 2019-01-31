@@ -1,71 +1,84 @@
-<div id="form-group">
-<div class="form text-color">
+<div class="super-div">
+  <div class="popup-storm">
 
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+  <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= devise_error_messages! %>
 
-  <% if @user.avatar.attached? %>
-  <%= image_tag @user.avatar, height: 100, width: 100, class: "tar rounded-circle" %>
-  <% else %>
-  <%= image_tag gravatar_image_url(@user.email, size: 75), height: 100, width: 100, class: "tar rounded-circle" %>
-  <% end %>
+    <% if @user.avatar.attached? %>
+    <%= image_tag @user.avatar, height: 100, width: 100, class: "tar rounded-circle" %>
+    <% else %>
+    <%= image_tag gravatar_image_url(@user.email, size: 75), height: 100, width: 100, class: "tar rounded-circle" %>
+    <% end %>
 
-  <div class="field">
-    <%= f.label :avatar %><br>
-    <div id="avatar">
-    <%= f.file_field :avatar%>
+    <div class="edit-user">
+      <%= f.label :avatar %><br><br>
+      <div class="choose-file">
+      <%= f.file_field :avatar%>
+      </div>
+    </div><br><br>
+
+    <div class="edit-user">
+      Dietery Preference
+      <div class="diet-options">
+        <div class="icon-hover"><img src="/images/color_diet_icons/chicken.png" alt = "omnivore" id = "icon" onclick = "omniAdd()"></div>
+        <div class="icon-hover"><img src="/images/color_diet_icons/plant.png" alt = "vegan" id = "icon" onclick = "veganAdd()"></div>
+        <div class="icon-hover"><img src="/images/color_diet_icons/cow.png" alt = "lacto vegetarian" id = "icon" onclick = "lactoAdd()"></div>
+        <div class="icon-hover"><img src="/images/color_diet_icons/carrot.png" alt = "vegetarian" id = "icon" onclick = "veggieAdd()"></div>
+        <div class="icon-hover"><img src="/images/color_diet_icons/fish.png" alt = "pescetarian" id = "icon" onclick = "pesciAdd()"></div>
+        <div class="icon-hover"><img src="/images/color_diet_icons/egg.png" alt = "ovo-vegetarian" id = "icon" onclick = "ovoAdd()"></div>
+      </div>
     </div>
-  </div><br>
 
-  <div class="field">
-    <%= f.label :username %><br />
-    <%= f.text_field :username, autofocus: true, autocomplete: "email", class: "form-control" %>
-  </div><br>
+    <div class="edit-user">
+      <%= f.text_field :diet, autofocus: true, id: "diet-pref", autocomplete: "off", class: "form-control" %>
+    </div><br>
 
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
-  </div><br>
+    <div class="edit-user">
+      <%= f.label :username %><br />
+      <%= f.text_field :username, autofocus: true, autocomplete: "email", class: "form-control" %>
+    </div><br>
 
-  <div class="field">
-    <%= f.label :dietery_preference %><br />
-    <%= f.text_field :diet, autofocus: true, autocomplete: "email", class: "form-control" %>
-  </div><br>
+    <div class="edit-user">
+      <%= f.label :email %><br>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+    </div><br>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% end %>
+
+    <div class="edit-user">
+      <%= f.label :password %><% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %> <br>
+      <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+
+    </div>
+
+    <div class="edit-user"><br>
+      <%= f.label :password_confirmation %><br>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+    </div>
+
+    <div class="edit-user"><br>
+      <%= f.label :current_password %><br>
+      <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control" %>
+    </div>
+  <br>
+    <div class="edit-user">
+      <%= f.submit "Update", class: "btn btn-primary" %>
+    </div><br>
   <% end %>
 
-  <div class="field">
-    <%= f.label :password %><% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %> <br>
-    <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+  <div class="edit-user">
+    <h3>Cancel my account</h3>
 
+    <p> <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %></p>
+
+    <%= link_to "Back", :back, class: "btn btn-secondary" %>
+
+    </div>
   </div>
-
-  <div class="field"><br>
-    <%= f.label :password_confirmation %><br>
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
-  </div>
-
-  <div class="field"><br>
-    <%= f.label :current_password %><br>
-    <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control" %>
-  </div>
-<br>
-  <div class="actions">
-    <%= f.submit "Update", class: "btn btn-primary" %>
-  </div><br>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p> <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %></p>
-
-<%= link_to "Back", :back, class: "btn btn-secondary" %>
-
-</div>
 </div>

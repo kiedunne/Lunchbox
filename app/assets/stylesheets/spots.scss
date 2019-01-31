@@ -57,10 +57,7 @@ $meet-pink: #ecd7d6;
   }
   .index-container{
     display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
     flex-wrap: wrap;
-    height: 100%;
     margin: 2%;
     margin-top: 0;
   }
@@ -403,6 +400,10 @@ img#index-avatar {
 #avatar
 {
   margin-left: 30%;
+}
+
+.choose-file {
+  margin-left: 12%;
 }
 
 a.spot-title {
