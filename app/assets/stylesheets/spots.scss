@@ -470,7 +470,62 @@ p.spot-time {
 .mapsss {
   height: 100px;
   width: 100px;
+  opacity: 1;
+  transition: 1s;
+}
+
+.mapsss:hover {
+  opacity: 0.5;
+  -webkit-animation:spin 4s linear infinite;
+  -moz-animation:spin 4s linear infinite;
+  animation:spin 4s linear infinite;
+}
+
+.listsss {
+  height: 100px;
+  width: 100px;
+  opacity: 1;
+  transition: 1s;
+}
+
+.listsss:hover {
+  opacity: 0.5;
+  animation: shake 0.5s;
+  -webkit-animation-name: wiggle;
+  -ms-animation-name: wiggle;
+  -ms-animation-duration: 1000ms;
+  -webkit-animation-duration: 1000ms;
+  -webkit-animation-iteration-count: 1;
+  -ms-animation-iteration-count: 1;
+}
+
+.listsss:focus {
+  opacity: 0.5;
+}
+
+#mapsrender {
+  height: 70%;
+}
+
+.map-picture {
+  float: left;
+  padding-right: 50px;
+}
+
+.all-picture {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 42.3%;
+  padding-bottom: 25px;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+@-webkit-keyframes wiggle {
+  0% {-webkit-transform: rotate(10deg);}
+  25% {-webkit-transform: rotate(-10deg);}
+  50% {-webkit-transform: rotate(20deg);}
+  75% {-webkit-transform: rotate(-5deg);}
+  100% {-webkit-transform: rotate(0deg);}
 }
