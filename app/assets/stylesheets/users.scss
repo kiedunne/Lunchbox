@@ -1,6 +1,11 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// #profile-avatar {
+//   height: 2vw;
+//   width: 2vw;
+//
+// }
 #vertical-profile-container
 {
   display: flex;
@@ -23,12 +28,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 25vw;
+  width: 24vw;
 }
 
 #card-total-profile {
   width: 30vw;
 }
+
 #UserPosts, #UserFollowingPosts {
   width: 68vw;
   display: flex;
