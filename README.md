@@ -5,6 +5,8 @@
 [![codecov](https://codecov.io/gh/AsadK47/Meet-and-Eat/branch/master/graph/badge.svg)](https://codecov.io/gh/AsadK47/Meet-and-Eat)
 [![Coverage Status](https://coveralls.io/repos/github/AsadK47/Meet-and-Eat/badge.svg?branch=master)](https://coveralls.io/github/AsadK47/Meet-and-Eat?branch=master)
 
+<img src="https://coveralls.io/repos/github/AsadK47/Meet-and-Eat/badge.svg?branch=master&kill_cache=1" />
+
 Welcome to Meet&Eat, the best place to find friends, food and fun.
 
 ![Screenshot](meet_screen.png)

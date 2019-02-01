@@ -1,2 +1,2 @@
 service_name: travis-pro
-repo_token: ENV['coveralls_token']
+repo_token: U5nHIp48EI0AJ8h7k537mVtxawAhExCHT
