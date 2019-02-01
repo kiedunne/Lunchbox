@@ -27,7 +27,7 @@
               <%= link_to profile_path(user.id) do %>
                 <% if user.id == spot.user_id %>
                   <% if user.avatar.attached? %>
-                    <%= image_tag user.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
+                    <img style="border-radius:10px;"<%= image_tag user.avatar.variant(resize: "40x40!") %></img>
                   <% else %>
                     <img src="/images/placeholder_img.jpg"style="height:2.5vw; width:2.5vw; border-radius: 10px;"></img>
                   <% end %>

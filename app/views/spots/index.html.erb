@@ -1,6 +1,8 @@
 <%= javascript_include_tag 'home' %>
 <%= javascript_include_tag 'spots' %>
+
 <%=render 'shared/navigation'%>
+
 
 <div class="containerz">
   <h1 class ="text-welcome-msg">Hi, <%= current_user.username %>!  Where do you feel like lunching today?</h1>
@@ -59,23 +61,23 @@
         <%= link_to profile_path(user.id) do %>
           <% if user.id == spot.user_id %>
             <% if user.avatar.attached? %>
-              <%= image_tag user.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
+              <img style="border-radius:10px;"<%= image_tag user.avatar.variant(resize: "40x40!") %></img>
             <% else %>
-              <%= image_tag gravatar_image_url(user.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %></img>
+              <img src="/images/placeholder_img.jpg"style="height:2.5vw; width:2.5vw; border-radius: 10px;"></img>
             <% end %>
           <% end %>
         <% end %>
       <% end %>
-      <img><% spot.followers.each do |follower| %>
+      <% spot.followers.each do |follower| %>
         <%= link_to profile_path(follower.id) do %>
           <% if follower.avatar.attached? %>
-            <%= image_tag follower.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
+              <img style="border-radius:10px;"<%= image_tag follower.avatar.variant(resize: "40x40!") %></img>
           <% else %>
-            <%= image_tag gravatar_image_url(follower.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
+            <img src="/images/placeholder_img.jpg"style="height:2.5vw; width:2.5vw; border-radius: 10px;"></img>
           <% end %>
         <% end %>
       <% end %>
-      </img>
+
 
   <% end %>
 </div>
@@ -107,23 +109,23 @@
         <%= link_to profile_path(user.id) do %>
           <% if user.id == spot.user_id %>
             <% if user.avatar.attached? %>
-              <%= image_tag user.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
+              <img style="border-radius:10px;"<%= image_tag user.avatar.variant(resize: "40x40!") %></img>
             <% else %>
-              <%= image_tag gravatar_image_url(user.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %></img>
+              <img src="/images/placeholder_img.jpg"style="height:2.5vw; width:2.5vw; border-radius: 10px;"></img>
             <% end %>
           <% end %>
         <% end %>
       <% end %>
-      <img><% spot.followers.each do |follower| %>
+      <% spot.followers.each do |follower| %>
         <%= link_to profile_path(follower.id) do %>
           <% if follower.avatar.attached? %>
-            <%= image_tag follower.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
+            <img style="border-radius:10px;"<%= image_tag follower.avatar.variant(resize: "40x40!") %></img>
           <% else %>
-            <%= image_tag gravatar_image_url(follower.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
+            <img src="/images/placeholder_img.jpg"style="height:2.5vw; width:2.5vw; border-radius: 10px;"></img>
           <% end %>
         <% end %>
       <% end %>
-      </img>
+
 
   <% end %>
 </div>
@@ -155,25 +157,23 @@
         <%= link_to profile_path(user.id) do %>
           <% if user.id == spot.user_id %>
             <% if user.avatar.attached? %>
-              <%= image_tag user.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
+              <img style="border-radius:10px;"<%= image_tag user.avatar.variant(resize: "40x40!") %></img>
             <% else %>
-              <%= image_tag gravatar_image_url(user.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %></img>
-
+              <img src="/images/placeholder_img.jpg"style="height:2.5vw; width:2.5vw; border-radius: 10px;"></img>
             <% end %>
           <% end %>
         <% end %>
 
       <% end %>
-      <img><% spot.followers.each do |follower| %>
+      <% spot.followers.each do |follower| %>
         <%= link_to profile_path(follower.id) do %>
           <% if follower.avatar.attached? %>
-            <%= image_tag follower.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
+            <img style="border-radius:10px;"<%= image_tag follower.avatar.variant(resize: "40x40!")%></img>
           <% else %>
-            <%= image_tag gravatar_image_url(follower.email, size: 75), height: 50, width: 50, class: "tar rounded-circle" %>
+            <img src="/images/placeholder_img.jpg"style="height:2.5vw; width:2.5vw; border-radius: 10px;"></img>
           <% end %>
         <% end %>
       <% end %>
-      </img>
 
   <% end %>
 </div>
@@ -186,3 +186,30 @@
 <div id="mapsrender" style="display: none">
   <%= render 'spots/partials/map_view' %>
 </div>
+
+<!-- 
+<script>
+
+  $(document).ready(ready);
+  $(document).on('load', ready);
+
+  var ready;
+  ready = function() {
+
+    function toggleSidebar() {
+      $(".button").toggleClass("active");
+      $("main").toggleClass("move-to-left");
+      $(".sidebar-item").toggleClass("active");
+    }
+
+    $(".button").on("click tap", function() {
+      toggleSidebar();
+    });
+
+    $(document).keyup(function(e) {
+      if (e.keyCode === 27) {
+        toggleSidebar();
+      }
+    });
+  };
+  </script> -->

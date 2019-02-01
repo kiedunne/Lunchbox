@@ -1,12 +1,13 @@
-<%= javascript_include_tag 'home' %>
-<%= javascript_include_tag 'spots' %>
-<div class="LunchSpotsContainer">
 
 <%=render 'shared/navigation'%>
+<%= javascript_include_tag 'home' %>
+<%= javascript_include_tag 'spots' %>
 
+
+<div class="LunchSpotsContainer">
 <div id="formAddLuchSpot">
   <div class="form text-color">
-    <h3 class='text-welcome-msg'>Add a Lunch spot!</h3>
+    <h3 id='index-spot-title' style="padding: ">Add a Lunch spot!</h3>
 
   <%= form_for :spot, url: spots_path do |f| %>
       <% if @spot.errors.any? %>
@@ -24,42 +25,35 @@
       &q=restaurants+near+me" allowfullscreen>
     </iframe>
 
-    <p>
-      <%= f.label :spot %><br>
-      <%= f.text_field(:spot, :class => 'form-control formwidth', id: 'show-form-enter') %>
-    </p>
+      <h3 class="new-spot-text" id='index-spot-location'>Find a lunch spot</h3>
+      <%= f.text_field(:spot, :autocomplete => :off, :class => 'form-control formwidth', id: 'show-form-enter') %>
 
-    <p>
-      <%= f.label :date %><br>
+      <h3 class="new-spot-text" id='index-spot-location'>Pick a date</h3>
       <%= f.text_field(:datestring, :autocomplete => :off, :id => "datepicker", :class => 'form-control formwidth') %>
-    </p>
 
-    <p>
-      <%= f.label :time_start %><br>
+      <h3 class="new-spot-text" id='index-spot-location'>Pick a start and end time</h3>
       <%= f.time_select(:time_start, autocomplete: 'off', class: "form-control") %>
-    </p>
-
-    <p>
-      <%= f.label :time_end %><br>
       <%= f.time_select(:time_end, autocomplete: 'off', :class => 'form-control') %>
-    </p>
 
-    <p>
-      <%= f.label :location %><br>
-      <%= f.text_field(:location, id: "location1", :class => 'form-control formwidth', :placeholder => "") %>
-    </p>
+      <h3 class="new-spot-text" id='index-spot-location'>Pick a location</h3>
 
-    <p>
-      <%= f.label :info %><br>
-      <%= f.text_area(:info, :class => 'form-control formwidth', id: 'show-form-enter') %>
-    </p>
+      <%= f.text_field(:location, autocomplete: 'off', id: "location1", :class => 'form-control formwidth', placeholder: '') %>
 
-    <p>
-      <%= f.submit(:class => 'btn btn-primary', id: 'show-form-enter') %>
-    </p>
+      <h3 class="new-spot-text" id='index-spot-location'>Write a description</h3>
+      <%= f.text_field(:info, :class => 'form-control formwidth', :autocomplete => :off, id: 'show-form-enter') %>
+
+      <%= f.submit( class: "submit-button", id: 'new-spot-button') %>
   <% end %>
 
+</div>
+</div>
+</div>
 
-</div>
-</div>
-</div>
+<style>
+  #new-spot-button {
+    background-color: #25988b;
+    margin: 20px;
+    color: white;
+  }
+
+  </style>

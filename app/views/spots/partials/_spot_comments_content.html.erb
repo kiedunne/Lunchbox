@@ -9,7 +9,7 @@
             <% if user.id == comment.user_id %>
               <%= link_to profile_path(user.id) do %>
                 <% if user.avatar.attached? %>
-                  <%= image_tag user.avatar.variant(resize: "50x50!"), class: "tar rounded-circle" %>
+                  <img style="border-radius: 10px;"<%= image_tag user.avatar.variant(resize: "50x50!")%></img>
                     <% else %>
                       <img src="/images/placeholder_img.jpg"style="height:3vw; width:3vw; border-radius: 10px;"></img>
                   <% end %>

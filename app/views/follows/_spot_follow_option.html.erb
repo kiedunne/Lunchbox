@@ -1,6 +1,6 @@
 
   <div id="show-user-buttons">
     <%= form_tag follow_spot_path(id: @spot.id), method: :post, data: {confirm: 'Joined a lunch spot!'}, remote: true do  %>
-    <button id="show-delete-button"><%= link_to 'Join Spot', follow_spot_path(id: @spot.id), method: :post, data: {confirm: 'Joined a lunch spot!'}, remote: true %></button>
+    <button id="show-edit-button"><%= link_to 'Join Spot', follow_spot_path(id: @spot.id), method: :post, data: {confirm: 'Joined a lunch spot!'}, remote: true %></button>
     <% end %>
   </div>
