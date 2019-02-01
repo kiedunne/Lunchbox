@@ -45,7 +45,7 @@ Welcome to Meet&Eat, the best place to find friends, food and fun.
 :white_check_mark: All active lunch spots an active date<br />
 :white_check_mark: Users can assign themselves interest tags (ex. coding, illustration)<br />
 :white_check_mark: Spots can be sorted by past, present and future<br />
-:white_check_mark: When typing in location, autofill activates to suggest places<br />
+:white_check_mark: When typing in location, autofill activates to suggest places. <br />
 
 ## Links to the application and development board
 
