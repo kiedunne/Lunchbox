@@ -3,10 +3,23 @@
 [![Build Status](https://travis-ci.com/AsadK47/Meet-and-Eat.svg?branch=master)](https://travis-ci.com/AsadK47/Meet-and-Eat)
 [![Maintainability](https://api.codeclimate.com/v1/badges/80296a48bd19ade48130/maintainability)](https://codeclimate.com/github/AsadK47/Meet-and-Eat/maintainability)
 [![codecov](https://codecov.io/gh/AsadK47/Meet-and-Eat/branch/master/graph/badge.svg)](https://codecov.io/gh/AsadK47/Meet-and-Eat)
+[![Coverage Status](https://coveralls.io/repos/github/AsadK47/Meet-and-Eat/badge.svg?branch=master)](https://coveralls.io/github/AsadK47/Meet-and-Eat?branch=master)
+
+<img src="https://coveralls.io/repos/github/AsadK47/Meet-and-Eat/badge.svg?branch=master&kill_cache=1" />
 
 Welcome to Meet&Eat, the best place to find friends, food and fun.
 
 ![Screenshot](meet_screen.png)
+
+![](assets/README-5f25e1ce.png)
+
+![](assets/README-090f4b42.png)
+
+![](assets/README-2dc1f8ab.png)
+
+![](assets/README-71367e77.png)
+
+![](assets/README-7d8d6700.png)
 
 ## Iteration 1.0 Features
 :white_check_mark: Users can sign up and sign in to Meet&Eat<br />
@@ -23,17 +36,16 @@ Welcome to Meet&Eat, the best place to find friends, food and fun.
 :white_check_mark: Users can leave create, edit and delete comments on a lunch spot <br />
 :white_check_mark: Users can choose a dietary preference (ex. vegetarian, pescitarian)<br />
 :white_check_mark: Users can change their dietary preference<br />
-:negative_squared_cross_mark: Expired lunch spots are not listed<br />
-:negative_squared_cross_mark: Users can filter lunch spots by time and date<br />
-:negative_squared_cross_mark: Users can filter lunch spots by location<br />
+:white_check_mark: Expired lunch spots are not listed<br />
+:white_check_mark: Users can filter lunch spots by time and date<br />
+:white_check_mark: Users can filter lunch spots by location<br />
 
 ## Iteration 3.0 Features
-:negative_squared_cross_mark: All active lunch spots display on a map<br />
-:negative_squared_cross_mark: All active lunch spots display on a calendar<br />
-:negative_squared_cross_mark: Users can assign themselves interest tags (ex. coding, illustration)<br />
-:negative_squared_cross_mark: Interest tags can be edited or deleted<br />
-:negative_squared_cross_mark: A User's interest tags are attached to any lunch spot they post or join<br />
-:negative_squared_cross_mark: Users can see the interest tags of all users who have joined a lunch spot<br />
+:white_check_mark: All active lunch spots display on a map<br />
+:white_check_mark: All active lunch spots an active date<br />
+:white_check_mark: Users can assign themselves interest tags (ex. coding, illustration)<br />
+:white_check_mark: Spots can be sorted by past, present and future<br />
+:white_check_mark: When typing in location, autofill activates to suggest places <br />
 
 ## Links to the application and development board
 
@@ -67,7 +79,41 @@ bin/rails server # Start the server at localhost:3000
 ## User Stories
 
 ```
-Add here
+As a luncher,
+So I can show where I am going,
+I would like to be able to add a lunch spot
+
+As a luncher,
+So other users can meet up with me,
+I would like to show my spot on a main board
+
+As a luncher,
+So I can join others at a spot,
+I would like to be able to join a spot
+
+As a luncher,
+So I can show people my dietary restrictions,
+I would like to be able to set my dietary preference upon sign up
+
+As a luncher,
+So I can easily view where everyone is going,
+I would like all lunch spots to appear on a single map
+
+As a luncher,
+So I can customise my profile,
+I would like to be able to edit my avatar and dietary preference on the edit user page
+
+As a luncher,
+So I can let people know I am attending a spot,
+I would like to be able to comment on other lunch spots made by users
+
+As a luncher,
+So I know what restrictions other people have,
+I would like to be able to see their dietary preference upon joining a spot
+
+As a luncher,
+So I can easily enter a spot location,
+I would like for it to be able to autofill upon typing
 ```
 
 ## Contributing to the project
@@ -76,7 +122,7 @@ If you wish to contribute to the project then please do so by running the code t
 
 We are open to pull requests and would definitely appreciate any comments and feedback that you may have about the project.
 
-Please ensure that the pull request is descriptive and easy to understand so as to minimize the time between the request and merge.
+Please ensure that the pull request is descriptive and easy to understand so as to minimise the time between the request and merge.
 
 ## Deploying to Heroku
 

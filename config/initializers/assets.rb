@@ -2,13 +2,13 @@
 
 # Version of your assets, change this if you want to expire all your assets.
 Rails.application.config.assets.version = '1.0'
-Rails.application.config.assets.precompile += %w( users.js )
-Rails.application.config.assets.precompile += %w( spots.js )
-Rails.application.config.assets.precompile += %w( home.js )
-Rails.application.config.assets.precompile += %w( users.css )
-Rails.application.config.assets.precompile += %w( spots.css )
-Rails.application.config.assets.precompile += %w( comments.css )
-Rails.application.config.assets.precompile += %w( home.css )
+Rails.application.config.assets.precompile += %w(users.js)
+Rails.application.config.assets.precompile += %w(spots.js)
+Rails.application.config.assets.precompile += %w(home.js)
+Rails.application.config.assets.precompile += %w(users.css)
+Rails.application.config.assets.precompile += %w(spots.css)
+Rails.application.config.assets.precompile += %w(comments.css)
+Rails.application.config.assets.precompile += %w(home.css)
 # Add additional assets to the asset load path.
 # Rails.application.config.assets.paths << Emoji.images_path
 # Add Yarn node_modules folder to the asset load path.

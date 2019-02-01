@@ -6,6 +6,7 @@ gem 'acts_as_follower', github: 'tcocca/acts_as_follower'
 gem 'aws-sdk-s3', require: false
 gem 'bootstrap-datepicker-rails'
 gem 'cancan'
+gem 'coveralls', require: false
 gem 'devise'
 gem 'figaro'
 gem 'geocoder'
@@ -55,7 +56,6 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
   gem 'codecov', require: false
-  gem 'coveralls', require: false
   gem 'factory_bot'
   gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 3.5'

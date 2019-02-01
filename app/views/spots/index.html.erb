@@ -1,6 +1,8 @@
-<%=render 'shared/navigation'%>
 <%= javascript_include_tag 'home' %>
 <%= javascript_include_tag 'spots' %>
+
+<%=render 'shared/navigation'%>
+
 
 <div class="containerz">
   <h1 class ="text-welcome-msg">Hi, <%= current_user.username %>!  Where do you feel like lunching today?</h1>
@@ -18,7 +20,7 @@
 
 <div id="list-spot" style="text-align: center">
   <button class="btn btn-outline-primary" type="button" data-toggle="collapse" data-target="#further-sposts" aria-expanded="false" aria-controls="collapseExample">
-    All spots
+    Furthers spots
   </button>
   <button id="today" class="btn btn-outline-success" type="button" data-toggle="collapse" data-target="#today-spots" aria-expanded="false" aria-controls="collapseExample">
     Today's spots
@@ -185,7 +187,7 @@
   <%= render 'spots/partials/map_view' %>
 </div>
 
-
+<!-- 
 <script>
 
   $(document).ready(ready);
@@ -210,4 +212,4 @@
       }
     });
   };
-  </script>
+  </script> -->
