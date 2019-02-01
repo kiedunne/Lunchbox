@@ -5,21 +5,7 @@
 [![codecov](https://codecov.io/gh/AsadK47/Meet-and-Eat/branch/master/graph/badge.svg)](https://codecov.io/gh/AsadK47/Meet-and-Eat)
 [![Coverage Status](https://coveralls.io/repos/github/AsadK47/Meet-and-Eat/badge.svg?branch=master)](https://coveralls.io/github/AsadK47/Meet-and-Eat?branch=master)
 
-<img src="https://coveralls.io/repos/github/AsadK47/Meet-and-Eat/badge.svg?branch=master&kill_cache=1" />
-
-Welcome to Meet&Eat, the best place to find friends, food and fun.
-
 ![Screenshot](meet_screen.png)
-
-![](assets/README-5f25e1ce.png)
-
-![](assets/README-090f4b42.png)
-
-![](assets/README-2dc1f8ab.png)
-
-![](assets/README-71367e77.png)
-
-![](assets/README-7d8d6700.png)
 
 ## Iteration 1.0 Features
 :white_check_mark: Users can sign up and sign in to Meet&Eat<br />
