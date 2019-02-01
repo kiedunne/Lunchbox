@@ -529,8 +529,9 @@ p.spot-time {
 
 .all-picture {
   display: block;
-  margin-left: 42.3%;
   padding-bottom: 25px;
+  display: flex;
+  justify-content: center;
 }
 
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
