@@ -1,15 +1,13 @@
-# Lunchbox
+
+![Screenshot](lnchbx_prev.png)
 
 [![Build Status](https://travis-ci.com/AsadK47/Meet-and-Eat.svg?branch=master)](https://travis-ci.com/AsadK47/Meet-and-Eat)
 [![Maintainability](https://api.codeclimate.com/v1/badges/80296a48bd19ade48130/maintainability)](https://codeclimate.com/github/AsadK47/Meet-and-Eat/maintainability)
 [![codecov](https://codecov.io/gh/AsadK47/Meet-and-Eat/branch/master/graph/badge.svg)](https://codecov.io/gh/AsadK47/Meet-and-Eat)
 [![Coverage Status](https://coveralls.io/repos/github/AsadK47/Meet-and-Eat/badge.svg?branch=master)](https://coveralls.io/github/AsadK47/Meet-and-Eat?branch=master)
 
-![Screenshot](lnchbx_prev.png)
-
-## Description
-Go to lunch with people in your area with Lunchbox, a handy little app to make lunch dates.
-Built with love on Rails and React.
+<h1 align="center">Find lunch buddies in your area.</h1>
+<h2 align="center">Built with :heart: on Rails and React.</h1>
 
 ## Current Iteration
 :construction: Revamp the front-end UI in React<br />
