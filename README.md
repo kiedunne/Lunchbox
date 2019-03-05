@@ -5,17 +5,17 @@
 [![codecov](https://codecov.io/gh/AsadK47/Meet-and-Eat/branch/master/graph/badge.svg)](https://codecov.io/gh/AsadK47/Meet-and-Eat)
 [![Coverage Status](https://coveralls.io/repos/github/AsadK47/Meet-and-Eat/badge.svg?branch=master)](https://coveralls.io/github/AsadK47/Meet-and-Eat?branch=master)
 
-![Screenshot](meet_screen.png)
+![Screenshot](lnchbx_prev.png)
 
 ## Description
 Go to lunch with people in your area with Lunchbox, a handy little app to make lunch dates.
 Built with love on Rails and React.
 
 ## Current Iteration
-:construction: Revamp the front-end UI in React
-:construction: Isolate separate back-end rails API
-:construction: Remove map from lunch spot preview
-:construction: Assign lunch spot placeholder image based on cuisine
+:construction: Revamp the front-end UI in React<br />
+:construction: Isolate separate back-end rails API<br />
+:construction: Remove map from lunch spot preview<br />
+:construction: Assign lunch spot placeholder image based on cuisine<br />
 
 ## Iteration 3.0 Features
 :white_check_mark: All active lunch spots display on a map<br />
