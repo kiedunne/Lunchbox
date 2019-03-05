@@ -7,9 +7,15 @@
 
 ![Screenshot](meet_screen.png)
 
-
 ## Description
-Go to lunch with people in your area with Lunchbox, a handy little app to make lunch dates. Built with love on Rails and React.
+Go to lunch with people in your area with Lunchbox, a handy little app to make lunch dates.
+Built with love on Rails and React.
+
+## Current Iteration
+:construction: Revamp the front-end UI in React
+:construction: Isolate separate back-end rails API
+:construction: Remove map from lunch spot preview
+:construction: Assign lunch spot placeholder image based on cuisine
 
 ## Iteration 3.0 Features
 :white_check_mark: All active lunch spots display on a map<br />
