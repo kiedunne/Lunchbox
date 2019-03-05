@@ -1,4 +1,4 @@
-# Meet&Eat
+# Lunchbox
 
 [![Build Status](https://travis-ci.com/AsadK47/Meet-and-Eat.svg?branch=master)](https://travis-ci.com/AsadK47/Meet-and-Eat)
 [![Maintainability](https://api.codeclimate.com/v1/badges/80296a48bd19ade48130/maintainability)](https://codeclimate.com/github/AsadK47/Meet-and-Eat/maintainability)
@@ -7,16 +7,16 @@
 
 ![Screenshot](meet_screen.png)
 
-## Iteration 1.0 Features
-:white_check_mark: Users can sign up and sign in to Meet&Eat<br />
-:white_check_mark: Users can upload an avatar<br />
-:white_check_mark: Users can post a lunch spot with a date, time, location and description<br />
-:white_check_mark: Users can only edit or delete their own lunch spots<br />
-:white_check_mark: Lunch spots appear on a map with the location marked<br />
-:white_check_mark: Users can see all posted lunch spots on the homepage<br />
-:white_check_mark: Users have a profile that displays the lunch spots they've posted<br />
-:white_check_mark: Users are automatically an attendee of a lunch spot they post<br />
-:white_check_mark: Users can join a lunch spot they'd like to attend<br />
+
+## Description
+Go to lunch with people in your area with Lunchbox, a handy little app to make lunch dates. Built with love on Rails and React.
+
+## Iteration 3.0 Features
+:white_check_mark: All active lunch spots display on a map<br />
+:white_check_mark: All active lunch spots an active date<br />
+:white_check_mark: Users can assign themselves interest tags (ex. coding, illustration)<br />
+:white_check_mark: Spots can be sorted by past, present and future<br />
+:white_check_mark: When typing in location, autofill activates to suggest places <br />
 
 ## Iteration 2.0 Features
 :white_check_mark: Users can leave create, edit and delete comments on a lunch spot <br />
@@ -26,26 +26,29 @@
 :white_check_mark: Users can filter lunch spots by time and date<br />
 :white_check_mark: Users can filter lunch spots by location<br />
 
-## Iteration 3.0 Features
-:white_check_mark: All active lunch spots display on a map<br />
-:white_check_mark: All active lunch spots an active date<br />
-:white_check_mark: Users can assign themselves interest tags (ex. coding, illustration)<br />
-:white_check_mark: Spots can be sorted by past, present and future<br />
-:white_check_mark: When typing in location, autofill activates to suggest places <br />
+## Iteration 1.0 Features
+:white_check_mark: Users can sign up and sign in<br />
+:white_check_mark: Users can upload an avatar<br />
+:white_check_mark: Users can post a lunch spot with a date, time, location and description<br />
+:white_check_mark: Users can only edit or delete their own lunch spots<br />
+:white_check_mark: Lunch spots appear on a map with the location marked<br />
+:white_check_mark: Users can see all posted lunch spots on the homepage<br />
+:white_check_mark: Users have a profile that displays the lunch spots they've posted<br />
+:white_check_mark: Users are automatically an attendee of a lunch spot they post<br />
+:white_check_mark: Users can join a lunch spot they'd like to attend<br />
 
-## Links to the application and development board
-
-**Heroku application:** https://meet-andeat.herokuapp.com/
+## Agile Planning
 
 **Trello board:** https://trello.com/b/P43rsW5t/meateat-planning
 
 ## Members
+
+- [Jackie Dunne](https://github.com/kiedunne)
 - [Asad Khan](https://github.com/AsadK47)
 - [Cristopher Palacios](https://github.com/criszelaya24)
 - [Mateusz Stacel](https://github.com/mateuszstacel)
-- [Jackie Dunne](https://github.com/kiedunne)
 
-## Running the app locally
+## Local Installation
 
 1. Git fork and clone the repository and cd into the Meet-and-Eat folder
 2. Run ```bundle install```
@@ -132,13 +135,3 @@ Below are some diagrams which we drew up in the initial stages of the applicatio
 Furthermore we had created a wiki page to help us document our work (link found below) which would in the show how much we had learned and accomplished throughout the project.
 
 Wiki pages: https://github.com/AsadK47/Meet-and-Eat/wiki
-
-### Diagrams
-
-**Diagram of MVP**
-
-![](assets/README-a29aa4ff.jpg)
-
-**Diagram of the iterations in development**
-
-![](assets/README-56d7b49b.jpg)

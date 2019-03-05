@@ -5,7 +5,6 @@ $meet-green: #25988b;
 $meet-pink: #ecd7d6;
 $meetdark-pink: #eab8b6;
 
-
 // SPOTS INDEX- HOME
 .text-welcome-msg
 {
@@ -24,7 +23,7 @@ $meetdark-pink: #eab8b6;
   background-color: $meet-pink;
   border-radius: 10px;
   margin-bottom: 15px;
-  transition: 0.3s;
+  transition: 0.2s;
 }
     #index-spot-title {
       color: $meet-green;
@@ -69,21 +68,20 @@ $meetdark-pink: #eab8b6;
   {
     text-align:center
   }
-
 .card-total {
-  border-style: solid;
-  border-width: thin;
-  border-color: #d6d6d6;
+  // border-style: solid;
+  // // border-width: thin;
+  // // border-color: #d6d6d6;
+  border-style: none;
   border-radius: 30px;
   width: 30vw;
   margin: 1%;
   padding: 10px;
   float: left;
   display: inline-block;
-  transition: 0.3s;
+  transition: 0.2s;
   background-color: white;
-     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 .card-body {
   padding: 10px;
@@ -97,10 +95,7 @@ $meetdark-pink: #eab8b6;
    .index-spot-text { color: white; text-decoration: none; }
    #index-spot-date { color: white; text-decoration: none; }
    .spot-title-time { background-color: $meet-green; }
-
-
 }
-
 img#index-avatar {
   height: 0.3vw;
   width: 0.3vw;
@@ -339,16 +334,6 @@ img#index-avatar {
 
 
 
-
-
-
-
-
-
-
-
-
-
 // USERS SHOW- PROFILE PAGE
 .textalign
 {
@@ -359,11 +344,6 @@ img#index-avatar {
   width: 60%;
   margin: auto;
 }
-
-
-
-
-
 #locationTimeContainer
 {
   width: 100%;
