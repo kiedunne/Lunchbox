@@ -1,13 +1,21 @@
-
 ![Screenshot](lnchbx_prev.png)
 
-[![Build Status](https://travis-ci.com/AsadK47/Meet-and-Eat.svg?branch=master)](https://travis-ci.com/AsadK47/Meet-and-Eat)
-[![Maintainability](https://api.codeclimate.com/v1/badges/80296a48bd19ade48130/maintainability)](https://codeclimate.com/github/AsadK47/Meet-and-Eat/maintainability)
-[![codecov](https://codecov.io/gh/AsadK47/Meet-and-Eat/branch/master/graph/badge.svg)](https://codecov.io/gh/AsadK47/Meet-and-Eat)
-[![Coverage Status](https://coveralls.io/repos/github/AsadK47/Meet-and-Eat/badge.svg?branch=master)](https://coveralls.io/github/AsadK47/Meet-and-Eat?branch=master)
+<div align="center">
+  <a href="https://travis-ci.com/AsadK47/Meet-and-Eat">
+    <img src="https://travis-ci.com/AsadK47/Meet-and-Eat.svg?branch=master" alt="Build Status" />
+  <a>
+  <a href="https://codeclimate.com/github/AsadK47/Meet-and-Eat/maintainability">
+    <img src="https://api.codeclimate.com/v1/badges/80296a48bd19ade48130/maintainability" alt="Maintainability" />
+  <a>
+    <a href="https://codecov.io/gh/AsadK47/Meet-and-Eat">
+    <img src="https://codecov.io/gh/AsadK47/Meet-and-Eat/branch/master/graph/badge.svg" alt="Coverage" />
+  <a>
+ </div>
 
-<h1 align="center">Find lunch buddies in your area.</h1>
-<h2 align="center">Built with :heart: on Rails and React.</h1>
+<div align="center">
+<h1>Find lunch buddies in your area.</h1>
+<h2>Built with :heart: on Rails and React.</h1>
+  </div>
 
 ## Current Iteration
 :construction: Revamp the front-end UI in React<br />
