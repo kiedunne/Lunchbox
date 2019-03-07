@@ -56,7 +56,7 @@ Built with love on Rails and React.
 
 ## Local Installation
 
-1. Git fork and clone the repository and cd into the Meet-and-Eat folder
+1. Git fork and clone the repository and cd into the Lunchbox folder
 2. Run ```bundle install```
 3. Run ```rake db:setup```
 4. Run ```bundle exec figaro install``` which will create an application.yml file and this file will be automatically .gitignored.
@@ -139,5 +139,3 @@ Please ensure that the pull request is descriptive and easy to understand so as 
 Below are some diagrams which we drew up in the initial stages of the application during our daily standup. It helped us to create a basic outline of the project and we used it as a guide to get us up and running.
 
 Furthermore we had created a wiki page to help us document our work (link found below) which would in the show how much we had learned and accomplished throughout the project.
-
-Wiki pages: https://github.com/AsadK47/Meet-and-Eat/wiki
