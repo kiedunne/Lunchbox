@@ -6,12 +6,29 @@
 {
   display: flex;
   margin: 3vw;
-  margin-top: 15vw;
+  margin-top: 12vw;
 }
 .profile-container {
   display: flex;
   flex-direction: column;
 }
+// Left user info bar
+    #profile-user-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%
+    }
+    .diet-profile {
+      width: 3vw;
+      height: 3vw;
+    }
+    .user-buttons {
+      padding: 10px;
+      padding-left: 0;
+    }
+
+
 #profile-spots-container{
   display: flex;
   flex-direction: column;
@@ -19,17 +36,10 @@
   justify-content: flex-start;
   margin-left: 3vw;
 }
-#profile-user-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%
-}
-
 #card-total-profile {
   width: 30vw;
+  height: 30vw;
 }
-
 #UserPosts, #UserFollowingPosts {
   width: 68vw;
   display: flex;
@@ -38,19 +48,8 @@
   align-items: center;
 }
 #UserFollowingPosts {
-
   display: flex;
   justify-content: center;
-
-}
-.diet-profile {
-  width: 3vw;
-  height: 3vw;
-}
-
-.user-buttons {
-  padding: 10px;
-  padding-left: 0;
 }
 a.spot-title {
   font-size: 30px;

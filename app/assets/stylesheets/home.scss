@@ -3,6 +3,32 @@ $meet-green: #25988b;
 $meet-pink: #ecd7d6;
 $meetdark-pink: #eab8b6;
 
+
+#logo {
+  padding: 0.5vw;
+  padding-left: 2vw;
+}
+
+.navbar-brand {
+  color: white;
+  font-family: arial;
+  font-weight: bold;
+  font-size: 4vw;
+  margin: 0;
+  text-decoration: none;
+}
+
+.navbar-brand-o {
+  color: $meetdark-pink;
+  margin: -0.5vw;
+  font-size: 4.8vw;
+}
+
+.navbar-brand-x {
+  margin: -1.5vw;
+  font-size: 1.5vw;
+  color: white;
+}
   .field {
     margin: 20px;
   }
@@ -126,11 +152,15 @@ body.home {
   font-style: bold;
   float: right;
 }
+
+
 #close-signin-button {
   font-size: 60px;
   font-style: bold;
   float: right;
 }
+
+
 #formGroupSignUp {
   color: white;
   text-align: center;
@@ -197,7 +227,6 @@ body.home {
   input[type=submit]:hover {
     opacity: 0.5;
   }
-
 
 .diet-options {
   padding: 20px;
